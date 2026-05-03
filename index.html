@@ -1199,9 +1199,7 @@ BI COPILOTS: Power BI Copilot (DAX + narrative, $14/user/mo, Azure), Tableau Age
 AGENTIC: Tellius (root cause analysis across 30+ sources, paid), Beam AI (enterprise agent hub, paid), MindsDB (OSS, Slack-native, 200+ sources, free), Zerve (AI notebooks + deployment, paid), Claude + MCP (model-agnostic, free tier), Meta AI Pipeline Agents (internal only, not public).`;
 
 async function callClaude(userPrompt, systemExtra='') {
-  const system = TOOL_SUMMARY + (systemExtra ? '
-
-' + systemExtra : '');
+  const system = TOOL_SUMMARY + (systemExtra ? '\n\n' + systemExtra : '');
   const resp = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -1224,11 +1222,8 @@ function formatAIResponse(text) {
     .replace(/^## (.+)$/gm, '<div style="font-family:Syne,sans-serif;font-size:13px;font-weight:700;margin:12px 0 5px">$1</div>')
     .replace(/^- (.+)$/gm, '<div style="padding:2px 0 2px 12px;border-left:2px solid var(--acc);margin:3px 0">$1</div>')
     .replace(/^(\d+)\. (.+)$/gm, '<div style="padding:2px 0"><span style="color:var(--acc);font-weight:700">$1.</span> $2</div>')
-    .replace(/
-
-/g, '<br>')
-    .replace(/
-/g, '<br>');
+    .replace(/\n\n/g, '<br>')
+    .replace(/\n/g, '<br>');
 }
 
 // ── NL SEARCH ──
