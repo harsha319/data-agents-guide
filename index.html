@@ -205,6 +205,59 @@ main{padding:14px 16px;padding-bottom:120px;}
 .cy{color:var(--grn);} .cn{color:var(--red);}
 .toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(14px);background:var(--surf);border:1px solid var(--bdr);border-radius:10px;padding:9px 14px;font-size:11px;z-index:400;opacity:0;transition:all .3s;white-space:nowrap;pointer-events:none;}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+/* ── PHASE 2: AI FEATURES ── */
+.ai-section{background:var(--surf);border:1px solid var(--bdr);border-radius:16px;padding:15px;margin-bottom:14px;position:relative;overflow:hidden;}
+.ai-section::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--acc2),var(--acc),var(--acc3));opacity:.7;}
+.ai-badge{display:inline-flex;align-items:center;gap:5px;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--acc);margin-bottom:3px;font-weight:600;}
+.ai-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--acc);animation:pulse 1.8s ease infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(1.4);}}
+.ai-t{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:2px;}
+.ai-s{font-size:10px;color:var(--mut);margin-bottom:12px;}
+
+/* AI Stack Advisor */
+.adv-input{width:100%;background:var(--surf2);border:1px solid var(--bdr);border-radius:10px;padding:10px 12px;font-family:'DM Mono',monospace;font-size:11px;color:var(--txt);resize:none;outline:none;transition:border-color .2s;min-height:70px;}
+.adv-input:focus{border-color:var(--acc);}
+.adv-input::placeholder{color:var(--mut);}
+.ai-btn{width:100%;margin-top:8px;padding:10px;border-radius:10px;background:linear-gradient(135deg,var(--acc2),var(--acc));border:none;color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:12px;cursor:pointer;transition:opacity .2s;display:flex;align-items:center;justify-content:center;gap:6px;}
+.ai-btn:hover{opacity:.88;}
+.ai-btn:disabled{opacity:.4;cursor:not-allowed;}
+.ai-result{display:none;margin-top:12px;padding:12px;background:var(--surf2);border:1px solid var(--bdr);border-radius:10px;font-size:11px;line-height:1.7;color:var(--txt);}
+.ai-result.show{display:block;animation:cIn .4s ease;}
+.ai-result strong{color:var(--acc);font-family:'Syne',sans-serif;}
+.ai-thinking{display:none;align-items:center;gap:8px;margin-top:10px;font-size:11px;color:var(--mut);}
+.ai-thinking.show{display:flex;}
+.ai-dots span{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--acc);animation:dot 1.2s ease infinite;}
+.ai-dots span:nth-child(2){animation-delay:.2s;}
+.ai-dots span:nth-child(3){animation-delay:.4s;}
+@keyframes dot{0%,100%{opacity:.2;transform:translateY(0);}50%{opacity:1;transform:translateY(-4px);}}
+
+/* Tool Battle */
+.battle-selects{display:flex;gap:8px;align-items:center;margin-bottom:8px;}
+.bsel{flex:1;background:var(--surf2);border:1px solid var(--bdr);border-radius:10px;padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:var(--txt);outline:none;cursor:pointer;transition:border-color .2s;}
+.bsel:focus{border-color:var(--acc);}
+.bvs{font-family:'Syne',sans-serif;font-weight:800;font-size:14px;color:var(--mut);flex-shrink:0;}
+
+/* ELI5 */
+.eli5-toggle{display:inline-flex;align-items:center;gap:6px;margin-top:8px;cursor:pointer;padding:4px 10px;border-radius:100px;border:1px solid var(--bdr);background:transparent;color:var(--mut);font-family:'DM Mono',monospace;font-size:9px;transition:all .2s;}
+.eli5-toggle:hover{border-color:var(--acc);color:var(--acc);}
+.eli5-toggle.on{border-color:var(--acc);color:var(--acc);background:#00e5ff0f;}
+.eli5-text{display:none;margin-top:8px;padding:10px 12px;background:linear-gradient(135deg,#7c3aed15,#00e5ff10);border:1px solid #7c3aed30;border-radius:10px;font-size:11px;line-height:1.7;color:var(--txt);animation:cIn .3s ease;}
+.eli5-text.show{display:block;}
+.eli5-loading{color:var(--mut);font-style:italic;}
+
+/* NL Search */
+.nl-wrap{position:relative;margin-bottom:0;}
+.nl-input{width:100%;background:var(--surf2);border:1px solid var(--bdr);border-radius:10px;padding:9px 36px 9px 12px;font-family:'DM Mono',monospace;font-size:11px;color:var(--txt);outline:none;transition:border-color .2s;}
+.nl-input:focus{border-color:var(--acc);}
+.nl-input::placeholder{color:var(--mut);}
+.nl-send{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;font-size:16px;color:var(--mut);transition:color .2s;}
+.nl-send:hover{color:var(--acc);}
+.nl-chips{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px;}
+.nl-chip{padding:4px 10px;border-radius:100px;font-size:9px;border:1px solid var(--bdr);background:transparent;color:var(--mut);cursor:pointer;font-family:'DM Mono',monospace;transition:all .2s;}
+.nl-chip:hover{border-color:var(--acc);color:var(--acc);}
+.nl-result-label{font-size:10px;color:var(--acc);margin-top:10px;display:none;font-weight:600;}
+.nl-result-label.show{display:block;}
 </style>
 </head>
 <body>
@@ -350,6 +403,52 @@ main{padding:14px 16px;padding-bottom:120px;}
   <div class="tlt">📅 History of the Space</div>
   <div class="tls"><div class="tltr" id="tltr"><div class="tlln"></div></div></div>
 </div>
+
+<!-- NL SEARCH -->
+<div class="ai-section" id="nl-section">
+  <div class="ai-badge"><span class="ai-badge-dot"></span>Claude AI</div>
+  <div class="ai-t">🔍 Natural Language Search</div>
+  <div class="ai-s">Describe what you need in plain English — Claude finds the right tools.</div>
+  <div class="nl-wrap">
+    <input class="nl-input" id="nl-input" type="text" placeholder='e.g. "open source catalog that works with dbt and Slack"'>
+    <button class="nl-send" onclick="runNLSearch()">⚡</button>
+  </div>
+  <div class="nl-chips">
+    <button class="nl-chip" onclick="setNL('free tool for non-technical business users')">Free + non-technical</button>
+    <button class="nl-chip" onclick="setNL('enterprise governance for regulated industries')">Regulated enterprise</button>
+    <button class="nl-chip" onclick="setNL('open source pipeline orchestration')">OSS pipeline</button>
+    <button class="nl-chip" onclick="setNL('BI tool that works inside Slack')">BI inside Slack</button>
+    <button class="nl-chip" onclick="setNL('NL to SQL for Snowflake')">NL on Snowflake</button>
+  </div>
+  <div class="nl-result-label" id="nl-result-label">AI matched these tools:</div>
+  <div class="ai-thinking" id="nl-thinking"><div class="ai-dots"><span></span><span></span><span></span></div> Claude is searching…</div>
+</div>
+<!-- AI STACK ADVISOR -->
+<div class="ai-section">
+  <div class="ai-badge"><span class="ai-badge-dot"></span>Claude AI</div>
+  <div class="ai-t">🤖 AI Stack Advisor</div>
+  <div class="ai-s">Describe your company — get a custom tool stack recommendation from Claude.</div>
+  <textarea class="adv-input" id="adv-input" placeholder='e.g. "50-person fintech startup on AWS, Snowflake warehouse, 3 data engineers, need SOC2 governance"'></textarea>
+  <button class="ai-btn" id="adv-btn" onclick="runAdvisor()">✨ Build My Stack</button>
+  <div class="ai-thinking" id="adv-thinking"><div class="ai-dots"><span></span><span></span><span></span></div> Claude is building your stack…</div>
+  <div class="ai-result" id="adv-result"></div>
+</div>
+<!-- TOOL BATTLE -->
+<div class="ai-section">
+  <div class="ai-badge"><span class="ai-badge-dot"></span>Claude AI</div>
+  <div class="ai-t">⚔️ Tool Battle</div>
+  <div class="ai-s">Pick any two tools — Claude generates a head-to-head breakdown.</div>
+  <div class="battle-selects">
+    <select class="bsel" id="b1"></select>
+    <span class="bvs">VS</span>
+    <select class="bsel" id="b2"></select>
+  </div>
+  <textarea class="adv-input" id="battle-context" placeholder='Optional: your context — e.g. "40-person e-commerce on BigQuery, need lineage"' style="min-height:54px;margin-top:8px"></textarea>
+  <button class="ai-btn" id="battle-btn" onclick="runBattle()">⚡ Battle!</button>
+  <div class="ai-thinking" id="battle-thinking"><div class="ai-dots"><span></span><span></span><span></span></div> Claude is judging…</div>
+  <div class="ai-result" id="battle-result"></div>
+</div>
+
 <div class="sec s1 vis" id="s1">
   <div class="sh"><div class="sic">🏗</div><div class="sti">Pipeline Orchestration & ETL</div><div class="scn">4 tools</div></div>
   <div class="sdv"></div>
@@ -359,28 +458,28 @@ main{padding:14px 16px;padding-bottom:120px;}
       <div class="td"><div class="tds">AI-native ETL with ai_query and ai_parse_document embedded directly in pipelines. Orchestrates AI workloads at scale using Lakeflow Jobs.</div><div class="tdf">Full lakehouse platform. Agent Bricks embeds ai_query(), ai_parse_document(), ai_classify() directly in SQL/Python — no separate LLM call needed. Lakeflow Jobs manages dependencies and observability at petabyte scale.<br><br><div class="hp">⭐ Harsha's Pick: Best for orgs going all-in on the Lakehouse paradigm.</div></div></div>
       <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">BigQuery</span><span class="ttag">dbt</span><span class="ttag">Spark</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Databricks Lakeflow')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Databricks Lakeflow','Pipeline')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Databricks Lakeflow')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Databricks Lakeflow','Pipeline')"> Compare</label></div>
     </div>
     <div class="tc" data-n="Apache Airflow" data-t="aws,bigquery,snowflake,oss,free,mature">
       <div class="tct"><div class="tn">Apache Airflow</div><div class="tbs"><div class="tbg oss">Open Source</div><div class="tbg mat">✅ Mature</div></div></div>
       <div class="td"><div class="tds">Python-based DAG orchestration with retries, alerts, and 100s of operators for BigQuery, Snowflake, Spark, and Kubernetes.</div><div class="tdf">Industry-standard open-source orchestrator. Airflow 3.0 (2026) adds native AI task types and LLM operator plugins. Managed via Astronomer or AWS MWAA.<br><br><div class="hp">⭐ Harsha's Pick: Default choice for any Python-first data team.</div></div></div>
       <div class="ttg"><span class="ttag">AWS</span><span class="ttag">GCP</span><span class="ttag">Azure</span><span class="ttag">Kubernetes</span><span class="ttag">dbt</span></div>
       <div class="tbg pfree" style="margin-top:7px;display:inline-block">✅ Free / OSS</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Apache Airflow')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Apache Airflow','Pipeline')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Apache Airflow')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Apache Airflow','Pipeline')"> Compare</label></div>
     </div>
     <div class="tc" data-n="Informatica CDI" data-t="snowflake,bigquery,enterprise,paid,mature">
       <div class="tct"><div class="tn">Informatica Cloud Data Integration</div><div class="tbs"><div class="tbg">Enterprise</div><div class="tbg mat">✅ Mature</div></div></div>
       <div class="td"><div class="tds">Agents dynamically generate and verify transformation logic as schemas change. Native integrations with Snowflake, Databricks, and BigQuery.</div><div class="tdf">CLAIRE AI detects schema drift and auto-heals pipelines. Pushdown optimization reduces data movement. Supports CDC, real-time streaming, and batch. Best for enterprises migrating from SSIS or DataStage.</div></div>
       <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">Databricks</span><span class="ttag">BigQuery</span><span class="ttag">SAP</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Informatica CDI')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Informatica CDI','Pipeline')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Informatica CDI')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Informatica CDI','Pipeline')"> Compare</label></div>
     </div>
     <div class="tc" data-n="LangGraph" data-t="oss,free,rising,hot">
       <div class="tct"><div class="tn">LangGraph Multi-Agent Orchestration</div><div class="tbs"><div class="tbg oss">Framework</div><div class="tbg rise">⬆️ Rising</div></div></div>
       <div class="td"><div class="tds">Self-healing DAGs where agents reason over pipeline state and metadata — auto-rewriting failed transformations or rerouting data flows.</div><div class="tdf">Open-source graph-based multi-agent framework from LangChain. Agents maintain state across tool calls and invoke sub-agents for complex tasks. Production deployments at major fintechs in 2026.<br><br><div class="hp">⭐ Harsha's Pick: Watch this space — the future of autonomous pipelines.</div></div></div>
       <div class="ttg"><span class="ttag">Python</span><span class="ttag">LangChain</span><span class="ttag">Anthropic</span><span class="ttag">OpenAI</span></div>
       <div class="tbg pfree" style="margin-top:7px;display:inline-block">✅ Free / OSS</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'LangGraph')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'LangGraph','Pipeline')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'LangGraph')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'LangGraph','Pipeline')"> Compare</label></div>
     </div>
   </div>
 </div>
@@ -394,49 +493,49 @@ main{padding:14px 16px;padding-bottom:120px;}
       <div class="td"><div class="tds">Best overall. ML-powered classification, column-level lineage, and business glossary automation across 200+ connectors.</div><div class="tdf">Gartner MQ Leader 2026. Only platform with "future-proof architecture" distinction. Atlan MCP brings lineage into Claude, Cursor, and GitHub Copilot for inline impact checks. AI stewards auto-enrich and enforce policies 24/7.<br><br><div class="hp">⭐ Harsha's Pick: #1 catalog for modern data teams. Best UX in class.</div></div></div>
       <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">Databricks</span><span class="ttag">dbt</span><span class="ttag">Looker</span><span class="ttag">Tableau</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Atlan')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Atlan','Catalog')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Atlan')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Atlan','Catalog')"> Compare</label></div>
     </div>
     <div class="tc" data-n="Collibra" data-t="enterprise,paid,mature">
       <div class="tct"><div class="tn">Collibra</div><div class="tbs"><div class="tbg">Enterprise</div><div class="tbg mat">✅ Mature</div></div></div>
       <div class="td"><div class="tds">Best for regulated enterprises. AI-assisted business glossary, automated lineage mapping, and governance workflow triggers.</div><div class="tdf">Gold standard for governance in banking, insurance, and pharma. Policy Center defines business rules across the data estate. Stewardship assignments, issue tracking, and audit trails built for compliance teams.</div></div>
       <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">AWS</span><span class="ttag">Azure</span><span class="ttag">SAP</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Collibra')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Collibra','Catalog')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Collibra')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Collibra','Catalog')"> Compare</label></div>
     </div>
     <div class="tc" data-n="Alation" data-t="enterprise,paid,mature">
       <div class="tct"><div class="tn">Alation</div><div class="tbs"><div class="tbg">Enterprise</div><div class="tbg mat">✅ Mature</div></div></div>
       <div class="td"><div class="tds">Analytics-first. ML-powered metadata discovery, intelligent search, and curation workflows for compliance teams.</div><div class="tdf">Pioneer of the modern data catalog. Behavioral analysis learns from how users query to auto-suggest relevant assets. Alation Connected Sheets brings catalog into Excel and Google Sheets. Strong in healthcare and financial services.</div></div>
       <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">BigQuery</span><span class="ttag">Tableau</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Alation')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Alation','Catalog')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Alation')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Alation','Catalog')"> Compare</label></div>
     </div>
     <div class="tc" data-n="Informatica IDMC" data-t="enterprise,paid,snowflake,bigquery,mature">
       <div class="tct"><div class="tn">Informatica IDMC</div><div class="tbs"><div class="tbg">Enterprise</div></div></div>
       <div class="td"><div class="tds">CLAIRE AI engine automates cataloging, classification, and quality assurance across large multi-cloud environments.</div><div class="tdf">Unified platform combining catalog, quality, masking, and MDM. CLAIRE AI scores data quality, suggests classifications, and detects PII automatically. Best for enterprises needing a single vendor for the full data management stack.</div></div>
       <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">AWS</span><span class="ttag">Azure</span><span class="ttag">GCP</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Informatica IDMC')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Informatica IDMC','Catalog')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Informatica IDMC')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Informatica IDMC','Catalog')"> Compare</label></div>
     </div>
     <div class="tc" data-n="Secoda" data-t="snowflake,bigquery,dbt,rising,paid,slack">
       <div class="tct"><div class="tn">Secoda</div><div class="tbs"><div class="tbg">Fast Deploy</div><div class="tbg rise">⬆️ Rising</div></div></div>
       <div class="td"><div class="tds">Deploys in 1–2 weeks. ML-powered metadata ingestion and natural language search. Best for teams starting quickly.</div><div class="tdf">Loved by startups and growth-stage companies. Secoda AI answers questions like "where is customer revenue data?" in natural language. Slack integration lets teams query the catalog without leaving their workflow.</div></div>
       <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">BigQuery</span><span class="ttag">dbt</span><span class="ttag">Slack</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Secoda')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Secoda','Catalog')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Secoda')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Secoda','Catalog')"> Compare</label></div>
     </div>
     <div class="tc" data-n="OpenMetadata" data-t="oss,free,snowflake,bigquery,dbt,rising">
       <div class="tct"><div class="tn">OpenMetadata / DataHub</div><div class="tbs"><div class="tbg oss">Open Source</div><div class="tbg rise">⬆️ Rising</div></div></div>
       <div class="td"><div class="tds">Open-source metadata foundation with AI scoring, classification, and lineage. Great for building governance from scratch.</div><div class="tdf">OpenMetadata (Collate) and DataHub (LinkedIn/Acryl) are the leading OSS catalogs. Both offer REST APIs and lineage visualization. DataHub stronger at scale; OpenMetadata better UX out-of-box. Support dbt, Airflow, and warehouse connectors natively.</div></div>
       <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">BigQuery</span><span class="ttag">dbt</span><span class="ttag">Airflow</span></div>
       <div class="tbg pfree" style="margin-top:7px;display:inline-block">✅ Free / OSS</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'OpenMetadata')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'OpenMetadata','Catalog')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'OpenMetadata')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'OpenMetadata','Catalog')"> Compare</label></div>
     </div>
     <div class="tc" data-n="OvalEdge" data-t="enterprise,paid">
       <div class="tct"><div class="tn">OvalEdge askEdgi</div><div class="tbs"><div class="tbg">Governed RAG</div></div></div>
       <div class="td"><div class="tds">Built on enterprise catalog. Unifies data discovery, governance, and analytics with zero-prep AI querying.</div><div class="tdf">Unique in combining catalog with a governed analytics layer. askEdgi enables RAG-style querying directly against cataloged assets with built-in access controls. Good for mid-market orgs wanting catalog + analytics in one product.</div></div>
       <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">SQL Server</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'OvalEdge askEdgi')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'OvalEdge','Catalog')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'OvalEdge askEdgi')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'OvalEdge','Catalog')"> Compare</label></div>
     </div>
   </div>
 </div>
@@ -450,42 +549,42 @@ main{padding:14px 16px;padding-bottom:120px;}
       <div class="td"><div class="tds">End-to-end column-level lineage through dbt/SQL into warehouses and BI tools. Atlan MCP brings lineage into AI tools for instant impact checks.</div><div class="tdf">Most comprehensive lineage in 2026. Column-level propagation from raw source through every transformation to final dashboard cell. MCP integration means devs get lineage context in their IDE without switching tabs.</div></div>
       <div class="ttg"><span class="ttag">dbt</span><span class="ttag">Snowflake</span><span class="ttag">Tableau</span><span class="ttag">Power BI</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Atlan (Lineage)')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Atlan','Lineage')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Atlan (Lineage)')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Atlan','Lineage')"> Compare</label></div>
     </div>
     <div class="tc" data-n="Collibra Lineage" data-t="enterprise,paid,mature">
       <div class="tct"><div class="tn">Collibra</div><div class="tbs"><div class="tbg">Enterprise</div><div class="tbg mat">✅ Mature</div></div></div>
       <div class="td"><div class="tds">Visual lineage for regulated enterprises with stewardship workflows. Best for heavy GDPR, BCBS 239, and SOX compliance.</div><div class="tdf">Most comprehensive lineage for compliance-heavy industries. Supports technical and business lineage views. Collibra Protect enables automated data masking based on lineage sensitivity classifications.</div></div>
       <div class="ttg"><span class="ttag">AWS</span><span class="ttag">Azure</span><span class="ttag">Snowflake</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Collibra (Lineage)')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Collibra','Lineage')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Collibra (Lineage)')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Collibra','Lineage')"> Compare</label></div>
     </div>
     <div class="tc" data-n="IBM Watson" data-t="enterprise,paid,mature">
       <div class="tct"><div class="tn">IBM Watson Knowledge Catalog</div><div class="tbs"><div class="tbg">AI + Data</div><div class="tbg mat">✅ Mature</div></div></div>
       <div class="td"><div class="tds">Tracks data and model lineage from ingestion through deployment. Model registry stores metadata and risk scoring per AI model.</div><div class="tdf">Unique in tracking both traditional data lineage and ML model lineage end-to-end. IBM OpenScale adds AI fairness monitoring on top of lineage. Best for IBM infrastructure with AI governance requirements.</div></div>
       <div class="ttg"><span class="ttag">IBM Cloud</span><span class="ttag">AWS</span><span class="ttag">Watson Studio</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'IBM Watson')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'IBM Watson','Lineage')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'IBM Watson')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'IBM Watson','Lineage')"> Compare</label></div>
     </div>
     <div class="tc" data-n="Google Dataplex" data-t="bigquery,gcp,enterprise,paid,rising">
       <div class="tct"><div class="tn">Google Dataplex</div><div class="tbs"><div class="tbg">GCP Native</div><div class="tbg rise">⬆️ Rising</div></div></div>
       <div class="td"><div class="tds">Serverless lineage integrated with BigQuery, Vertex AI, and Looker. Best for GCP-native orgs needing built-in scalability.</div><div class="tdf">Fully managed data fabric on GCP. Auto-discovery of BigQuery assets, automatic lineage capture from BigQuery jobs. Dataplex Catalog replaced Data Catalog in 2025 with AI-powered enrichment. Zero operational overhead.</div></div>
       <div class="ttg"><span class="ttag">BigQuery</span><span class="ttag">Vertex AI</span><span class="ttag">Looker</span><span class="ttag">GCP</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Usage-based</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Google Dataplex')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Google Dataplex','Lineage')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Google Dataplex')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Google Dataplex','Lineage')"> Compare</label></div>
     </div>
     <div class="tc" data-n="Informatica Lineage" data-t="enterprise,paid,snowflake,mature">
       <div class="tct"><div class="tn">Informatica IDMC</div><div class="tbs"><div class="tbg">Enterprise</div></div></div>
       <div class="td"><div class="tds">Metadata and lineage for large multi-cloud environments with pre-built parsers for 50+ sources.</div><div class="tdf">End-to-end lineage within the IDMC unified platform. Strongest when combined with Informatica ETL tools — captures lineage automatically as pipelines run. Best for enterprises already on Informatica stack.</div></div>
       <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">AWS</span><span class="ttag">Azure</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Informatica (Lineage)')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Informatica','Lineage')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Informatica (Lineage)')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Informatica','Lineage')"> Compare</label></div>
     </div>
     <div class="tc" data-n="Alation Lineage" data-t="enterprise,paid,mature">
       <div class="tct"><div class="tn">Alation</div><div class="tbs"><div class="tbg">Enterprise</div><div class="tbg mat">✅ Mature</div></div></div>
       <div class="td"><div class="tds">Usage-based lineage captured from query history in connected warehouses. Realistic rather than static schema-based lineage.</div><div class="tdf">Alation's lineage is functional but secondary to its catalog and search strength. Captured automatically from query history — providing realistic usage-based lineage. Best used as part of the broader Alation platform.</div></div>
       <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">Tableau</span><span class="ttag">BigQuery</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Alation (Lineage)')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Alation','Lineage')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Alation (Lineage)')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Alation','Lineage')"> Compare</label></div>
     </div>
   </div>
 </div>
@@ -499,42 +598,42 @@ main{padding:14px 16px;padding-bottom:120px;}
       <div class="td"><div class="tds">Only Gartner-recognized future-proof architecture in 2026. #1 in lineage & impact analysis. AI stewards enforce policies continuously.</div><div class="tdf">AI Policy Engine auto-classifies PII, enforces masking, and triggers stewardship workflows without manual intervention. Monte Carlo partnership adds automated data quality monitoring layered on top of governance.</div></div>
       <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">dbt</span><span class="ttag">BigQuery</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Atlan (Governance)')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Atlan','Governance')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Atlan (Governance)')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Atlan','Governance')"> Compare</label></div>
     </div>
     <div class="tc" data-n="Collibra Governance" data-t="enterprise,paid,mature">
       <div class="tct"><div class="tn">Collibra</div><div class="tbs"><div class="tbg">Enterprise</div><div class="tbg mat">✅ Mature</div></div></div>
       <div class="td"><div class="tds">Enterprise-grade policy enforcement, automated lineage, compliance integrity, and remediation workflows.</div><div class="tdf">Strongest governance workflow engine in the market. Identifies stewardship dependencies and triggers remediation. Collibra Data Quality embedded within governance workflow for end-to-end data trust.</div></div>
       <div class="ttg"><span class="ttag">SAP</span><span class="ttag">Snowflake</span><span class="ttag">AWS</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Collibra (Governance)')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Collibra','Governance')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Collibra (Governance)')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Collibra','Governance')"> Compare</label></div>
     </div>
     <div class="tc" data-n="Informatica Governance" data-t="enterprise,paid,mature">
       <div class="tct"><div class="tn">Informatica IDMC</div><div class="tbs"><div class="tbg">Enterprise</div></div></div>
       <div class="td"><div class="tds">CLAIRE AI for classification, quality governance, and automated compliance across multi-cloud environments.</div><div class="tdf">Broadest governance coverage: catalog + quality + masking + MDM + lineage in one platform. Pre-built policy templates for GDPR, HIPAA, and CCPA. CLAIRE detects PII, applies masking, and logs all access for compliance audit.</div></div>
       <div class="ttg"><span class="ttag">AWS</span><span class="ttag">Azure</span><span class="ttag">GCP</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Informatica (Gov)')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Informatica','Governance')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Informatica (Gov)')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Informatica','Governance')"> Compare</label></div>
     </div>
     <div class="tc" data-n="IBM Watson Gov" data-t="enterprise,paid,mature">
       <div class="tct"><div class="tn">IBM Watson Knowledge Catalog</div><div class="tbs"><div class="tbg">AI Governance</div></div></div>
       <div class="td"><div class="tds">Combines data and AI model governance. Tracks ingestion through deployment with risk scoring for each AI model.</div><div class="tdf">One of few platforms with formal AI model governance alongside traditional data governance. IBM AI Factsheets auto-document model provenance for regulatory submissions. IBM OpenScale adds fairness and explainability for deployed models.</div></div>
       <div class="ttg"><span class="ttag">IBM Cloud</span><span class="ttag">Watson</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'IBM Watson (Gov)')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'IBM Watson','Governance')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'IBM Watson (Gov)')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'IBM Watson','Governance')"> Compare</label></div>
     </div>
     <div class="tc" data-n="Oracle" data-t="enterprise,paid,mature">
       <div class="tct"><div class="tn">Oracle Enterprise Metadata Mgmt</div><div class="tbs"><div class="tbg">Enterprise</div></div></div>
       <div class="td"><div class="tds">AI-powered search and tagging. Real-time lineage, risk, and usage insights. Region-specific deployment for multi-jurisdiction compliance.</div><div class="tdf">Best for Oracle-heavy enterprises. Deep EBS, Fusion, and OBIEE integration. Pre-built templates for MiFID II, BCBS 239, and GDPR. Sovereign cloud deployment options for data residency requirements.</div></div>
       <div class="ttg"><span class="ttag">Oracle Cloud</span><span class="ttag">OCI</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Oracle Metadata Mgmt')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Oracle','Governance')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Oracle Metadata Mgmt')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Oracle','Governance')"> Compare</label></div>
     </div>
     <div class="tc" data-n="Apache Egeria" data-t="oss,free,rising">
       <div class="tct"><div class="tn">Apache Egeria</div><div class="tbs"><div class="tbg oss">Open Source</div><div class="tbg rise">⬆️ Rising</div></div></div>
       <div class="td"><div class="tds">2026 ML-powered metadata normalization and contextual mapping — consistent governance even when teams use different labels.</div><div class="tdf">Linux Foundation project for federated governance across organizational boundaries. Metadata servers exchange governance info via OMAG APIs. Cohort federation allows multiple catalogs to share lineage without centralizing data. Best for consortium-style governance.</div></div>
       <div class="ttg"><span class="ttag">Any Cloud</span><span class="ttag">On-Prem</span></div>
       <div class="tbg pfree" style="margin-top:7px;display:inline-block">✅ Free / OSS</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Apache Egeria')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Apache Egeria','Governance')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Apache Egeria')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Apache Egeria','Governance')"> Compare</label></div>
     </div>
   </div>
 </div>
@@ -547,42 +646,42 @@ main{padding:14px 16px;padding-bottom:120px;}
       <div class="td"><div class="tds">Translates natural language to SQL using a compound AI system. Warehouse-native with no extra LLM costs.</div><div class="tdf">Genie spaces let data teams curate trusted Q&A pairs that guide SQL generation. Business users query in plain English within Databricks UI or via API. Compound AI architecture combines retrieval, verification, and generation for high accuracy.</div></div>
       <div class="ttg"><span class="ttag">Databricks</span><span class="ttag">Delta Lake</span><span class="ttag">Unity Catalog</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Databricks Genie')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Databricks Genie','NL-SQL')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Databricks Genie')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Databricks Genie','NL-SQL')"> Compare</label></div>
     </div>
     <div class="tc" data-n="Snowflake Cortex" data-t="snowflake,enterprise,paid,hot">
       <div class="tct"><div class="tn">Snowflake Cortex Analyst</div><div class="tbs"><div class="tbg">Warehouse Native</div><div class="tbg hot">🔥 Hot</div></div></div>
       <div class="td"><div class="tds">Native NL queries in Snowflake. Routes questions via Cortex Agents. No additional LLM spend — data never leaves Snowflake.</div><div class="tdf">Semantic model YAML defines business logic, measures, and joins once. Cortex Analyst uses it to generate accurate SQL consistently. Cortex Agents chain Analyst queries with Python tools for complex multi-step answers.</div></div>
       <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">Streamlit</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid (credits)</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Snowflake Cortex Analyst')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Snowflake Cortex','NL-SQL')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Snowflake Cortex Analyst')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Snowflake Cortex','NL-SQL')"> Compare</label></div>
     </div>
     <div class="tc" data-n="ThoughtSpot" data-t="snowflake,bigquery,enterprise,paid,rising">
       <div class="tct"><div class="tn">ThoughtSpot Spotter</div><div class="tbs"><div class="tbg">Self-Service</div><div class="tbg rise">⬆️ Rising</div></div></div>
       <div class="td"><div class="tds">Generates dashboards and semantic models from natural language. Strong for non-technical business users at scale.</div><div class="tdf">Spotter is a conversational analytics agent generating Liveboards and semantic models from NL. Multi-turn conversations let users iteratively refine analysis. ThoughtSpot Everywhere embeds Spotter in any app via API. Strongest for deploying self-service to thousands of business users.</div></div>
       <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">BigQuery</span><span class="ttag">Databricks</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'ThoughtSpot Spotter')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'ThoughtSpot','NL-SQL')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'ThoughtSpot Spotter')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'ThoughtSpot','NL-SQL')"> Compare</label></div>
     </div>
     <div class="tc" data-n="Querio" data-t="snowflake,bigquery,rising,paid">
       <div class="tct"><div class="tn">Querio</div><div class="tbs"><div class="tbg">AI-Native BI</div><div class="tbg rise">⬆️ Rising</div></div></div>
       <div class="td"><div class="tds">Connects to Snowflake, BigQuery, Postgres. Context layer defines joins and metrics once for consistent NL interpretation.</div><div class="tdf">Context layer is the key differentiator — data teams define business terms, joins, and metrics once. Every NL query routes through this layer for consistent, accurate results. Auto-refreshing dashboards update when underlying data changes.</div></div>
       <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">BigQuery</span><span class="ttag">Postgres</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Querio')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Querio','NL-SQL')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Querio')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Querio','NL-SQL')"> Compare</label></div>
     </div>
     <div class="tc" data-n="Julius AI" data-t="free,rising">
       <div class="tct"><div class="tn">Julius AI</div><div class="tbs"><div class="tbg">File + DB</div><div class="tbg rise">⬆️ Rising</div></div></div>
       <div class="td"><div class="tds">Conversational analysis of uploaded files up to 32 GB and connected databases. Built for non-technical users.</div><div class="tdf">Most accessible tool here — zero SQL knowledge required. Upload CSV, Excel, or connect to MySQL/SQL Server/Databricks and ask questions in plain English. Julius generates charts, statistical analysis, and explains findings in plain language. Free tier available.</div></div>
       <div class="ttg"><span class="ttag">CSV</span><span class="ttag">MySQL</span><span class="ttag">SQL Server</span><span class="ttag">Databricks</span></div>
       <div class="tbg pfree" style="margin-top:7px;display:inline-block">✅ Free Tier</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Julius AI')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Julius AI','NL-SQL')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Julius AI')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Julius AI','NL-SQL')"> Compare</label></div>
     </div>
     <div class="tc" data-n="Hex Magic" data-t="snowflake,bigquery,dbt,rising,paid">
       <div class="tct"><div class="tn">Hex Magic AI</div><div class="tbs"><div class="tbg">Notebook</div><div class="tbg rise">⬆️ Rising</div></div></div>
       <div class="td"><div class="tds">Generates SQL and Python from natural language in a collaborative notebook. Best for analytics teams doing code-assisted exploration.</div><div class="tdf">Hex blends notebooks and BI. Magic AI generates SQL, Python, and chart code from NL within cells. Collaborative editing lets multiple analysts work simultaneously. Hex Apps turn notebooks into interactive apps for stakeholders. AI-native on dbt.</div></div>
       <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">BigQuery</span><span class="ttag">dbt</span><span class="ttag">Python</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Hex Magic AI')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Hex Magic','NL-SQL')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Hex Magic AI')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Hex Magic','NL-SQL')"> Compare</label></div>
     </div>
   </div>
 </div>
@@ -596,56 +695,56 @@ main{padding:14px 16px;padding-bottom:120px;}
       <div class="td"><div class="tds">Generates DAX queries and narrative visuals. Anomaly detection flags metric shifts with NL explanations. $14/user/month for M365 orgs.</div><div class="tdf">Lowest friction AI BI tool for Microsoft-heavy orgs. Copilot generates DAX measures, narrative summaries, and visual suggestions from NL. Fabric integration means Copilot works across the entire Microsoft data estate.</div></div>
       <div class="ttg"><span class="ttag">Azure</span><span class="ttag">Microsoft Fabric</span><span class="ttag">SharePoint</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 $14/user/mo</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Power BI Copilot')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Power BI','BI Copilots')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Power BI Copilot')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Power BI','BI Copilots')"> Compare</label></div>
     </div>
     <div class="tc" data-n="Tableau" data-t="snowflake,enterprise,paid,mature,slack">
       <div class="tct"><div class="tn">Tableau Agent + Pulse</div><div class="tbs"><div class="tbg">Enterprise</div><div class="tbg mat">✅ Mature</div></div></div>
       <div class="td"><div class="tds">Agent handles conversational queries and calculations. Pulse delivers metric alerts and summaries directly to Slack or email.</div><div class="tdf">Tableau Agent is the conversational layer on Tableau's best-in-class visualization engine. Pulse monitors KPIs and surfaces anomalies in plain language via Slack, email, or Salesforce. Together they create a push+pull analytics experience unmatched in the market.</div></div>
       <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">Salesforce</span><span class="ttag">Slack</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Tableau Agent + Pulse')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Tableau','BI Copilots')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Tableau Agent + Pulse')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Tableau','BI Copilots')"> Compare</label></div>
     </div>
     <div class="tc" data-n="Looker + Gemini" data-t="bigquery,gcp,enterprise,paid,rising">
       <div class="tct"><div class="tn">Looker + Gemini</div><div class="tbs"><div class="tbg">GCP Native</div><div class="tbg rise">⬆️ Rising</div></div></div>
       <div class="td"><div class="tds">Code-first semantic governance with Gemini NL capabilities. Best for data-engineering-heavy orgs on Google Cloud.</div><div class="tdf">Looker's LookML semantic layer is the industry's most rigorous code-first approach to governed metrics. Gemini adds conversational querying on top. Best for GCP-native orgs who want strict semantic layer control over every metric definition.</div></div>
       <div class="ttg"><span class="ttag">BigQuery</span><span class="ttag">GCP</span><span class="ttag">Vertex AI</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Looker + Gemini')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Looker + Gemini','BI Copilots')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Looker + Gemini')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Looker + Gemini','BI Copilots')"> Compare</label></div>
     </div>
     <div class="tc" data-n="Sigma Computing" data-t="snowflake,bigquery,enterprise,paid,rising">
       <div class="tct"><div class="tn">Sigma Computing</div><div class="tbs"><div class="tbg">Warehouse AI</div><div class="tbg rise">⬆️ Rising</div></div></div>
       <div class="td"><div class="tds">Ask Sigma is an agentic AI that locates data sources, builds multi-step analyses, and shows each step of its decision logic.</div><div class="tdf">Unique spreadsheet-like interface runs directly on the warehouse — no data extract needed. Ask Sigma adds AI reasoning on top, showing decision steps taken to answer a question. Strong for finance teams migrating from Excel to cloud analytics.</div></div>
       <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">BigQuery</span><span class="ttag">Databricks</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Sigma Computing')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Sigma Computing','BI Copilots')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Sigma Computing')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Sigma Computing','BI Copilots')"> Compare</label></div>
     </div>
     <div class="tc" data-n="Holistics AI" data-t="snowflake,bigquery,dbt,paid,rising">
       <div class="tct"><div class="tn">Holistics AI</div><div class="tbs"><div class="tbg">Semantic Layer</div><div class="tbg rise">⬆️ Rising</div></div></div>
       <div class="td"><div class="tds">Composable metric logic via AQL. AI generates metric definitions that data teams review before promoting to the governed model.</div><div class="tdf">Holistics AML lets teams define metrics as code with version control. AI suggests metric definitions that go through a review workflow before becoming official governed metrics. Human-in-the-loop governance built into the AI layer. Growing fast in Southeast Asia.</div></div>
       <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">BigQuery</span><span class="ttag">dbt</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Holistics AI')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Holistics AI','BI Copilots')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Holistics AI')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Holistics AI','BI Copilots')"> Compare</label></div>
     </div>
     <div class="tc" data-n="Qlik AutoML" data-t="enterprise,paid,mature">
       <div class="tct"><div class="tn">Qlik AutoML</div><div class="tbs"><div class="tbg">ML + BI</div><div class="tbg mat">✅ Mature</div></div></div>
       <div class="td"><div class="tds">Predictive analytics and automated ML embedded in the BI layer. For teams wanting ML insights without separate data science infra.</div><div class="tdf">AutoML lets business analysts build predictive models without Python. Drag-and-drop experiment configuration, automated feature engineering, and model comparison. Predictions surface directly in Qlik dashboards. Best for sales forecasting and churn prediction.</div></div>
       <div class="ttg"><span class="ttag">Qlik Cloud</span><span class="ttag">AWS</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Qlik AutoML')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Qlik AutoML','BI Copilots')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Qlik AutoML')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Qlik AutoML','BI Copilots')"> Compare</label></div>
     </div>
     <div class="tc" data-n="Domo" data-t="enterprise,paid,mature">
       <div class="tct"><div class="tn">Domo</div><div class="tbs"><div class="tbg">Executive</div><div class="tbg mat">✅ Mature</div></div></div>
       <div class="td"><div class="tds">AI-driven insights optimized for executive mobile use. Best for C-suite dashboards and business-wide KPI monitoring.</div><div class="tdf">Domo's mobile-first design is unmatched for executive consumption of business data. Domo AI adds automated narratives and anomaly alerts. Domo Everywhere embeds analytics in any external application. Strong in retail, healthcare, and media.</div></div>
       <div class="ttg"><span class="ttag">Salesforce</span><span class="ttag">AWS</span><span class="ttag">Snowflake</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Domo')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Domo','BI Copilots')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Domo')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Domo','BI Copilots')"> Compare</label></div>
     </div>
     <div class="tc" data-n="Zenlytic ZOE" data-t="snowflake,bigquery,dbt,paid,rising,slack">
       <div class="tct"><div class="tn">Zenlytic ZOE</div><div class="tbs"><div class="tbg">AI-Native</div><div class="tbg rise">⬆️ Rising</div></div></div>
       <div class="td"><div class="tds">Conversational BI agent with governed semantic layer. Translates NL to governed queries with strong data team control.</div><div class="tdf">Zoe routes questions through governed metric definitions — AI-generated answers always use the right business logic. Multi-turn conversations let users explore data iteratively. Slack integration lets any team member ask Zoe without logging into a BI tool.</div></div>
       <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">BigQuery</span><span class="ttag">dbt</span><span class="ttag">Slack</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Zenlytic ZOE')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Zenlytic ZOE','BI Copilots')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Zenlytic ZOE')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Zenlytic ZOE','BI Copilots')"> Compare</label></div>
     </div>
   </div>
 </div>
@@ -659,42 +758,42 @@ main{padding:14px 16px;padding-bottom:120px;}
       <div class="td"><div class="tds">Governed NL-to-SQL across 30+ sources simultaneously. Leads on autonomous root cause analysis — investigates why metrics changed.</div><div class="tdf">Only tool that autonomously investigates the "why" behind metric changes. Polaris AI runs multi-dimensional analysis across all connected sources simultaneously, surfacing root causes in minutes. Strong momentum in financial services and retail.</div></div>
       <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">BigQuery</span><span class="ttag">Databricks</span><span class="ttag">Redshift</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Tellius')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Tellius','Agentic')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Tellius')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Tellius','Agentic')"> Compare</label></div>
     </div>
     <div class="tc" data-n="Beam AI" data-t="enterprise,paid,rising">
       <div class="tct"><div class="tn">Beam AI</div><div class="tbs"><div class="tbg">Automation</div><div class="tbg rise">⬆️ Rising</div></div></div>
       <div class="td"><div class="tds">Enterprise agentic automation hub. Central dashboard for agent tasks, memory, history, and performance. Integrates with Airtable, ServiceNow, Asana.</div><div class="tdf">Beam deploys specialized agents for data operations — monitoring pipelines, filing incidents, updating dashboards, and notifying stakeholders. Agent memory persists context across tasks. Full visibility into every agent action with rollback capability.</div></div>
       <div class="ttg"><span class="ttag">Airtable</span><span class="ttag">ServiceNow</span><span class="ttag">Asana</span><span class="ttag">Slack</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Beam AI')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Beam AI','Agentic')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Beam AI')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Beam AI','Agentic')"> Compare</label></div>
     </div>
     <div class="tc" data-n="MindsDB" data-t="snowflake,oss,free,hot,slack">
       <div class="tct"><div class="tn">MindsDB</div><div class="tbs"><div class="tbg oss">Open Source</div><div class="tbg hot">🔥 Hot</div></div></div>
       <div class="td"><div class="tds">Autonomous BI agents integrated directly into Slack. Conversational analytics on operational data across 200+ sources.</div><div class="tdf">MindsDB runs as an AI layer directly on top of your existing databases — no data movement. Agents answer questions in Slack by querying the right source autonomously. 200+ connectors including real-time streams. Open-source core with 25k+ GitHub stars.</div></div>
       <div class="ttg"><span class="ttag">Slack</span><span class="ttag">MySQL</span><span class="ttag">Snowflake</span><span class="ttag">MongoDB</span></div>
       <div class="tbg pfree" style="margin-top:7px;display:inline-block">✅ Free / OSS</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'MindsDB')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'MindsDB','Agentic')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'MindsDB')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'MindsDB','Agentic')"> Compare</label></div>
     </div>
     <div class="tc" data-n="Zerve" data-t="snowflake,bigquery,paid,rising">
       <div class="tct"><div class="tn">Zerve</div><div class="tbs"><div class="tbg">Data Science</div><div class="tbg rise">⬆️ Rising</div></div></div>
       <div class="td"><div class="tds">AI-native notebooks with built-in collaboration and deployment. Coding, datasets, and AI assistance in one shared environment.</div><div class="tdf">Combines data science notebook experience with built-in deployment infrastructure. AI assistant helps write, debug, and optimize code across SQL, Python, and R. Environments are fully reproducible. Real-time collaboration with conflict resolution.</div></div>
       <div class="ttg"><span class="ttag">Python</span><span class="ttag">R</span><span class="ttag">Snowflake</span><span class="ttag">BigQuery</span></div>
       <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Zerve')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Zerve','Agentic')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Zerve')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Zerve','Agentic')"> Compare</label></div>
     </div>
     <div class="tc" data-n="Claude + MCP" data-t="oss,free,hot">
       <div class="tct"><div class="tn">Claude + MCP</div><div class="tbs"><div class="tbg">Flexible</div><div class="tbg hot">🔥 Hot</div></div></div>
       <div class="td"><div class="tds">Model-agnostic agent framework. Plug in any context via MCP. Best for custom agentic workflows. No built-in governance layer.</div><div class="tdf">Model Context Protocol lets Claude connect to any tool, database, or API as a first-class tool-calling agent. Data teams use Claude + MCP to build custom data agents without engineering a full platform. Increasingly used in data ops automation.</div></div>
       <div class="ttg"><span class="ttag">Any Stack</span><span class="ttag">Python</span><span class="ttag">API</span></div>
       <div class="tbg pfree" style="margin-top:7px;display:inline-block">✅ Free Tier</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Claude + MCP')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Claude + MCP','Agentic')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Claude + MCP')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Claude + MCP','Agentic')"> Compare</label></div>
     </div>
     <div class="tc" data-n="Meta AI Agents" data-t="enterprise,rising">
       <div class="tct"><div class="tn">Meta AI Pipeline Agents</div><div class="tbs"><div class="tbg">Hyperscale</div><div class="tbg rise">⬆️ Rising</div></div></div>
       <div class="td"><div class="tds">Swarm of 50+ specialized agents pre-computing tribal knowledge. 40% fewer tool calls; complex research from 2 days to 30 minutes.</div><div class="tdf">Meta's internal multi-agent system for petabyte-scale pipelines. Not publicly available, but architecture patterns are being replicated using LangGraph. Key insight: specialized agents with narrow tasks outperform general agents at hyperscale.</div></div>
       <div class="ttg"><span class="ttag">Internal / Meta only</span></div>
       <div class="tbg" style="margin-top:7px;display:inline-block;background:#6b728020;color:#9ca3af">⚠️ Not Public</div>
-      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Meta AI Pipeline Agents')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Meta AI Agents','Agentic')"> Compare</label></div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Meta AI Pipeline Agents')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Meta AI Agents','Agentic')"> Compare</label></div>
     </div>
   </div>
 </div>
@@ -1063,6 +1162,274 @@ function initTimeline(){
 }
 
 function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2400);}
+
+// ── PHASE 2: AI FEATURES ──────────────────────────────
+
+const TOOL_NAMES = [
+  'Databricks Lakeflow','Apache Airflow','Informatica CDI','LangGraph',
+  'Atlan','Collibra','Alation','Informatica IDMC','Secoda','OpenMetadata','OvalEdge askEdgi',
+  'Atlan (Lineage)','Collibra (Lineage)','IBM Watson Knowledge Catalog','Google Dataplex','Informatica (Lineage)','Alation (Lineage)',
+  'Atlan (Governance)','Collibra (Governance)','Informatica (Gov)','IBM Watson Knowledge Catalog (Gov)','Oracle Enterprise Metadata Mgmt','Apache Egeria',
+  'Databricks Genie','Snowflake Cortex Analyst','ThoughtSpot Spotter','Querio','Julius AI','Hex Magic AI',
+  'Microsoft Power BI Copilot','Tableau Agent + Pulse','Looker + Gemini','Sigma Computing','Holistics AI','Qlik AutoML','Domo','Zenlytic ZOE',
+  'Tellius','Beam AI','MindsDB','Zerve','Claude + MCP','Meta AI Pipeline Agents'
+];
+
+const TOOL_SUMMARY = `You are an expert on data engineering, analytics, and BI tooling in 2026. Here are the 43 tools covered in this guide:
+
+PIPELINE: Databricks Lakeflow (AI-native ETL, enterprise, paid, Snowflake/BigQuery), Apache Airflow (OSS DAG orchestration, free, any cloud), Informatica CDI (enterprise schema-drift healing, paid), LangGraph (OSS multi-agent self-healing DAGs, free).
+
+CATALOG: Atlan (Gartner Leader, best UX, column-level lineage, MCP integration, paid), Collibra (regulated enterprise, policy enforcement, paid), Alation (analytics-first, behavioral ML, paid), Informatica IDMC (CLAIRE AI, multi-cloud, paid), Secoda (fast deploy 1-2 weeks, paid), OpenMetadata/DataHub (OSS, free), OvalEdge askEdgi (governed RAG, paid).
+
+LINEAGE: Atlan (best overall, column-level, MCP), Collibra (compliance lineage, GDPR/SOX), IBM Watson Knowledge Catalog (data+ML model lineage), Google Dataplex (GCP native, BigQuery lineage, usage-based), Informatica IDMC, Alation.
+
+GOVERNANCE: Atlan (Gartner future-proof, AI policy engine), Collibra (workflow engine, GDPR/HIPAA), Informatica IDMC (CLAIRE, GDPR/HIPAA templates), IBM Watson (AI+data governance, risk scoring), Oracle (multi-jurisdiction, OCI), Apache Egeria (OSS federated, free).
+
+NL-TO-SQL: Databricks Genie (compound AI, warehouse-native, paid), Snowflake Cortex Analyst (semantic YAML, Snowflake-native, credits), ThoughtSpot Spotter (self-service at scale, paid), Querio (semantic layer, paid), Julius AI (file upload 32GB, free tier), Hex Magic AI (notebook + NL, paid).
+
+BI COPILOTS: Power BI Copilot (DAX + narrative, $14/user/mo, Azure), Tableau Agent + Pulse (Slack alerts, best viz, paid), Looker + Gemini (LookML + Gemini, GCP), Sigma Computing (spreadsheet UX on warehouse, paid), Holistics AI (AQL metrics-as-code, SEA), Qlik AutoML (ML+BI, paid), Domo (executive mobile, paid), Zenlytic ZOE (governed semantic, paid).
+
+AGENTIC: Tellius (root cause analysis across 30+ sources, paid), Beam AI (enterprise agent hub, paid), MindsDB (OSS, Slack-native, 200+ sources, free), Zerve (AI notebooks + deployment, paid), Claude + MCP (model-agnostic, free tier), Meta AI Pipeline Agents (internal only, not public).`;
+
+async function callClaude(userPrompt, systemExtra='') {
+  const system = TOOL_SUMMARY + (systemExtra ? '
+
+' + systemExtra : '');
+  const resp = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      model: 'claude-sonnet-4-20250514',
+      max_tokens: 1000,
+      system,
+      messages: [{ role: 'user', content: userPrompt }]
+    })
+  });
+  const data = await resp.json();
+  if (data.error) throw new Error(data.error.message);
+  return data.content?.[0]?.text || '';
+}
+
+function formatAIResponse(text) {
+  return text
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/^### (.+)$/gm, '<div style="font-family:Syne,sans-serif;font-size:12px;font-weight:700;color:var(--acc);margin:10px 0 4px">$1</div>')
+    .replace(/^## (.+)$/gm, '<div style="font-family:Syne,sans-serif;font-size:13px;font-weight:700;margin:12px 0 5px">$1</div>')
+    .replace(/^- (.+)$/gm, '<div style="padding:2px 0 2px 12px;border-left:2px solid var(--acc);margin:3px 0">$1</div>')
+    .replace(/^(\d+)\. (.+)$/gm, '<div style="padding:2px 0"><span style="color:var(--acc);font-weight:700">$1.</span> $2</div>')
+    .replace(/
+
+/g, '<br>')
+    .replace(/
+/g, '<br>');
+}
+
+// ── NL SEARCH ──
+function setNL(text) {
+  document.getElementById('nl-input').value = text;
+  runNLSearch();
+}
+
+async function runNLSearch() {
+  const q = document.getElementById('nl-input').value.trim();
+  if (!q) { toast('Type something to search'); return; }
+
+  const thinking = document.getElementById('nl-thinking');
+  const label = document.getElementById('nl-result-label');
+  thinking.classList.add('show');
+  label.classList.remove('show');
+
+  // Reset all cards first
+  document.querySelectorAll('.tc').forEach(c => c.classList.remove('hid'));
+
+  try {
+    const prompt = `The user is searching for data tools with this description: "${q}"
+
+From the 43 tools in this guide, identify the BEST matching tools (between 2-8 tools). Return ONLY a JSON array of tool data-n attribute values (exactly as listed below), nothing else.
+
+Available data-n values:
+Databricks Lakeflow, Apache Airflow, Informatica CDI, LangGraph,
+Atlan, Collibra, Alation, Informatica IDMC, Secoda, OpenMetadata, OvalEdge,
+Atlan Lineage, Collibra Lineage, IBM Watson, Google Dataplex, Informatica Lineage, Alation Lineage,
+Atlan Governance, Collibra Governance, Informatica Governance, IBM Watson Gov, Oracle, Apache Egeria,
+Databricks Genie, Snowflake Cortex, ThoughtSpot, Querio, Julius AI, Hex Magic,
+Power BI, Tableau, Looker + Gemini, Sigma Computing, Holistics AI, Qlik AutoML, Domo, Zenlytic ZOE,
+Tellius, Beam AI, MindsDB, Zerve, Claude + MCP, Meta AI Agents
+
+Return ONLY the JSON array like: ["Atlan", "Secoda", "OpenMetadata"]`;
+
+    const raw = await callClaude(prompt, 'Return ONLY valid JSON array. No explanation, no markdown, just the array.');
+    const clean = raw.replace(/```json|```/g, '').trim();
+    const matches = JSON.parse(clean);
+
+    // Show only matching cards
+    document.querySelectorAll('.sec').forEach(s => s.classList.add('vis'));
+    let found = 0;
+    document.querySelectorAll('.tc').forEach(card => {
+      const n = (card.dataset.n || '').toLowerCase();
+      const isMatch = matches.some(m => n.includes(m.toLowerCase()) || m.toLowerCase().includes(n.split(' ')[0].toLowerCase()));
+      card.classList.toggle('hid', !isMatch);
+      if (isMatch) found++;
+    });
+
+    label.textContent = `Claude matched ${found} tool${found !== 1 ? 's' : ''} for: "${q}"`;
+    label.classList.add('show');
+    toast(`🔍 Found ${found} matching tool${found !== 1 ? 's' : ''}`);
+  } catch(e) {
+    toast('Search failed — check console');
+    console.error(e);
+  } finally {
+    thinking.classList.remove('show');
+  }
+}
+
+document.getElementById('nl-input').addEventListener('keydown', e => {
+  if (e.key === 'Enter') runNLSearch();
+});
+
+// ── AI STACK ADVISOR ──
+async function runAdvisor() {
+  const desc = document.getElementById('adv-input').value.trim();
+  if (!desc) { toast('Describe your company first'); return; }
+
+  const btn = document.getElementById('adv-btn');
+  const thinking = document.getElementById('adv-thinking');
+  const result = document.getElementById('adv-result');
+
+  btn.disabled = true;
+  thinking.classList.add('show');
+  result.classList.remove('show');
+
+  try {
+    const text = await callClaude(
+      `A user describes their company as: "${desc}"
+
+Based on this description, recommend a complete data stack from the 43 tools in this guide. For each layer (Pipeline, Catalog, Lineage, Governance, Analytics/BI, Agentic if needed), pick the single best tool and explain why in 1-2 sentences specific to their situation.
+
+Format your response with clear sections for each tool. Be specific and direct. Include any important caveats. End with a "Total stack cost" estimate (Free/Low/Medium/High).`
+    );
+
+    result.innerHTML = formatAIResponse(text);
+    result.classList.add('show');
+    btn.textContent = '🔄 Rebuild Stack';
+  } catch(e) {
+    result.innerHTML = '<span style="color:var(--red)">Failed to get recommendation. Please try again.</span>';
+    result.classList.add('show');
+    console.error(e);
+  } finally {
+    btn.disabled = false;
+    thinking.classList.remove('show');
+  }
+}
+
+// ── TOOL BATTLE ──
+function initBattle() {
+  const b1 = document.getElementById('b1');
+  const b2 = document.getElementById('b2');
+  const tools = [
+    'Atlan','Collibra','Alation','Informatica IDMC','Secoda','OpenMetadata/DataHub','OvalEdge askEdgi',
+    'Databricks Lakeflow','Apache Airflow','Informatica CDI','LangGraph',
+    'Google Dataplex','IBM Watson Knowledge Catalog','Apache Egeria','Oracle Enterprise Metadata Mgmt',
+    'Databricks Genie','Snowflake Cortex Analyst','ThoughtSpot Spotter','Querio','Julius AI','Hex Magic AI',
+    'Power BI Copilot','Tableau Agent + Pulse','Looker + Gemini','Sigma Computing','Holistics AI','Qlik AutoML','Domo','Zenlytic ZOE',
+    'Tellius','Beam AI','MindsDB','Zerve','Claude + MCP','Meta AI Pipeline Agents'
+  ];
+  tools.forEach((t, i) => {
+    const o1 = new Option(t, t); const o2 = new Option(t, t);
+    b1.add(o1); b2.add(o2);
+  });
+  b2.selectedIndex = 1;
+}
+
+async function runBattle() {
+  const t1 = document.getElementById('b1').value;
+  const t2 = document.getElementById('b2').value;
+  const ctx = document.getElementById('battle-context').value.trim();
+
+  if (t1 === t2) { toast('Pick two different tools!'); return; }
+
+  const btn = document.getElementById('battle-btn');
+  const thinking = document.getElementById('battle-thinking');
+  const result = document.getElementById('battle-result');
+
+  btn.disabled = true;
+  thinking.classList.add('show');
+  result.classList.remove('show');
+
+  try {
+    const contextLine = ctx ? `User context: ${ctx}` : 'No specific context provided — give a general comparison.';
+    const text = await callClaude(
+      `Compare these two data tools head-to-head: ${t1} vs ${t2}
+
+${contextLine}
+
+Structure your response as:
+## ⚔️ ${t1} vs ${t2}
+
+### When to choose ${t1}
+[3 specific reasons]
+
+### When to choose ${t2}
+[3 specific reasons]
+
+### Head-to-head scorecard
+Rate each on: Ease of setup, Governance depth, AI capabilities, Cost, Best team size (1-5 stars emoji)
+
+### 🏆 Winner for this context
+[Clear recommendation with 2-sentence reasoning]`
+    );
+
+    result.innerHTML = formatAIResponse(text);
+    result.classList.add('show');
+    btn.textContent = '⚡ Battle Again';
+  } catch(e) {
+    result.innerHTML = '<span style="color:var(--red)">Battle failed. Please try again.</span>';
+    result.classList.add('show');
+    console.error(e);
+  } finally {
+    btn.disabled = false;
+    thinking.classList.remove('show');
+  }
+}
+
+// ── ELI5 MODE ──
+async function runELI5(btn) {
+  const card = btn.closest('.tc');
+  const name = card.querySelector('.tn')?.textContent || '';
+  const desc = card.querySelector('.tds')?.textContent || '';
+  const eli5div = card.querySelector('.eli5-text');
+
+  const isOn = btn.classList.toggle('on');
+
+  if (!isOn) {
+    eli5div.style.display = 'none';
+    btn.textContent = '🧠 ELI5';
+    return;
+  }
+
+  btn.textContent = '🧠 Loading…';
+  eli5div.style.display = 'block';
+  eli5div.innerHTML = '<span class="eli5-loading">Claude is simplifying this…</span>';
+
+  try {
+    const text = await callClaude(
+      `Explain "${name}" to a non-technical person in 2-3 short sentences. Use a simple real-world analogy. Current description: "${desc}". Be fun, clear, and use zero jargon. Start with "Think of it like…"`,
+      'You explain complex data tools to non-technical people using simple analogies. Keep it under 60 words.'
+    );
+    eli5div.innerHTML = text;
+    eli5div.classList.add('show');
+    btn.textContent = '🧠 ELI5 ON';
+  } catch(e) {
+    eli5div.innerHTML = 'Failed to load. Try again.';
+    btn.classList.remove('on');
+    btn.textContent = '🧠 ELI5';
+    console.error(e);
+  }
+}
+
+// Init battle dropdowns on load
+window.addEventListener('DOMContentLoaded', () => { initBattle(); });
+
 </script>
 </body>
 </html>
