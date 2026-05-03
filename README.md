@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI & BI Data Agents 2026 — Harsha KS
 
-## Getting Started
+The most comprehensive interactive guide to 43 AI & BI data agents in 2026.
 
-First, run the development server:
+## Features
 
+- **Search** — keyword + Claude AI natural language search
+- **Filter** — 11 quick-filter chips (OSS, Free, Enterprise, Cloud, Stack)
+- **Compare** — side-by-side comparison of up to 3 tools
+- **Bookmarks** — save tools, persists in browser
+- **ELI5 Mode** — Claude simplifies any tool description in plain English
+- **ROI Estimator** — calculate the value of agentic workflows for your team
+- **AI Stack Advisor** — describe your company, get a custom stack recommendation
+- **Tool Battle** — Claude gives a head-to-head breakdown of any 2 tools
+- **Stack Builder** — build and share your dream data stack
+- **Market Map** — visual 2x2 of all 43 tools
+- **Timeline** — history of the space 2015-2026
+- **Quiz** — 3 questions to get personalised tool recommendations
+- **Dark/Light mode** — persists in browser
+
+## Deploy to Vercel
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/harsha319/data-agents-guide2)
+
+Or via CLI:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm i -g vercel
+vercel
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Zero dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Plain HTML + CSS + JS. No build step. No npm install. Deploys in 10 seconds.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Curated by Harsha KS
