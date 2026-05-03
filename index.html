@@ -121,6 +121,15 @@ main{padding:14px 16px;padding-bottom:120px;}
 .ssi-emp{font-size:11px;color:var(--mut);}
 .ssi-rm{color:var(--mut);font-size:14px;padding:4px;cursor:pointer;}
 .sshbtn{width:100%;margin-top:10px;padding:10px;border-radius:10px;background:linear-gradient(135deg,var(--acc2),var(--acc));border:none;color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:12px;cursor:pointer;}
+.lb-list{display:flex;flex-direction:column;gap:7px;}
+.lb-item{display:flex;align-items:center;padding:10px 12px;border-radius:10px;background:var(--surf2);border:1px solid var(--bdr);transition:all .2s;cursor:pointer;}
+.lb-item:hover{border-color:var(--acc);}
+.lb-rank{font-family:'Syne',sans-serif;font-size:14px;font-weight:800;color:var(--mut);width:24px;}
+.lb-item:nth-child(1) .lb-rank{color:var(--acc3);}
+.lb-item:nth-child(2) .lb-rank{color:#94a3b8;}
+.lb-item:nth-child(3) .lb-rank{color:#b45309;}
+.lb-name{flex:1;font-family:'Syne',sans-serif;font-size:12px;font-weight:700;}
+.lb-views{font-size:10px;color:var(--mut);margin-right:10px;}
 .tl{margin-bottom:14px;}
 .tlt{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:10px;}
 .tls{overflow-x:auto;scrollbar-width:none;padding-bottom:8px;}
@@ -260,6 +269,113 @@ main{padding:14px 16px;padding-bottom:120px;}
 .nl-chip:hover{border-color:var(--acc);color:var(--acc);}
 .nl-result-label{font-size:10px;color:var(--acc);margin-top:10px;display:none;font-weight:600;}
 .nl-result-label.show{display:block;}
+
+/* ── DESKTOP RESPONSIVE ── */
+@media(min-width:768px){
+  header{padding:18px 32px 14px;}
+  .htag{font-size:10px;letter-spacing:4px;}
+  h1{font-size:28px;}
+  .hsub{font-size:12px;}
+  .hauth{padding:4px 12px 4px 4px;}
+  .hav{width:22px;height:22px;font-size:10px;}
+  .hname{font-size:10px;}
+  .sw{padding:12px 32px 0;}
+  .sb{padding:11px 16px;border-radius:14px;}
+  .sb input{font-size:13px;}
+  .tw{padding:12px 32px 8px;}
+  .tab{padding:7px 16px;font-size:11px;}
+  .sfw{padding:6px 32px 12px;gap:7px;}
+  .sf{padding:5px 12px;font-size:10px;}
+  .tlbar{padding:12px 32px;gap:12px;}
+  .tb{padding:10px;font-size:11px;}
+  main{padding:20px 32px;padding-bottom:120px;}
+  .stats{gap:12px;margin-bottom:18px;}
+  .stat{padding:18px 12px;border-radius:14px;}
+  .sn{font-size:28px;}
+  .sl{font-size:9px;}
+  .ins{padding:18px;border-radius:14px;margin-bottom:18px;}
+  .il{font-size:9px;}
+  .it{font-size:12px;}
+  .mm{padding:20px;border-radius:18px;margin-bottom:18px;}
+  .mmt{font-size:16px;}
+  .mms{font-size:11px;}
+  .mmc{aspect-ratio:2.2/1;}
+  .md{width:11px;height:11px;}
+  .mdl{font-size:9px;padding:2px 6px;}
+  .ml{font-size:9px;}
+  .mleg{gap:12px;margin-top:12px;}
+  .mli{font-size:10px;}
+  .mld{width:10px;height:10px;}
+  .stk{padding:20px;border-radius:18px;margin-bottom:18px;}
+  .stkt{font-size:16px;}
+  .stks{font-size:11px;}
+  .ssl{flex-direction:row;flex-wrap:wrap;}
+  .ssi{flex:1;min-width:180px;}
+  .sshbtn{width:auto;padding:10px 32px;font-size:13px;}
+  .tl{margin-bottom:18px;}
+  .tlt{font-size:16px;}
+  .tli{width:110px;}
+  .tly{font-size:9px;}
+  .tln{font-size:9px;}
+  .tle{font-size:8px;}
+  .sec{margin-bottom:28px;}
+  .sh{margin-bottom:14px;}
+  .sic{width:38px;height:38px;border-radius:11px;font-size:18px;}
+  .sti{font-size:16px;}
+  .scn{font-size:10px;padding:3px 10px;}
+  .tg{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+  .tc{padding:16px;border-radius:16px;}
+  .tn{font-size:14px;}
+  .tbg{font-size:9px;padding:3px 9px;}
+  .td{font-size:12px;}
+  .ttag{font-size:9px;padding:3px 8px;}
+  .hp{font-size:10px;}
+  .tca{gap:7px;margin-top:11px;}
+  .ca{font-size:10px;padding:5px 11px;}
+  .ckw{font-size:10px;}
+  .quiz{padding:20px;border-radius:18px;margin-bottom:18px;}
+  .qt{font-size:16px;}
+  .qs{font-size:11px;}
+  .qq{font-size:13px;}
+  .qo{padding:10px 14px;font-size:12px;}
+  .qb{padding:10px;font-size:12px;}
+  .ai-section{padding:20px;border-radius:18px;margin-bottom:18px;}
+  .ai-t{font-size:16px;}
+  .ai-s{font-size:11px;}
+  .adv-input{font-size:12px;padding:12px 14px;}
+  .ai-btn{padding:12px;font-size:13px;}
+  .ai-result{font-size:12px;padding:16px;}
+  .nl-input{font-size:12px;padding:11px 40px 11px 14px;}
+  .nl-chip{font-size:10px;padding:5px 12px;}
+  .bsel{font-size:12px;padding:10px 12px;}
+  .bvs{font-size:16px;}
+  .ov.open{align-items:center;justify-content:center;}
+  .mo{border-radius:20px;max-width:700px;max-height:80vh;}
+  .mot{font-size:18px;}
+  .ctbl{font-size:12px;}
+  .ctbl th{font-size:13px;padding:10px 8px;}
+  .ctbl td{padding:10px 8px;}
+  .cpa{padding:14px 32px 20px;}
+}
+
+@media(min-width:1024px){
+  header{max-width:960px;margin:0 auto;border-left:1px solid var(--bdr);border-right:1px solid var(--bdr);border-bottom:1px solid var(--bdr);}
+  .sw,.tw,.sfw,.tlbar{max-width:960px;margin-left:auto;margin-right:auto;}
+  main{max-width:960px;margin:0 auto;}
+  .stats{grid-template-columns:repeat(3,1fr);gap:14px;}
+  .sn{font-size:32px;}
+  .sl{font-size:10px;}
+  .mmc{aspect-ratio:2.5/1;}
+  .tg{grid-template-columns:repeat(2,1fr);gap:14px;}
+  .ssl{gap:10px;}
+  .ssi{min-width:200px;}
+  .qos{flex-direction:row;flex-wrap:wrap;}
+  .qo{flex:1;min-width:160px;}
+  .battle-selects{gap:14px;}
+  .cpa{max-width:960px;left:50%;transform:translateX(-50%) translateY(100%);border-radius:16px 16px 0 0;}
+  .cpa.open{transform:translateX(-50%) translateY(0);}
+  .mo{max-width:800px;}
+}
 </style>
 </head>
 <body>
@@ -404,6 +520,60 @@ main{padding:14px 16px;padding-bottom:120px;}
 <div class="tl">
   <div class="tlt">📅 History of the Space</div>
   <div class="tls"><div class="tltr" id="tltr"><div class="tlln"></div></div></div>
+</div>
+
+<div class="stk">
+  <div class="stkt">🏆 Community Leaderboard</div>
+  <div class="stks">Most viewed tools this week. Simulated data for Phase 1.</div>
+  <div class="lb-list">
+    <div class="lb-item" onclick="document.querySelector('[data-n=\'Atlan\']').scrollIntoView({behavior:'smooth',block:'center'})"><div class="lb-rank">1</div><div class="lb-name">Atlan</div><div class="lb-views">12.4k views</div><div class="tbg hot">🔥 Hot</div></div>
+    <div class="lb-item" onclick="document.querySelector('[data-n=\'Databricks Lakeflow\']').scrollIntoView({behavior:'smooth',block:'center'})"><div class="lb-rank">2</div><div class="lb-name">Databricks Lakeflow</div><div class="lb-views">9.8k views</div><div class="tbg rise">⬆️ Rising</div></div>
+    <div class="lb-item" onclick="document.querySelector('[data-n=\'Snowflake Cortex\']').scrollIntoView({behavior:'smooth',block:'center'})"><div class="lb-rank">3</div><div class="lb-name">Snowflake Cortex Analyst</div><div class="lb-views">8.2k views</div><div class="tbg hot">🔥 Hot</div></div>
+    <div class="lb-item" onclick="document.querySelector('[data-n=\'Apache Airflow\']').scrollIntoView({behavior:'smooth',block:'center'})"><div class="lb-rank">4</div><div class="lb-name">Apache Airflow</div><div class="lb-views">7.1k views</div><div class="tbg mat">✅ Mature</div></div>
+    <div class="lb-item" onclick="document.querySelector('[data-n=\'LangGraph\']').scrollIntoView({behavior:'smooth',block:'center'})"><div class="lb-rank">5</div><div class="lb-name">LangGraph</div><div class="lb-views">6.5k views</div><div class="tbg rise">⬆️ Rising</div></div>
+  </div>
+</div>
+
+<div class="quiz" id="personality-quiz">
+  <div class="qt">🔮 Quiz: Which Tool Are You?</div>
+  <div class="qs">A highly scientific 3-question personality test.</div>
+  <div class="qpg"><div class="qpd on" id="pqpd1"></div><div class="qpd" id="pqpd2"></div><div class="qpd" id="pqpd3"></div></div>
+  
+  <div class="qst active" id="pqs1">
+    <div class="qq">It's Friday 5 PM and a pipeline breaks. You:</div>
+    <div class="qos">
+      <button class="qo" onclick="pqPick(this,'manual')">Panic, then check logs manually</button>
+      <button class="qo" onclick="pqPick(this,'agent')">Let the self-healing agents fix it</button>
+      <button class="qo" onclick="pqPick(this,'meeting')">Schedule a meeting for Monday</button>
+    </div>
+    <div class="qnav"><button class="qb pri" onclick="pqNext(1)">Next →</button></div>
+  </div>
+  
+  <div class="qst" id="pqs2">
+    <div class="qq">Your ideal vacation is:</div>
+    <div class="qos">
+      <button class="qo" onclick="pqPick(this,'structure')">A highly structured, governed tour</button>
+      <button class="qo" onclick="pqPick(this,'open')">Backpacking with no itinerary (open source)</button>
+      <button class="qo" onclick="pqPick(this,'luxury')">All-inclusive luxury resort (enterprise)</button>
+    </div>
+    <div class="qnav"><button class="qb" onclick="pqBack(2)">← Back</button><button class="qb pri" onclick="pqNext(2)">Next →</button></div>
+  </div>
+  
+  <div class="qst" id="pqs3">
+    <div class="qq">How do you prefer people ask you questions?</div>
+    <div class="qos">
+      <button class="qo" onclick="pqPick(this,'sql')">Strictly via perfectly formatted SQL</button>
+      <button class="qo" onclick="pqPick(this,'nl')">Natural language in Slack</button>
+      <button class="qo" onclick="pqPick(this,'dashboard')">Just look at the dashboard I made</button>
+    </div>
+    <div class="qnav"><button class="qb" onclick="pqBack(3)">← Back</button><button class="qb pri" onclick="pqSubmit()">Reveal My Tool →</button></div>
+  </div>
+  
+  <div class="qr" id="pqr">
+    <div class="qrt">You are...</div>
+    <div id="pqrl"></div>
+    <button class="qb pri" style="margin-top:10px;width:100%" onclick="pqReset()">Retake Quiz</button>
+  </div>
 </div>
 
 <!-- NL SEARCH -->
@@ -1107,6 +1277,44 @@ function qReset(){
   document.getElementById('qr').classList.remove('show');
   document.querySelectorAll('.qpd').forEach((d,i)=>{if(i>0)d.classList.remove('on');});
   document.querySelectorAll('.qo').forEach(o=>o.classList.remove('sel'));
+}
+
+// ── PERSONALITY QUIZ ──
+let pqAnswers = {}, pqStep = 1;
+function pqPick(btn,val){
+  btn.closest('.qos').querySelectorAll('.qo').forEach(o=>o.classList.remove('sel'));
+  btn.classList.add('sel');pqAnswers[`q${pqStep}`]=val;
+}
+function pqNext(step){
+  if(!pqAnswers[`q${step}`]){toast('Pick an option first');return;}
+  document.getElementById(`pqs${step}`).classList.remove('active');
+  pqStep=step+1;document.getElementById(`pqs${pqStep}`).classList.add('active');
+  document.getElementById(`pqpd${pqStep}`).classList.add('on');
+}
+function pqBack(step){document.getElementById(`pqs${step}`).classList.remove('active');pqStep=step-1;document.getElementById(`pqs${pqStep}`).classList.add('active');}
+function pqSubmit(){
+  if(!pqAnswers['q3']){toast('Pick an option first');return;}
+  const {q1,q2,q3} = pqAnswers;
+  
+  let tool = "Apache Airflow", desc = "Reliable, open, and a little complex. You hold everything together.";
+  if (q1 === 'agent' && q3 === 'nl') { tool = "MindsDB"; desc = "You're an autonomous agent! Living in Slack and solving problems magically."; }
+  else if (q2 === 'structure') { tool = "Collibra"; desc = "You're enterprise governance. Highly structured, compliant, and strictly governed."; }
+  else if (q3 === 'nl' && q2 === 'luxury') { tool = "Databricks Genie"; desc = "You're a warehouse-native NL agent. Premium, smart, and expensive."; }
+  else if (q1 === 'meeting' && q3 === 'dashboard') { tool = "Tableau Agent"; desc = "You love a good visualization and a weekly meeting."; }
+  else if (q2 === 'open') { tool = "OpenMetadata"; desc = "You're open source, fast-moving, and love connecting things together."; }
+  else if (q1 === 'manual') { tool = "Power BI Copilot"; desc = "You're dependable, embedded in the Microsoft ecosystem, and love DAX."; }
+  
+  document.getElementById('pqrl').innerHTML = `<div class="qri"><strong style="font-size:16px;color:var(--acc);margin-bottom:8px;">${tool}</strong><span style="font-size:11px;color:var(--txt);line-height:1.5">${desc}</span></div>`;
+  document.getElementById('pqs3').classList.remove('active');
+  document.getElementById('pqr').classList.add('show');
+}
+function pqReset(){
+  pqAnswers={};pqStep=1;
+  document.querySelectorAll('#personality-quiz .qst').forEach(s=>s.classList.remove('active'));
+  document.getElementById('pqs1').classList.add('active');
+  document.getElementById('pqr').classList.remove('show');
+  document.querySelectorAll('#personality-quiz .qpd').forEach((d,i)=>{if(i>0)d.classList.remove('on');});
+  document.querySelectorAll('#personality-quiz .qo').forEach(o=>o.classList.remove('sel'));
 }
 
 function initMap(){
