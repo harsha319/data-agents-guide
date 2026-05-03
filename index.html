@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI & BI Data Agents 2026 — Harsha KS</title>
 <meta name="description" content="Interactive guide to 43 AI & BI data agents in 2026. Curated by Harsha KS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#0a0c10;--surf:#111318;--surf2:#181c24;--bdr:#222730;--acc:#00e5ff;--acc2:#7c3aed;--acc3:#f59e0b;--txt:#e8eaf0;--mut:#6b7280;--grn:#10b981;--pink:#f472b6;--red:#ef4444;}
@@ -907,12 +909,17 @@ const TOOL_META = {
   'Meta AI Agents':{pricing:'N/A',oss:false,free:false,wh:'Internal',cat:'Agentic',ent:true},
 };
 
-window.addEventListener('load',()=>{
-  setTimeout(()=>{
-    const s=document.getElementById('splash');
-    s.style.transition='opacity .6s';s.style.opacity='0';
-    setTimeout(()=>s.remove(),700);
-  },2100);
+function dismissSplash(){
+  const s=document.getElementById('splash');
+  if(!s||s.dataset.dismissed)return;
+  s.dataset.dismissed='1';
+  s.style.transition='opacity .6s';s.style.opacity='0';
+  setTimeout(()=>s.remove(),700);
+}
+window.addEventListener('DOMContentLoaded',()=>{
+  setTimeout(dismissSplash,2100);
+  // Failsafe: remove splash after 4s no matter what
+  setTimeout(dismissSplash,4000);
   initBkds();initMap();initStack();initTimeline();
   document.getElementById('thBtn').textContent=localStorage.getItem('hk_th')==='light'?'☀️':'🌙';
   if(localStorage.getItem('hk_th')==='light')document.documentElement.setAttribute('data-theme','light');
