@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI & BI Data Agents 2026 — Harsha KS</title>
+<meta name="description" content="Interactive guide to 43 AI & BI data agents in 2026. Curated by Harsha KS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0c10;--surf:#111318;--surf2:#181c24;--bdr:#222730;--acc:#00e5ff;--acc2:#7c3aed;--acc3:#f59e0b;--txt:#e8eaf0;--mut:#6b7280;--grn:#10b981;--pink:#f472b6;--red:#ef4444;}
+[data-theme=light]{--bg:#f0f4f8;--surf:#fff;--surf2:#e8edf3;--bdr:#d1d9e0;--txt:#0f1923;--mut:#5a6a7a;--acc:#0077aa;--acc2:#6d28d9;--acc3:#d97706;--grn:#059669;}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Mono',monospace;background:var(--bg);color:var(--txt);min-height:100vh;overflow-x:hidden;transition:background .3s,color .3s;}
+#splash{position:fixed;inset:0;background:#0a0c10;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;}
+.sp-line{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,8vw,54px);color:#e8eaf0;opacity:0;transform:translateY(22px);animation:fUp .6s ease forwards;}
+.sp-line span{color:#00e5ff;}
+.sp-line:nth-child(2){animation-delay:.2s;}
+.sp-sub{font-size:11px;color:#6b7280;opacity:0;animation:fUp .5s .38s ease forwards;}
+.sp-bar{width:150px;height:2px;background:#222730;border-radius:2px;margin-top:18px;opacity:0;animation:fUp .4s .55s ease forwards;}
+.sp-fill{height:100%;width:0;background:#00e5ff;border-radius:2px;animation:barF 1.1s .65s ease forwards;}
+@keyframes fUp{to{opacity:1;transform:translateY(0);}}
+@keyframes barF{to{width:100%;}}
+@keyframes cIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+header{padding:16px 18px 12px;background:var(--bg);border-bottom:1px solid var(--bdr);position:sticky;top:0;z-index:100;backdrop-filter:blur(14px);}
+.hr{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;}
+.htag{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--acc);margin-bottom:3px;}
+h1{font-family:'Syne',sans-serif;font-size:clamp(18px,5vw,24px);font-weight:800;line-height:1.1;}
+h1 span{color:var(--acc);}
+.hsub{font-size:10px;color:var(--mut);margin-top:3px;}
+.hauth{display:inline-flex;align-items:center;gap:5px;margin-top:7px;padding:3px 9px 3px 3px;background:#00e5ff0f;border:1px solid #00e5ff25;border-radius:100px;}
+.hav{width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,var(--acc),var(--acc2));display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#000;}
+.hname{font-size:9px;color:var(--acc);}
+.hbtns{display:flex;gap:6px;}
+.ib{width:34px;height:34px;border-radius:10px;border:1px solid var(--bdr);background:var(--surf);color:var(--txt);font-size:15px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;}
+.ib:hover{border-color:var(--acc);color:var(--acc);}
+.sw{padding:10px 16px 0;}
+.sb{display:flex;align-items:center;gap:8px;background:var(--surf);border:1px solid var(--bdr);border-radius:12px;padding:9px 13px;transition:border-color .2s;}
+.sb:focus-within{border-color:var(--acc);}
+.sb input{flex:1;background:transparent;border:none;outline:none;font-family:'DM Mono',monospace;font-size:12px;color:var(--txt);}
+.sb input::placeholder{color:var(--mut);}
+.scl{color:var(--mut);cursor:pointer;font-size:13px;display:none;}
+.sc{font-size:10px;color:var(--mut);padding:5px 16px 0;display:none;}
+.tw{padding:10px 16px 6px;overflow-x:auto;scrollbar-width:none;}
+.tw::-webkit-scrollbar{display:none;}
+.tabs{display:flex;gap:6px;width:max-content;}
+.tab{padding:6px 12px;border-radius:100px;font-family:'DM Mono',monospace;font-size:10px;font-weight:500;cursor:pointer;border:1px solid var(--bdr);background:transparent;color:var(--mut);transition:all .2s;white-space:nowrap;}
+.tab.on{background:var(--acc);border-color:var(--acc);color:#000;font-weight:700;}
+.tab:active{transform:scale(.95);}
+.sfw{padding:4px 16px 10px;display:flex;gap:5px;flex-wrap:wrap;border-bottom:1px solid var(--bdr);}
+.sf{padding:4px 9px;border-radius:100px;font-size:9px;font-weight:500;cursor:pointer;border:1px solid var(--bdr);background:transparent;color:var(--mut);transition:all .2s;text-transform:uppercase;letter-spacing:.3px;}
+.sf.on{background:var(--surf2);border-color:var(--txt);color:var(--txt);}
+.tlbar{display:flex;gap:8px;padding:10px 16px;border-bottom:1px solid var(--bdr);}
+.tb{flex:1;padding:8px;border-radius:10px;border:1px solid var(--bdr);background:var(--surf);color:var(--mut);font-family:'DM Mono',monospace;font-size:10px;cursor:pointer;transition:all .2s;text-align:center;}
+.tb.on{border-color:var(--acc);color:var(--acc);background:#00e5ff0f;}
+.cbdg{display:inline-block;background:var(--acc);color:#000;border-radius:100px;padding:1px 6px;font-size:9px;font-weight:700;margin-left:3px;}
+main{padding:14px 16px;padding-bottom:120px;}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px;}
+.stat{background:var(--surf);border:1px solid var(--bdr);border-radius:12px;padding:12px 8px;text-align:center;}
+.sn{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--acc);line-height:1;margin-bottom:3px;}
+.sl{font-size:8px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px;line-height:1.3;}
+.ins{background:linear-gradient(135deg,var(--surf),var(--surf2));border:1px solid #00e5ff25;border-radius:12px;padding:13px;margin-bottom:14px;}
+.il{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--acc);margin-bottom:4px;}
+.it{font-size:11px;color:#9ca3af;line-height:1.65;}
+.egg{display:none;background:linear-gradient(135deg,var(--acc2),var(--acc));border-radius:14px;padding:16px;margin-bottom:14px;color:#fff;text-align:center;}
+.egg.show{display:block;animation:cIn .4s ease;}
+.egg-t{font-family:'Syne',sans-serif;font-size:16px;font-weight:800;margin-bottom:5px;}
+.egg-d{font-size:11px;opacity:.9;line-height:1.6;}
+.quiz{background:var(--surf);border:1px solid var(--bdr);border-radius:16px;padding:15px;margin-bottom:14px;}
+.qt{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:2px;}
+.qs{font-size:10px;color:var(--mut);margin-bottom:11px;}
+.qpg{display:flex;gap:4px;margin-bottom:11px;}
+.qpd{flex:1;height:3px;border-radius:3px;background:var(--bdr);transition:background .3s;}
+.qpd.on{background:var(--acc);}
+.qst{display:none;}
+.qst.active{display:block;}
+.qq{font-size:12px;font-weight:600;margin-bottom:8px;}
+.qos{display:flex;flex-direction:column;gap:5px;}
+.qo{padding:9px 12px;border-radius:10px;border:1px solid var(--bdr);background:transparent;color:var(--txt);font-family:'DM Mono',monospace;font-size:11px;cursor:pointer;text-align:left;transition:all .2s;}
+.qo:hover,.qo.sel{border-color:var(--acc);background:#00e5ff12;color:var(--acc);}
+.qnav{display:flex;gap:7px;margin-top:9px;}
+.qb{flex:1;padding:8px;border-radius:10px;font-family:'DM Mono',monospace;font-size:11px;cursor:pointer;font-weight:600;transition:all .2s;border:1px solid var(--bdr);background:transparent;color:var(--mut);}
+.qb.pri{background:var(--acc);border-color:var(--acc);color:#000;}
+.qr{display:none;}
+.qr.show{display:block;}
+.qrt{font-family:'Syne',sans-serif;font-size:13px;font-weight:800;color:var(--acc);margin-bottom:8px;}
+.qri{background:var(--surf2);border:1px solid var(--bdr);border-radius:10px;padding:10px 12px;margin-bottom:6px;}
+.qri strong{font-family:'Syne',sans-serif;font-size:12px;display:block;margin-bottom:2px;}
+.qri span{font-size:10px;color:var(--mut);}
+.mm{background:var(--surf);border:1px solid var(--bdr);border-radius:16px;padding:15px;margin-bottom:14px;}
+.mmt{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:2px;}
+.mms{font-size:10px;color:var(--mut);margin-bottom:11px;}
+.mmc{position:relative;width:100%;aspect-ratio:1;border:1px solid var(--bdr);border-radius:12px;overflow:hidden;background:var(--surf2);}
+.mh{position:absolute;left:0;right:0;top:50%;height:1px;background:var(--bdr);}
+.mv{position:absolute;top:0;bottom:0;left:50%;width:1px;background:var(--bdr);}
+.ml{position:absolute;font-size:8px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px;}
+.ml.t{top:5px;left:50%;transform:translateX(-50%);}
+.ml.b{bottom:5px;left:50%;transform:translateX(-50%);}
+.ml.l{left:5px;top:50%;transform:translateY(-50%);}
+.ml.r{right:5px;top:50%;transform:translateY(-50%);}
+.md{position:absolute;transform:translate(-50%,-50%);width:9px;height:9px;border-radius:50%;cursor:pointer;transition:transform .2s;z-index:2;}
+.md:hover{transform:translate(-50%,-50%) scale(2.4);}
+.mdl{position:absolute;font-size:7px;color:var(--txt);white-space:nowrap;top:11px;left:50%;transform:translateX(-50%);background:var(--surf);padding:1px 4px;border-radius:4px;border:1px solid var(--bdr);opacity:0;transition:opacity .2s;pointer-events:none;z-index:3;}
+.md:hover .mdl{opacity:1;}
+.mleg{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px;}
+.mli{display:flex;align-items:center;gap:4px;font-size:9px;color:var(--mut);}
+.mld{width:8px;height:8px;border-radius:50%;}
+.stk{background:var(--surf);border:1px solid var(--bdr);border-radius:16px;padding:15px;margin-bottom:14px;}
+.stkt{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:2px;}
+.stks{font-size:10px;color:var(--mut);margin-bottom:11px;}
+.ssl{display:flex;flex-direction:column;gap:7px;}
+.ssi{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px dashed var(--bdr);border-radius:10px;cursor:pointer;transition:all .2s;}
+.ssi:hover{border-color:var(--acc);}
+.ssi.fil{border-style:solid;background:var(--surf2);}
+.ssi-ic{font-size:16px;width:26px;text-align:center;}
+.ssi-inf{flex:1;}
+.ssi-cat{font-size:9px;color:var(--mut);text-transform:uppercase;letter-spacing:.4px;}
+.ssi-tool{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;color:var(--acc);}
+.ssi-emp{font-size:11px;color:var(--mut);}
+.ssi-rm{color:var(--mut);font-size:14px;padding:4px;cursor:pointer;}
+.sshbtn{width:100%;margin-top:10px;padding:10px;border-radius:10px;background:linear-gradient(135deg,var(--acc2),var(--acc));border:none;color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:12px;cursor:pointer;}
+.lb-list{display:flex;flex-direction:column;gap:7px;}
+.lb-item{display:flex;align-items:center;padding:10px 12px;border-radius:10px;background:var(--surf2);border:1px solid var(--bdr);transition:all .2s;cursor:pointer;}
+.lb-item:hover{border-color:var(--acc);}
+.lb-rank{font-family:'Syne',sans-serif;font-size:14px;font-weight:800;color:var(--mut);width:24px;}
+.lb-item:nth-child(1) .lb-rank{color:var(--acc3);}
+.lb-item:nth-child(2) .lb-rank{color:#94a3b8;}
+.lb-item:nth-child(3) .lb-rank{color:#b45309;}
+.lb-name{flex:1;font-family:'Syne',sans-serif;font-size:12px;font-weight:700;}
+.lb-views{font-size:10px;color:var(--mut);margin-right:10px;}
+.tl{margin-bottom:14px;}
+.tlt{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:10px;}
+.tls{overflow-x:auto;scrollbar-width:none;padding-bottom:8px;}
+.tls::-webkit-scrollbar{display:none;}
+.tltr{display:flex;gap:0;width:max-content;position:relative;padding:22px 16px 4px;}
+.tlln{position:absolute;top:30px;left:0;right:0;height:2px;background:var(--bdr);}
+.tli{display:flex;flex-direction:column;align-items:center;width:85px;position:relative;}
+.tld{width:12px;height:12px;border-radius:50%;border:2px solid var(--acc);background:var(--bg);z-index:1;}
+.tly{font-size:8px;color:var(--acc);font-weight:700;margin-bottom:5px;}
+.tln{font-size:8px;color:var(--txt);text-align:center;font-family:'Syne',sans-serif;font-weight:600;margin-top:5px;line-height:1.3;}
+.tle{font-size:7px;color:var(--mut);text-align:center;line-height:1.4;margin-top:2px;}
+.sec{margin-bottom:22px;display:none;}
+.sec.vis{display:block;}
+.sh{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.sic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.sti{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;flex:1;}
+.scn{font-size:9px;color:var(--mut);background:var(--surf2);border:1px solid var(--bdr);padding:2px 7px;border-radius:100px;}
+.sdv{height:1px;background:var(--bdr);margin:0 0 10px;}
+.tg{display:flex;flex-direction:column;gap:8px;}
+.tc{background:var(--surf);border:1px solid var(--bdr);border-radius:14px;padding:13px;transition:border-color .2s,transform .15s;cursor:pointer;position:relative;overflow:hidden;animation:cIn .3s ease both;}
+.tc::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;border-radius:14px 0 0 14px;}
+.tc:active{transform:scale(.985);}
+.tc.bk{border-color:var(--acc3);box-shadow:0 0 0 1px var(--acc3);}
+.tc.cs{border-color:var(--acc);box-shadow:0 0 0 2px var(--acc);}
+.tc.hid{display:none;}
+.tc:nth-child(1){animation-delay:.00s}.tc:nth-child(2){animation-delay:.05s}
+.tc:nth-child(3){animation-delay:.10s}.tc:nth-child(4){animation-delay:.15s}
+.tc:nth-child(5){animation-delay:.20s}.tc:nth-child(6){animation-delay:.25s}
+.tc:nth-child(7){animation-delay:.30s}.tc:nth-child(8){animation-delay:.35s}
+.tct{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:5px;}
+.tn{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;line-height:1.2;}
+.tbs{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end;}
+.tbg{font-size:8px;padding:2px 7px;border-radius:100px;font-weight:600;letter-spacing:.4px;text-transform:uppercase;white-space:nowrap;}
+.hot{background:#ef444420;color:#f87171;}
+.rise{background:#f59e0b20;color:#fbbf24;}
+.mat{background:#10b98120;color:#34d399;}
+.oss{background:#10b98115!important;color:#34d399!important;}
+.pfree{background:#10b98115;color:#34d399;}
+.ppaid{background:#7c3aed15;color:#a78bfa;}
+.td{font-size:11px;color:#9ca3af;line-height:1.6;}
+.tdf{display:none;margin-top:6px;padding-top:6px;border-top:1px solid var(--bdr);}
+.tc.exp .tdf{display:block;}
+.tc.exp .tds{display:none;}
+.ttg{display:flex;gap:4px;flex-wrap:wrap;margin-top:7px;}
+.ttag{font-size:8px;padding:2px 6px;border-radius:6px;background:var(--surf2);border:1px solid var(--bdr);color:var(--mut);}
+.hp{font-size:9px;color:var(--acc3);margin-top:4px;font-style:italic;}
+.tca{display:flex;gap:5px;margin-top:9px;align-items:center;flex-wrap:wrap;}
+.ca{font-size:9px;padding:4px 9px;border-radius:8px;border:1px solid var(--bdr);background:transparent;color:var(--mut);cursor:pointer;font-family:'DM Mono',monospace;transition:all .2s;}
+.ca:hover{border-color:var(--acc);color:var(--acc);}
+.ca.bk{border-color:var(--acc3);color:var(--acc3);}
+.ckw{margin-left:auto;display:flex;align-items:center;gap:4px;font-size:9px;color:var(--mut);cursor:pointer;}
+.ckw input{cursor:pointer;accent-color:var(--acc);}
+.s1 .sic{background:#00e5ff18;}.s1 .tc::before{background:var(--acc);}.s1 .tbg{background:#00e5ff18;color:var(--acc);}
+.s2 .sic{background:#7c3aed18;}.s2 .tc::before{background:var(--acc2);}.s2 .tbg{background:#7c3aed18;color:#a78bfa;}
+.s3 .sic{background:#f59e0b18;}.s3 .tc::before{background:var(--acc3);}.s3 .tbg{background:#f59e0b18;color:var(--acc3);}
+.s4 .sic{background:#10b98118;}.s4 .tc::before{background:var(--grn);}.s4 .tbg{background:#10b98118;color:var(--grn);}
+.s5 .sic{background:#f472b618;}.s5 .tc::before{background:var(--pink);}.s5 .tbg{background:#f472b618;color:var(--pink);}
+.s6 .sic{background:#ef444418;}.s6 .tc::before{background:#ef4444;}.s6 .tbg{background:#ef444418;color:#f87171;}
+.s7 .sic{background:#0ea5e918;}.s7 .tc::before{background:#0ea5e9;}.s7 .tbg{background:#0ea5e918;color:#38bdf8;}
+#bkv{display:none;}
+#bkv.vis{display:block;}
+.bke{text-align:center;padding:40px 20px;color:var(--mut);font-size:12px;}
+.cpa{position:fixed;bottom:0;left:0;right:0;background:var(--surf);border-top:1px solid var(--bdr);padding:12px 16px 28px;z-index:200;transform:translateY(100%);transition:transform .3s;}
+.cpa.open{transform:translateY(0);}
+.cpah{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.cpat{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;}
+.cpax{background:none;border:none;color:var(--mut);cursor:pointer;font-size:18px;}
+.cpsl{display:flex;gap:7px;margin-bottom:10px;}
+.cps{flex:1;padding:8px;border-radius:10px;border:1px dashed var(--bdr);font-size:10px;color:var(--mut);text-align:center;min-height:46px;display:flex;align-items:center;justify-content:center;position:relative;}
+.cps.fil{border-color:var(--acc);color:var(--txt);font-family:'Syne',sans-serif;font-size:10px;font-weight:700;}
+.cps .rx{position:absolute;top:3px;right:3px;font-size:10px;cursor:pointer;color:var(--mut);}
+.cpgo{width:100%;padding:10px;border-radius:10px;background:var(--acc);border:none;color:#000;font-family:'Syne',sans-serif;font-weight:700;font-size:12px;cursor:pointer;}
+.ov{position:fixed;inset:0;background:#000c;z-index:500;display:none;align-items:flex-end;}
+.ov.open{display:flex;}
+.mo{background:var(--surf);border-radius:20px 20px 0 0;width:100%;max-height:82vh;overflow-y:auto;padding:20px;animation:cIn .3s ease;}
+.moh{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+.mot{font-family:'Syne',sans-serif;font-size:15px;font-weight:800;}
+.mox{background:none;border:none;color:var(--mut);cursor:pointer;font-size:20px;}
+.ctbl{width:100%;border-collapse:collapse;font-size:10px;}
+.ctbl th{font-family:'Syne',sans-serif;font-size:11px;padding:7px 5px;border-bottom:2px solid var(--bdr);text-align:left;}
+.ctbl td{padding:7px 5px;border-bottom:1px solid var(--bdr);vertical-align:top;}
+.ctbl tr:last-child td{border-bottom:none;}
+.rl{color:var(--mut);font-size:9px;text-transform:uppercase;}
+.cy{color:var(--grn);} .cn{color:var(--red);}
+.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(14px);background:var(--surf);border:1px solid var(--bdr);border-radius:10px;padding:9px 14px;font-size:11px;z-index:400;opacity:0;transition:all .3s;white-space:nowrap;pointer-events:none;}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+/* ── PHASE 2: AI FEATURES ── */
+.ai-section{background:var(--surf);border:1px solid var(--bdr);border-radius:16px;padding:15px;margin-bottom:14px;position:relative;overflow:hidden;}
+.ai-section::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--acc2),var(--acc),var(--acc3));opacity:.7;}
+.ai-badge{display:inline-flex;align-items:center;gap:5px;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--acc);margin-bottom:3px;font-weight:600;}
+.ai-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--acc);animation:pulse 1.8s ease infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(1.4);}}
+.ai-t{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:2px;}
+.ai-s{font-size:10px;color:var(--mut);margin-bottom:12px;}
+
+/* AI Stack Advisor */
+.adv-input{width:100%;background:var(--surf2);border:1px solid var(--bdr);border-radius:10px;padding:10px 12px;font-family:'DM Mono',monospace;font-size:11px;color:var(--txt);resize:none;outline:none;transition:border-color .2s;min-height:70px;}
+.adv-input:focus{border-color:var(--acc);}
+.adv-input::placeholder{color:var(--mut);}
+.ai-btn{width:100%;margin-top:8px;padding:10px;border-radius:10px;background:linear-gradient(135deg,var(--acc2),var(--acc));border:none;color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:12px;cursor:pointer;transition:opacity .2s;display:flex;align-items:center;justify-content:center;gap:6px;}
+.ai-btn:hover{opacity:.88;}
+.ai-btn:disabled{opacity:.4;cursor:not-allowed;}
+.ai-result{display:none;margin-top:12px;padding:12px;background:var(--surf2);border:1px solid var(--bdr);border-radius:10px;font-size:11px;line-height:1.7;color:var(--txt);}
+.ai-result.show{display:block;animation:cIn .4s ease;}
+.ai-result strong{color:var(--acc);font-family:'Syne',sans-serif;}
+.ai-thinking{display:none;align-items:center;gap:8px;margin-top:10px;font-size:11px;color:var(--mut);}
+.ai-thinking.show{display:flex;}
+.ai-dots span{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--acc);animation:dot 1.2s ease infinite;}
+.ai-dots span:nth-child(2){animation-delay:.2s;}
+.ai-dots span:nth-child(3){animation-delay:.4s;}
+@keyframes dot{0%,100%{opacity:.2;transform:translateY(0);}50%{opacity:1;transform:translateY(-4px);}}
+
+/* Tool Battle */
+.battle-selects{display:flex;gap:8px;align-items:center;margin-bottom:8px;}
+.bsel{flex:1;background:var(--surf2);border:1px solid var(--bdr);border-radius:10px;padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:var(--txt);outline:none;cursor:pointer;transition:border-color .2s;}
+.bsel:focus{border-color:var(--acc);}
+.bvs{font-family:'Syne',sans-serif;font-weight:800;font-size:14px;color:var(--mut);flex-shrink:0;}
+
+/* ELI5 */
+.eli5-toggle{display:inline-flex;align-items:center;gap:6px;margin-top:8px;cursor:pointer;padding:4px 10px;border-radius:100px;border:1px solid var(--bdr);background:transparent;color:var(--mut);font-family:'DM Mono',monospace;font-size:9px;transition:all .2s;}
+.eli5-toggle:hover{border-color:var(--acc);color:var(--acc);}
+.eli5-toggle.on{border-color:var(--acc);color:var(--acc);background:#00e5ff0f;}
+.eli5-text{display:none;margin-top:8px;padding:10px 12px;background:linear-gradient(135deg,#7c3aed15,#00e5ff10);border:1px solid #7c3aed30;border-radius:10px;font-size:11px;line-height:1.7;color:var(--txt);animation:cIn .3s ease;}
+.eli5-text.show{display:block;}
+.eli5-loading{color:var(--mut);font-style:italic;}
+
+/* NL Search */
+.nl-wrap{position:relative;margin-bottom:0;}
+.nl-input{width:100%;background:var(--surf2);border:1px solid var(--bdr);border-radius:10px;padding:9px 36px 9px 12px;font-family:'DM Mono',monospace;font-size:11px;color:var(--txt);outline:none;transition:border-color .2s;}
+.nl-input:focus{border-color:var(--acc);}
+.nl-input::placeholder{color:var(--mut);}
+.nl-send{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;font-size:16px;color:var(--mut);transition:color .2s;}
+.nl-send:hover{color:var(--acc);}
+.nl-chips{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px;}
+.nl-chip{padding:4px 10px;border-radius:100px;font-size:9px;border:1px solid var(--bdr);background:transparent;color:var(--mut);cursor:pointer;font-family:'DM Mono',monospace;transition:all .2s;}
+.nl-chip:hover{border-color:var(--acc);color:var(--acc);}
+.nl-result-label{font-size:10px;color:var(--acc);margin-top:10px;display:none;font-weight:600;}
+.nl-result-label.show{display:block;}
+
+/* ── DESKTOP RESPONSIVE ── */
+@media(min-width:768px){
+  header{padding:18px 32px 14px;}
+  .htag{font-size:10px;letter-spacing:4px;}
+  h1{font-size:28px;}
+  .hsub{font-size:12px;}
+  .hauth{padding:4px 12px 4px 4px;}
+  .hav{width:22px;height:22px;font-size:10px;}
+  .hname{font-size:10px;}
+  .sw{padding:12px 32px 0;}
+  .sb{padding:11px 16px;border-radius:14px;}
+  .sb input{font-size:13px;}
+  .tw{padding:12px 32px 8px;}
+  .tab{padding:7px 16px;font-size:11px;}
+  .sfw{padding:6px 32px 12px;gap:7px;}
+  .sf{padding:5px 12px;font-size:10px;}
+  .tlbar{padding:12px 32px;gap:12px;}
+  .tb{padding:10px;font-size:11px;}
+  main{padding:20px 32px;padding-bottom:120px;}
+  .stats{gap:12px;margin-bottom:18px;}
+  .stat{padding:18px 12px;border-radius:14px;}
+  .sn{font-size:28px;}
+  .sl{font-size:9px;}
+  .ins{padding:18px;border-radius:14px;margin-bottom:18px;}
+  .il{font-size:9px;}
+  .it{font-size:12px;}
+  .mm{padding:20px;border-radius:18px;margin-bottom:18px;}
+  .mmt{font-size:16px;}
+  .mms{font-size:11px;}
+  .mmc{aspect-ratio:2.2/1;}
+  .md{width:11px;height:11px;}
+  .mdl{font-size:9px;padding:2px 6px;}
+  .ml{font-size:9px;}
+  .mleg{gap:12px;margin-top:12px;}
+  .mli{font-size:10px;}
+  .mld{width:10px;height:10px;}
+  .stk{padding:20px;border-radius:18px;margin-bottom:18px;}
+  .stkt{font-size:16px;}
+  .stks{font-size:11px;}
+  .ssl{flex-direction:row;flex-wrap:wrap;}
+  .ssi{flex:1;min-width:180px;}
+  .sshbtn{width:auto;padding:10px 32px;font-size:13px;}
+  .tl{margin-bottom:18px;}
+  .tlt{font-size:16px;}
+  .tli{width:110px;}
+  .tly{font-size:9px;}
+  .tln{font-size:9px;}
+  .tle{font-size:8px;}
+  .sec{margin-bottom:28px;}
+  .sh{margin-bottom:14px;}
+  .sic{width:38px;height:38px;border-radius:11px;font-size:18px;}
+  .sti{font-size:16px;}
+  .scn{font-size:10px;padding:3px 10px;}
+  .tg{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+  .tc{padding:16px;border-radius:16px;}
+  .tn{font-size:14px;}
+  .tbg{font-size:9px;padding:3px 9px;}
+  .td{font-size:12px;}
+  .ttag{font-size:9px;padding:3px 8px;}
+  .hp{font-size:10px;}
+  .tca{gap:7px;margin-top:11px;}
+  .ca{font-size:10px;padding:5px 11px;}
+  .ckw{font-size:10px;}
+  .quiz{padding:20px;border-radius:18px;margin-bottom:18px;}
+  .qt{font-size:16px;}
+  .qs{font-size:11px;}
+  .qq{font-size:13px;}
+  .qo{padding:10px 14px;font-size:12px;}
+  .qb{padding:10px;font-size:12px;}
+  .ai-section{padding:20px;border-radius:18px;margin-bottom:18px;}
+  .ai-t{font-size:16px;}
+  .ai-s{font-size:11px;}
+  .adv-input{font-size:12px;padding:12px 14px;}
+  .ai-btn{padding:12px;font-size:13px;}
+  .ai-result{font-size:12px;padding:16px;}
+  .nl-input{font-size:12px;padding:11px 40px 11px 14px;}
+  .nl-chip{font-size:10px;padding:5px 12px;}
+  .bsel{font-size:12px;padding:10px 12px;}
+  .bvs{font-size:16px;}
+  .ov.open{align-items:center;justify-content:center;}
+  .mo{border-radius:20px;max-width:700px;max-height:80vh;}
+  .mot{font-size:18px;}
+  .ctbl{font-size:12px;}
+  .ctbl th{font-size:13px;padding:10px 8px;}
+  .ctbl td{padding:10px 8px;}
+  .cpa{padding:14px 32px 20px;}
+}
+
+@media(min-width:1024px){
+  header{max-width:960px;margin:0 auto;border-left:1px solid var(--bdr);border-right:1px solid var(--bdr);border-bottom:1px solid var(--bdr);}
+  .sw,.tw,.sfw,.tlbar{max-width:960px;margin-left:auto;margin-right:auto;}
+  main{max-width:960px;margin:0 auto;}
+  .stats{grid-template-columns:repeat(3,1fr);gap:14px;}
+  .sn{font-size:32px;}
+  .sl{font-size:10px;}
+  .mmc{aspect-ratio:2.5/1;}
+  .tg{grid-template-columns:repeat(2,1fr);gap:14px;}
+  .ssl{gap:10px;}
+  .ssi{min-width:200px;}
+  .qos{flex-direction:row;flex-wrap:wrap;}
+  .qo{flex:1;min-width:160px;}
+  .battle-selects{gap:14px;}
+  .cpa{max-width:960px;left:50%;transform:translateX(-50%) translateY(100%);border-radius:16px 16px 0 0;}
+  .cpa.open{transform:translateX(-50%) translateY(0);}
+  .mo{max-width:800px;}
+}
+</style>
+</head>
+<body>
+
+<div id="splash">
+  <div class="sp-line">AI & BI <span>Data</span></div>
+  <div class="sp-line">Agents <span>2026</span></div>
+  <div class="sp-sub">Curated by Harsha KS · 43 tools · 7 categories</div>
+  <div class="sp-bar"><div class="sp-fill"></div></div>
+</div>
+
+<header>
+  <div class="hr">
+    <div>
+      <div class="htag">// 2026 Landscape</div>
+      <h1>AI & BI <span>Data Agents</span></h1>
+      <div class="hsub">7 categories · 43 tools · May 2026</div>
+      <div class="hauth"><div class="hav">HK</div><span class="hname">Harsha KS</span></div>
+    </div>
+    <div class="hbtns">
+      <button class="ib" id="thBtn">🌙</button>
+      <button class="ib" id="shBtn">🔗</button>
+    </div>
+  </div>
+</header>
+
+<div class="sw">
+  <div class="sb">
+    <span>🔍</span>
+    <input type="text" id="si" placeholder='Search… try "Atlan" or "open source"'>
+    <span class="scl" id="scl">✕</span>
+  </div>
+</div>
+<div class="sc" id="sc"></div>
+
+<div class="tw">
+  <div class="tabs">
+    <button class="tab on" onclick="showAll(this)">All</button>
+    <button class="tab" onclick="filterSec('s1',this)">🏗 Pipeline</button>
+    <button class="tab" onclick="filterSec('s2',this)">🗂 Catalog</button>
+    <button class="tab" onclick="filterSec('s3',this)">🔍 Lineage</button>
+    <button class="tab" onclick="filterSec('s4',this)">🛡 Governance</button>
+    <button class="tab" onclick="filterSec('s5',this)">💬 NL-to-SQL</button>
+    <button class="tab" onclick="filterSec('s6',this)">📊 BI Copilots</button>
+    <button class="tab" onclick="filterSec('s7',this)">🤖 Agentic</button>
+    <button class="tab" onclick="showBkd(this)">🔖 Saved</button>
+  </div>
+</div>
+
+<div class="sfw">
+  <button class="sf" onclick="togSF(this,'oss')">Open Source</button>
+  <button class="sf" onclick="togSF(this,'free')">Free Tier</button>
+  <button class="sf" onclick="togSF(this,'enterprise')">Enterprise</button>
+  <button class="sf" onclick="togSF(this,'hot')">🔥 Hot</button>
+  <button class="sf" onclick="togSF(this,'rising')">⬆️ Rising</button>
+  <button class="sf" onclick="togSF(this,'snowflake')">Snowflake</button>
+  <button class="sf" onclick="togSF(this,'bigquery')">BigQuery</button>
+  <button class="sf" onclick="togSF(this,'dbt')">dbt</button>
+  <button class="sf" onclick="togSF(this,'slack')">Slack</button>
+</div>
+
+<div class="tlbar">
+  <button class="tb" id="cmpBtn" onclick="togCmp()">⚖️ Compare <span class="cbdg" id="cbdg" style="display:none">0</span></button>
+  <button class="tb" onclick="showBkd(document.querySelector('.tab:last-child'))">🔖 Saved <span class="cbdg" id="bkc">0</span></button>
+</div>
+
+<main>
+<div class="egg" id="egg">
+  <div class="egg-t">🥚 Secret Tool Found!</div>
+  <div class="egg-d"><strong>Claude's Brain</strong> — The AI powering most of these tools under the hood. Not sold separately. You're already using it. 😉</div>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="sn">327%</div><div class="sl">Multi-agent growth</div></div>
+  <div class="stat"><div class="sn">80%</div><div class="sl">DBs built by AI</div></div>
+  <div class="stat"><div class="sn">43</div><div class="sl">Tools covered</div></div>
+</div>
+
+<div class="ins">
+  <div class="il">// Key Insight 2026</div>
+  <div class="it">Data catalogs are becoming the enterprise context layer — giving AI agents queryable metadata, lineage, and governance at runtime. Governance is no longer separate from analytics.</div>
+</div>
+
+<div class="quiz">
+  <div class="qt">🎯 Find Your Perfect Stack</div>
+  <div class="qs">3 quick questions → personalised recommendations</div>
+  <div class="qpg"><div class="qpd on" id="qp1"></div><div class="qpd" id="qp2"></div><div class="qpd" id="qp3"></div></div>
+  <div class="qst active" id="qs1">
+    <div class="qq">What's your team size?</div>
+    <div class="qos">
+      <button class="qo" onclick="pickQ(this,'small')">👤 Solo / Small (1–10)</button>
+      <button class="qo" onclick="pickQ(this,'mid')">👥 Mid-size (10–100)</button>
+      <button class="qo" onclick="pickQ(this,'enterprise')">🏢 Enterprise (100+)</button>
+    </div>
+    <div class="qnav"><button class="qb pri" onclick="qNext(1)">Next →</button></div>
+  </div>
+  <div class="qst" id="qs2">
+    <div class="qq">Primary cloud?</div>
+    <div class="qos">
+      <button class="qo" onclick="pickQ(this,'aws')">☁️ AWS</button>
+      <button class="qo" onclick="pickQ(this,'gcp')">🌐 Google Cloud</button>
+      <button class="qo" onclick="pickQ(this,'azure')">🔷 Azure</button>
+      <button class="qo" onclick="pickQ(this,'multi')">🌍 Multi-cloud</button>
+    </div>
+    <div class="qnav"><button class="qb" onclick="qBack(2)">← Back</button><button class="qb pri" onclick="qNext(2)">Next →</button></div>
+  </div>
+  <div class="qst" id="qs3">
+    <div class="qq">Biggest pain point?</div>
+    <div class="qos">
+      <button class="qo" onclick="pickQ(this,'pipelines')">🔧 Building pipelines</button>
+      <button class="qo" onclick="pickQ(this,'discovery')">🔍 Finding & governing data</button>
+      <button class="qo" onclick="pickQ(this,'analytics')">📊 BI & reporting</button>
+      <button class="qo" onclick="pickQ(this,'nlq')">💬 Business users querying data</button>
+    </div>
+    <div class="qnav"><button class="qb" onclick="qBack(3)">← Back</button><button class="qb pri" onclick="qSubmit()">See my stack →</button></div>
+  </div>
+  <div class="qr" id="qr">
+    <div class="qrt">✨ Your recommended stack</div>
+    <div id="qrl"></div>
+    <button class="qb pri" style="margin-top:10px;width:100%" onclick="qReset()">Start over</button>
+  </div>
+</div>
+
+<div class="mm">
+  <div class="mmt">🗺️ Market Map</div>
+  <div class="mms">Tap a dot to jump to that tool. X = All-in-One→Specialist. Y = Enterprise→SMB.</div>
+  <div class="mmc" id="mmc">
+    <div class="mh"></div><div class="mv"></div>
+    <div class="ml t">Enterprise</div><div class="ml b">SMB</div>
+    <div class="ml l">Specialist</div><div class="ml r">All-in-One</div>
+  </div>
+  <div class="mleg" id="mleg"></div>
+</div>
+
+<div class="stk">
+  <div class="stkt">🏗️ Build Your Dream Stack</div>
+  <div class="stks">Pick one tool per category, then share your stack.</div>
+  <div class="ssl" id="ssl"></div>
+  <button class="sshbtn" onclick="shareStack()">📤 Share My Stack</button>
+</div>
+
+<div class="tl">
+  <div class="tlt">📅 History of the Space</div>
+  <div class="tls"><div class="tltr" id="tltr"><div class="tlln"></div></div></div>
+</div>
+
+<div class="stk">
+  <div class="stkt">🏆 Community Leaderboard</div>
+  <div class="stks">Most viewed tools this week. Simulated data for Phase 1.</div>
+  <div class="lb-list">
+    <div class="lb-item" onclick="document.querySelector('[data-n=\'Atlan\']').scrollIntoView({behavior:'smooth',block:'center'})"><div class="lb-rank">1</div><div class="lb-name">Atlan</div><div class="lb-views">12.4k views</div><div class="tbg hot">🔥 Hot</div></div>
+    <div class="lb-item" onclick="document.querySelector('[data-n=\'Databricks Lakeflow\']').scrollIntoView({behavior:'smooth',block:'center'})"><div class="lb-rank">2</div><div class="lb-name">Databricks Lakeflow</div><div class="lb-views">9.8k views</div><div class="tbg rise">⬆️ Rising</div></div>
+    <div class="lb-item" onclick="document.querySelector('[data-n=\'Snowflake Cortex\']').scrollIntoView({behavior:'smooth',block:'center'})"><div class="lb-rank">3</div><div class="lb-name">Snowflake Cortex Analyst</div><div class="lb-views">8.2k views</div><div class="tbg hot">🔥 Hot</div></div>
+    <div class="lb-item" onclick="document.querySelector('[data-n=\'Apache Airflow\']').scrollIntoView({behavior:'smooth',block:'center'})"><div class="lb-rank">4</div><div class="lb-name">Apache Airflow</div><div class="lb-views">7.1k views</div><div class="tbg mat">✅ Mature</div></div>
+    <div class="lb-item" onclick="document.querySelector('[data-n=\'LangGraph\']').scrollIntoView({behavior:'smooth',block:'center'})"><div class="lb-rank">5</div><div class="lb-name">LangGraph</div><div class="lb-views">6.5k views</div><div class="tbg rise">⬆️ Rising</div></div>
+  </div>
+</div>
+
+<div class="quiz" id="personality-quiz">
+  <div class="qt">🔮 Quiz: Which Tool Are You?</div>
+  <div class="qs">A highly scientific 3-question personality test.</div>
+  <div class="qpg"><div class="qpd on" id="pqpd1"></div><div class="qpd" id="pqpd2"></div><div class="qpd" id="pqpd3"></div></div>
+  
+  <div class="qst active" id="pqs1">
+    <div class="qq">It's Friday 5 PM and a pipeline breaks. You:</div>
+    <div class="qos">
+      <button class="qo" onclick="pqPick(this,'manual')">Panic, then check logs manually</button>
+      <button class="qo" onclick="pqPick(this,'agent')">Let the self-healing agents fix it</button>
+      <button class="qo" onclick="pqPick(this,'meeting')">Schedule a meeting for Monday</button>
+    </div>
+    <div class="qnav"><button class="qb pri" onclick="pqNext(1)">Next →</button></div>
+  </div>
+  
+  <div class="qst" id="pqs2">
+    <div class="qq">Your ideal vacation is:</div>
+    <div class="qos">
+      <button class="qo" onclick="pqPick(this,'structure')">A highly structured, governed tour</button>
+      <button class="qo" onclick="pqPick(this,'open')">Backpacking with no itinerary (open source)</button>
+      <button class="qo" onclick="pqPick(this,'luxury')">All-inclusive luxury resort (enterprise)</button>
+    </div>
+    <div class="qnav"><button class="qb" onclick="pqBack(2)">← Back</button><button class="qb pri" onclick="pqNext(2)">Next →</button></div>
+  </div>
+  
+  <div class="qst" id="pqs3">
+    <div class="qq">How do you prefer people ask you questions?</div>
+    <div class="qos">
+      <button class="qo" onclick="pqPick(this,'sql')">Strictly via perfectly formatted SQL</button>
+      <button class="qo" onclick="pqPick(this,'nl')">Natural language in Slack</button>
+      <button class="qo" onclick="pqPick(this,'dashboard')">Just look at the dashboard I made</button>
+    </div>
+    <div class="qnav"><button class="qb" onclick="pqBack(3)">← Back</button><button class="qb pri" onclick="pqSubmit()">Reveal My Tool →</button></div>
+  </div>
+  
+  <div class="qr" id="pqr">
+    <div class="qrt">You are...</div>
+    <div id="pqrl"></div>
+    <button class="qb pri" style="margin-top:10px;width:100%" onclick="pqReset()">Retake Quiz</button>
+  </div>
+</div>
+
+<!-- NL SEARCH -->
+<div class="ai-section" id="nl-section">
+  <div class="ai-badge"><span class="ai-badge-dot"></span>Claude AI</div>
+  <div class="ai-t">🔍 Natural Language Search</div>
+  <div class="ai-s">Describe what you need in plain English — Claude finds the right tools.</div>
+  <div class="nl-wrap">
+    <input class="nl-input" id="nl-input" type="text" placeholder='e.g. "open source catalog that works with dbt and Slack"'>
+    <button class="nl-send" onclick="runNLSearch()">⚡</button>
+  </div>
+  <div class="nl-chips">
+    <button class="nl-chip" onclick="setNL('free tool for non-technical business users')">Free + non-technical</button>
+    <button class="nl-chip" onclick="setNL('enterprise governance for regulated industries')">Regulated enterprise</button>
+    <button class="nl-chip" onclick="setNL('open source pipeline orchestration')">OSS pipeline</button>
+    <button class="nl-chip" onclick="setNL('BI tool that works inside Slack')">BI inside Slack</button>
+    <button class="nl-chip" onclick="setNL('NL to SQL for Snowflake')">NL on Snowflake</button>
+  </div>
+  <div class="nl-result-label" id="nl-result-label">AI matched these tools:</div>
+  <div class="ai-thinking" id="nl-thinking"><div class="ai-dots"><span></span><span></span><span></span></div> Claude is searching…</div>
+</div>
+<!-- AI STACK ADVISOR -->
+<div class="ai-section">
+  <div class="ai-badge"><span class="ai-badge-dot"></span>Claude AI</div>
+  <div class="ai-t">🤖 AI Stack Advisor</div>
+  <div class="ai-s">Describe your company — get a custom tool stack recommendation from Claude.</div>
+  <textarea class="adv-input" id="adv-input" placeholder='e.g. "50-person fintech startup on AWS, Snowflake warehouse, 3 data engineers, need SOC2 governance"'></textarea>
+  <button class="ai-btn" id="adv-btn" onclick="runAdvisor()">✨ Build My Stack</button>
+  <div class="ai-thinking" id="adv-thinking"><div class="ai-dots"><span></span><span></span><span></span></div> Claude is building your stack…</div>
+  <div class="ai-result" id="adv-result"></div>
+</div>
+<!-- TOOL BATTLE -->
+<div class="ai-section">
+  <div class="ai-badge"><span class="ai-badge-dot"></span>Claude AI</div>
+  <div class="ai-t">⚔️ Tool Battle</div>
+  <div class="ai-s">Pick any two tools — Claude generates a head-to-head breakdown.</div>
+  <div class="battle-selects">
+    <select class="bsel" id="b1"></select>
+    <span class="bvs">VS</span>
+    <select class="bsel" id="b2"></select>
+  </div>
+  <textarea class="adv-input" id="battle-context" placeholder='Optional: your context — e.g. "40-person e-commerce on BigQuery, need lineage"' style="min-height:54px;margin-top:8px"></textarea>
+  <button class="ai-btn" id="battle-btn" onclick="runBattle()">⚡ Battle!</button>
+  <div class="ai-thinking" id="battle-thinking"><div class="ai-dots"><span></span><span></span><span></span></div> Claude is judging…</div>
+  <div class="ai-result" id="battle-result"></div>
+</div>
+
+<div class="sec s1 vis" id="s1">
+  <div class="sh"><div class="sic">🏗</div><div class="sti">Pipeline Orchestration & ETL</div><div class="scn">4 tools</div></div>
+  <div class="sdv"></div>
+  <div class="tg">
+    <div class="tc" data-n="Databricks Lakeflow" data-t="snowflake,bigquery,enterprise,hot,paid">
+      <div class="tct"><div class="tn">Databricks Lakeflow + Agent Bricks</div><div class="tbs"><div class="tbg">Enterprise</div><div class="tbg hot">🔥 Hot</div></div></div>
+      <div class="td"><div class="tds">AI-native ETL with ai_query and ai_parse_document embedded directly in pipelines. Orchestrates AI workloads at scale using Lakeflow Jobs.</div><div class="tdf">Full lakehouse platform. Agent Bricks embeds ai_query(), ai_parse_document(), ai_classify() directly in SQL/Python — no separate LLM call needed. Lakeflow Jobs manages dependencies and observability at petabyte scale.<br><br><div class="hp">⭐ Harsha's Pick: Best for orgs going all-in on the Lakehouse paradigm.</div></div></div>
+      <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">BigQuery</span><span class="ttag">dbt</span><span class="ttag">Spark</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Databricks Lakeflow')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Databricks Lakeflow','Pipeline')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="Apache Airflow" data-t="aws,bigquery,snowflake,oss,free,mature">
+      <div class="tct"><div class="tn">Apache Airflow</div><div class="tbs"><div class="tbg oss">Open Source</div><div class="tbg mat">✅ Mature</div></div></div>
+      <div class="td"><div class="tds">Python-based DAG orchestration with retries, alerts, and 100s of operators for BigQuery, Snowflake, Spark, and Kubernetes.</div><div class="tdf">Industry-standard open-source orchestrator. Airflow 3.0 (2026) adds native AI task types and LLM operator plugins. Managed via Astronomer or AWS MWAA.<br><br><div class="hp">⭐ Harsha's Pick: Default choice for any Python-first data team.</div></div></div>
+      <div class="ttg"><span class="ttag">AWS</span><span class="ttag">GCP</span><span class="ttag">Azure</span><span class="ttag">Kubernetes</span><span class="ttag">dbt</span></div>
+      <div class="tbg pfree" style="margin-top:7px;display:inline-block">✅ Free / OSS</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Apache Airflow')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Apache Airflow','Pipeline')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="Informatica CDI" data-t="snowflake,bigquery,enterprise,paid,mature">
+      <div class="tct"><div class="tn">Informatica Cloud Data Integration</div><div class="tbs"><div class="tbg">Enterprise</div><div class="tbg mat">✅ Mature</div></div></div>
+      <div class="td"><div class="tds">Agents dynamically generate and verify transformation logic as schemas change. Native integrations with Snowflake, Databricks, and BigQuery.</div><div class="tdf">CLAIRE AI detects schema drift and auto-heals pipelines. Pushdown optimization reduces data movement. Supports CDC, real-time streaming, and batch. Best for enterprises migrating from SSIS or DataStage.</div></div>
+      <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">Databricks</span><span class="ttag">BigQuery</span><span class="ttag">SAP</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Informatica CDI')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Informatica CDI','Pipeline')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="LangGraph" data-t="oss,free,rising,hot">
+      <div class="tct"><div class="tn">LangGraph Multi-Agent Orchestration</div><div class="tbs"><div class="tbg oss">Framework</div><div class="tbg rise">⬆️ Rising</div></div></div>
+      <div class="td"><div class="tds">Self-healing DAGs where agents reason over pipeline state and metadata — auto-rewriting failed transformations or rerouting data flows.</div><div class="tdf">Open-source graph-based multi-agent framework from LangChain. Agents maintain state across tool calls and invoke sub-agents for complex tasks. Production deployments at major fintechs in 2026.<br><br><div class="hp">⭐ Harsha's Pick: Watch this space — the future of autonomous pipelines.</div></div></div>
+      <div class="ttg"><span class="ttag">Python</span><span class="ttag">LangChain</span><span class="ttag">Anthropic</span><span class="ttag">OpenAI</span></div>
+      <div class="tbg pfree" style="margin-top:7px;display:inline-block">✅ Free / OSS</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'LangGraph')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'LangGraph','Pipeline')"> Compare</label></div>
+    </div>
+  </div>
+</div>
+
+<div class="sec s2 vis" id="s2">
+  <div class="sh"><div class="sic">🗂</div><div class="sti">Data Cataloging</div><div class="scn">7 tools</div></div>
+  <div class="sdv"></div>
+  <div class="tg">
+    <div class="tc" data-n="Atlan" data-t="snowflake,bigquery,dbt,enterprise,paid,hot">
+      <div class="tct"><div class="tn">Atlan</div><div class="tbs"><div class="tbg">Gartner Leader</div><div class="tbg hot">🔥 Hot</div></div></div>
+      <div class="td"><div class="tds">Best overall. ML-powered classification, column-level lineage, and business glossary automation across 200+ connectors.</div><div class="tdf">Gartner MQ Leader 2026. Only platform with "future-proof architecture" distinction. Atlan MCP brings lineage into Claude, Cursor, and GitHub Copilot for inline impact checks. AI stewards auto-enrich and enforce policies 24/7.<br><br><div class="hp">⭐ Harsha's Pick: #1 catalog for modern data teams. Best UX in class.</div></div></div>
+      <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">Databricks</span><span class="ttag">dbt</span><span class="ttag">Looker</span><span class="ttag">Tableau</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Atlan')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Atlan','Catalog')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="Collibra" data-t="enterprise,paid,mature">
+      <div class="tct"><div class="tn">Collibra</div><div class="tbs"><div class="tbg">Enterprise</div><div class="tbg mat">✅ Mature</div></div></div>
+      <div class="td"><div class="tds">Best for regulated enterprises. AI-assisted business glossary, automated lineage mapping, and governance workflow triggers.</div><div class="tdf">Gold standard for governance in banking, insurance, and pharma. Policy Center defines business rules across the data estate. Stewardship assignments, issue tracking, and audit trails built for compliance teams.</div></div>
+      <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">AWS</span><span class="ttag">Azure</span><span class="ttag">SAP</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Collibra')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Collibra','Catalog')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="Alation" data-t="enterprise,paid,mature">
+      <div class="tct"><div class="tn">Alation</div><div class="tbs"><div class="tbg">Enterprise</div><div class="tbg mat">✅ Mature</div></div></div>
+      <div class="td"><div class="tds">Analytics-first. ML-powered metadata discovery, intelligent search, and curation workflows for compliance teams.</div><div class="tdf">Pioneer of the modern data catalog. Behavioral analysis learns from how users query to auto-suggest relevant assets. Alation Connected Sheets brings catalog into Excel and Google Sheets. Strong in healthcare and financial services.</div></div>
+      <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">BigQuery</span><span class="ttag">Tableau</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Alation')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Alation','Catalog')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="Informatica IDMC" data-t="enterprise,paid,snowflake,bigquery,mature">
+      <div class="tct"><div class="tn">Informatica IDMC</div><div class="tbs"><div class="tbg">Enterprise</div></div></div>
+      <div class="td"><div class="tds">CLAIRE AI engine automates cataloging, classification, and quality assurance across large multi-cloud environments.</div><div class="tdf">Unified platform combining catalog, quality, masking, and MDM. CLAIRE AI scores data quality, suggests classifications, and detects PII automatically. Best for enterprises needing a single vendor for the full data management stack.</div></div>
+      <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">AWS</span><span class="ttag">Azure</span><span class="ttag">GCP</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Informatica IDMC')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Informatica IDMC','Catalog')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="Secoda" data-t="snowflake,bigquery,dbt,rising,paid,slack">
+      <div class="tct"><div class="tn">Secoda</div><div class="tbs"><div class="tbg">Fast Deploy</div><div class="tbg rise">⬆️ Rising</div></div></div>
+      <div class="td"><div class="tds">Deploys in 1–2 weeks. ML-powered metadata ingestion and natural language search. Best for teams starting quickly.</div><div class="tdf">Loved by startups and growth-stage companies. Secoda AI answers questions like "where is customer revenue data?" in natural language. Slack integration lets teams query the catalog without leaving their workflow.</div></div>
+      <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">BigQuery</span><span class="ttag">dbt</span><span class="ttag">Slack</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Secoda')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Secoda','Catalog')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="OpenMetadata" data-t="oss,free,snowflake,bigquery,dbt,rising">
+      <div class="tct"><div class="tn">OpenMetadata / DataHub</div><div class="tbs"><div class="tbg oss">Open Source</div><div class="tbg rise">⬆️ Rising</div></div></div>
+      <div class="td"><div class="tds">Open-source metadata foundation with AI scoring, classification, and lineage. Great for building governance from scratch.</div><div class="tdf">OpenMetadata (Collate) and DataHub (LinkedIn/Acryl) are the leading OSS catalogs. Both offer REST APIs and lineage visualization. DataHub stronger at scale; OpenMetadata better UX out-of-box. Support dbt, Airflow, and warehouse connectors natively.</div></div>
+      <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">BigQuery</span><span class="ttag">dbt</span><span class="ttag">Airflow</span></div>
+      <div class="tbg pfree" style="margin-top:7px;display:inline-block">✅ Free / OSS</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'OpenMetadata')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'OpenMetadata','Catalog')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="OvalEdge" data-t="enterprise,paid">
+      <div class="tct"><div class="tn">OvalEdge askEdgi</div><div class="tbs"><div class="tbg">Governed RAG</div></div></div>
+      <div class="td"><div class="tds">Built on enterprise catalog. Unifies data discovery, governance, and analytics with zero-prep AI querying.</div><div class="tdf">Unique in combining catalog with a governed analytics layer. askEdgi enables RAG-style querying directly against cataloged assets with built-in access controls. Good for mid-market orgs wanting catalog + analytics in one product.</div></div>
+      <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">SQL Server</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'OvalEdge askEdgi')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'OvalEdge','Catalog')"> Compare</label></div>
+    </div>
+  </div>
+</div>
+
+<div class="sec s3 vis" id="s3">
+  <div class="sh"><div class="sic">🔍</div><div class="sti">Data Lineage</div><div class="scn">6 tools</div></div>
+  <div class="sdv"></div>
+  <div class="tg">
+    <div class="tc" data-n="Atlan Lineage" data-t="snowflake,bigquery,dbt,enterprise,paid,hot">
+      <div class="tct"><div class="tn">Atlan</div><div class="tbs"><div class="tbg">Best Overall</div><div class="tbg hot">🔥 Hot</div></div></div>
+      <div class="td"><div class="tds">End-to-end column-level lineage through dbt/SQL into warehouses and BI tools. Atlan MCP brings lineage into AI tools for instant impact checks.</div><div class="tdf">Most comprehensive lineage in 2026. Column-level propagation from raw source through every transformation to final dashboard cell. MCP integration means devs get lineage context in their IDE without switching tabs.</div></div>
+      <div class="ttg"><span class="ttag">dbt</span><span class="ttag">Snowflake</span><span class="ttag">Tableau</span><span class="ttag">Power BI</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Atlan (Lineage)')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Atlan','Lineage')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="Collibra Lineage" data-t="enterprise,paid,mature">
+      <div class="tct"><div class="tn">Collibra</div><div class="tbs"><div class="tbg">Enterprise</div><div class="tbg mat">✅ Mature</div></div></div>
+      <div class="td"><div class="tds">Visual lineage for regulated enterprises with stewardship workflows. Best for heavy GDPR, BCBS 239, and SOX compliance.</div><div class="tdf">Most comprehensive lineage for compliance-heavy industries. Supports technical and business lineage views. Collibra Protect enables automated data masking based on lineage sensitivity classifications.</div></div>
+      <div class="ttg"><span class="ttag">AWS</span><span class="ttag">Azure</span><span class="ttag">Snowflake</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Collibra (Lineage)')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Collibra','Lineage')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="IBM Watson" data-t="enterprise,paid,mature">
+      <div class="tct"><div class="tn">IBM Watson Knowledge Catalog</div><div class="tbs"><div class="tbg">AI + Data</div><div class="tbg mat">✅ Mature</div></div></div>
+      <div class="td"><div class="tds">Tracks data and model lineage from ingestion through deployment. Model registry stores metadata and risk scoring per AI model.</div><div class="tdf">Unique in tracking both traditional data lineage and ML model lineage end-to-end. IBM OpenScale adds AI fairness monitoring on top of lineage. Best for IBM infrastructure with AI governance requirements.</div></div>
+      <div class="ttg"><span class="ttag">IBM Cloud</span><span class="ttag">AWS</span><span class="ttag">Watson Studio</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'IBM Watson')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'IBM Watson','Lineage')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="Google Dataplex" data-t="bigquery,gcp,enterprise,paid,rising">
+      <div class="tct"><div class="tn">Google Dataplex</div><div class="tbs"><div class="tbg">GCP Native</div><div class="tbg rise">⬆️ Rising</div></div></div>
+      <div class="td"><div class="tds">Serverless lineage integrated with BigQuery, Vertex AI, and Looker. Best for GCP-native orgs needing built-in scalability.</div><div class="tdf">Fully managed data fabric on GCP. Auto-discovery of BigQuery assets, automatic lineage capture from BigQuery jobs. Dataplex Catalog replaced Data Catalog in 2025 with AI-powered enrichment. Zero operational overhead.</div></div>
+      <div class="ttg"><span class="ttag">BigQuery</span><span class="ttag">Vertex AI</span><span class="ttag">Looker</span><span class="ttag">GCP</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Usage-based</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Google Dataplex')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Google Dataplex','Lineage')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="Informatica Lineage" data-t="enterprise,paid,snowflake,mature">
+      <div class="tct"><div class="tn">Informatica IDMC</div><div class="tbs"><div class="tbg">Enterprise</div></div></div>
+      <div class="td"><div class="tds">Metadata and lineage for large multi-cloud environments with pre-built parsers for 50+ sources.</div><div class="tdf">End-to-end lineage within the IDMC unified platform. Strongest when combined with Informatica ETL tools — captures lineage automatically as pipelines run. Best for enterprises already on Informatica stack.</div></div>
+      <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">AWS</span><span class="ttag">Azure</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Informatica (Lineage)')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Informatica','Lineage')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="Alation Lineage" data-t="enterprise,paid,mature">
+      <div class="tct"><div class="tn">Alation</div><div class="tbs"><div class="tbg">Enterprise</div><div class="tbg mat">✅ Mature</div></div></div>
+      <div class="td"><div class="tds">Usage-based lineage captured from query history in connected warehouses. Realistic rather than static schema-based lineage.</div><div class="tdf">Alation's lineage is functional but secondary to its catalog and search strength. Captured automatically from query history — providing realistic usage-based lineage. Best used as part of the broader Alation platform.</div></div>
+      <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">Tableau</span><span class="ttag">BigQuery</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Alation (Lineage)')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Alation','Lineage')"> Compare</label></div>
+    </div>
+  </div>
+</div>
+
+<div class="sec s4 vis" id="s4">
+  <div class="sh"><div class="sic">🛡</div><div class="sti">Data Governance & Compliance</div><div class="scn">6 tools</div></div>
+  <div class="sdv"></div>
+  <div class="tg">
+    <div class="tc" data-n="Atlan Governance" data-t="enterprise,paid,hot,snowflake,bigquery,dbt">
+      <div class="tct"><div class="tn">Atlan</div><div class="tbs"><div class="tbg">Gartner Leader</div><div class="tbg hot">🔥 Hot</div></div></div>
+      <div class="td"><div class="tds">Only Gartner-recognized future-proof architecture in 2026. #1 in lineage & impact analysis. AI stewards enforce policies continuously.</div><div class="tdf">AI Policy Engine auto-classifies PII, enforces masking, and triggers stewardship workflows without manual intervention. Monte Carlo partnership adds automated data quality monitoring layered on top of governance.</div></div>
+      <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">dbt</span><span class="ttag">BigQuery</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Atlan (Governance)')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Atlan','Governance')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="Collibra Governance" data-t="enterprise,paid,mature">
+      <div class="tct"><div class="tn">Collibra</div><div class="tbs"><div class="tbg">Enterprise</div><div class="tbg mat">✅ Mature</div></div></div>
+      <div class="td"><div class="tds">Enterprise-grade policy enforcement, automated lineage, compliance integrity, and remediation workflows.</div><div class="tdf">Strongest governance workflow engine in the market. Identifies stewardship dependencies and triggers remediation. Collibra Data Quality embedded within governance workflow for end-to-end data trust.</div></div>
+      <div class="ttg"><span class="ttag">SAP</span><span class="ttag">Snowflake</span><span class="ttag">AWS</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Collibra (Governance)')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Collibra','Governance')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="Informatica Governance" data-t="enterprise,paid,mature">
+      <div class="tct"><div class="tn">Informatica IDMC</div><div class="tbs"><div class="tbg">Enterprise</div></div></div>
+      <div class="td"><div class="tds">CLAIRE AI for classification, quality governance, and automated compliance across multi-cloud environments.</div><div class="tdf">Broadest governance coverage: catalog + quality + masking + MDM + lineage in one platform. Pre-built policy templates for GDPR, HIPAA, and CCPA. CLAIRE detects PII, applies masking, and logs all access for compliance audit.</div></div>
+      <div class="ttg"><span class="ttag">AWS</span><span class="ttag">Azure</span><span class="ttag">GCP</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Informatica (Gov)')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Informatica','Governance')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="IBM Watson Gov" data-t="enterprise,paid,mature">
+      <div class="tct"><div class="tn">IBM Watson Knowledge Catalog</div><div class="tbs"><div class="tbg">AI Governance</div></div></div>
+      <div class="td"><div class="tds">Combines data and AI model governance. Tracks ingestion through deployment with risk scoring for each AI model.</div><div class="tdf">One of few platforms with formal AI model governance alongside traditional data governance. IBM AI Factsheets auto-document model provenance for regulatory submissions. IBM OpenScale adds fairness and explainability for deployed models.</div></div>
+      <div class="ttg"><span class="ttag">IBM Cloud</span><span class="ttag">Watson</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'IBM Watson (Gov)')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'IBM Watson','Governance')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="Oracle" data-t="enterprise,paid,mature">
+      <div class="tct"><div class="tn">Oracle Enterprise Metadata Mgmt</div><div class="tbs"><div class="tbg">Enterprise</div></div></div>
+      <div class="td"><div class="tds">AI-powered search and tagging. Real-time lineage, risk, and usage insights. Region-specific deployment for multi-jurisdiction compliance.</div><div class="tdf">Best for Oracle-heavy enterprises. Deep EBS, Fusion, and OBIEE integration. Pre-built templates for MiFID II, BCBS 239, and GDPR. Sovereign cloud deployment options for data residency requirements.</div></div>
+      <div class="ttg"><span class="ttag">Oracle Cloud</span><span class="ttag">OCI</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Oracle Metadata Mgmt')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Oracle','Governance')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="Apache Egeria" data-t="oss,free,rising">
+      <div class="tct"><div class="tn">Apache Egeria</div><div class="tbs"><div class="tbg oss">Open Source</div><div class="tbg rise">⬆️ Rising</div></div></div>
+      <div class="td"><div class="tds">2026 ML-powered metadata normalization and contextual mapping — consistent governance even when teams use different labels.</div><div class="tdf">Linux Foundation project for federated governance across organizational boundaries. Metadata servers exchange governance info via OMAG APIs. Cohort federation allows multiple catalogs to share lineage without centralizing data. Best for consortium-style governance.</div></div>
+      <div class="ttg"><span class="ttag">Any Cloud</span><span class="ttag">On-Prem</span></div>
+      <div class="tbg pfree" style="margin-top:7px;display:inline-block">✅ Free / OSS</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Apache Egeria')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Apache Egeria','Governance')"> Compare</label></div>
+    </div>
+  </div>
+</div>
+<div class="sec s5 vis" id="s5">
+  <div class="sh"><div class="sic">💬</div><div class="sti">NL-to-SQL / Self-Service Analytics</div><div class="scn">6 tools</div></div>
+  <div class="sdv"></div>
+  <div class="tg">
+    <div class="tc" data-n="Databricks Genie" data-t="snowflake,enterprise,paid,hot">
+      <div class="tct"><div class="tn">Databricks Genie</div><div class="tbs"><div class="tbg">Warehouse Native</div><div class="tbg hot">🔥 Hot</div></div></div>
+      <div class="td"><div class="tds">Translates natural language to SQL using a compound AI system. Warehouse-native with no extra LLM costs.</div><div class="tdf">Genie spaces let data teams curate trusted Q&A pairs that guide SQL generation. Business users query in plain English within Databricks UI or via API. Compound AI architecture combines retrieval, verification, and generation for high accuracy.</div></div>
+      <div class="ttg"><span class="ttag">Databricks</span><span class="ttag">Delta Lake</span><span class="ttag">Unity Catalog</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Databricks Genie')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Databricks Genie','NL-SQL')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="Snowflake Cortex" data-t="snowflake,enterprise,paid,hot">
+      <div class="tct"><div class="tn">Snowflake Cortex Analyst</div><div class="tbs"><div class="tbg">Warehouse Native</div><div class="tbg hot">🔥 Hot</div></div></div>
+      <div class="td"><div class="tds">Native NL queries in Snowflake. Routes questions via Cortex Agents. No additional LLM spend — data never leaves Snowflake.</div><div class="tdf">Semantic model YAML defines business logic, measures, and joins once. Cortex Analyst uses it to generate accurate SQL consistently. Cortex Agents chain Analyst queries with Python tools for complex multi-step answers.</div></div>
+      <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">Streamlit</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid (credits)</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Snowflake Cortex Analyst')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Snowflake Cortex','NL-SQL')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="ThoughtSpot" data-t="snowflake,bigquery,enterprise,paid,rising">
+      <div class="tct"><div class="tn">ThoughtSpot Spotter</div><div class="tbs"><div class="tbg">Self-Service</div><div class="tbg rise">⬆️ Rising</div></div></div>
+      <div class="td"><div class="tds">Generates dashboards and semantic models from natural language. Strong for non-technical business users at scale.</div><div class="tdf">Spotter is a conversational analytics agent generating Liveboards and semantic models from NL. Multi-turn conversations let users iteratively refine analysis. ThoughtSpot Everywhere embeds Spotter in any app via API. Strongest for deploying self-service to thousands of business users.</div></div>
+      <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">BigQuery</span><span class="ttag">Databricks</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'ThoughtSpot Spotter')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'ThoughtSpot','NL-SQL')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="Querio" data-t="snowflake,bigquery,rising,paid">
+      <div class="tct"><div class="tn">Querio</div><div class="tbs"><div class="tbg">AI-Native BI</div><div class="tbg rise">⬆️ Rising</div></div></div>
+      <div class="td"><div class="tds">Connects to Snowflake, BigQuery, Postgres. Context layer defines joins and metrics once for consistent NL interpretation.</div><div class="tdf">Context layer is the key differentiator — data teams define business terms, joins, and metrics once. Every NL query routes through this layer for consistent, accurate results. Auto-refreshing dashboards update when underlying data changes.</div></div>
+      <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">BigQuery</span><span class="ttag">Postgres</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Querio')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Querio','NL-SQL')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="Julius AI" data-t="free,rising">
+      <div class="tct"><div class="tn">Julius AI</div><div class="tbs"><div class="tbg">File + DB</div><div class="tbg rise">⬆️ Rising</div></div></div>
+      <div class="td"><div class="tds">Conversational analysis of uploaded files up to 32 GB and connected databases. Built for non-technical users.</div><div class="tdf">Most accessible tool here — zero SQL knowledge required. Upload CSV, Excel, or connect to MySQL/SQL Server/Databricks and ask questions in plain English. Julius generates charts, statistical analysis, and explains findings in plain language. Free tier available.</div></div>
+      <div class="ttg"><span class="ttag">CSV</span><span class="ttag">MySQL</span><span class="ttag">SQL Server</span><span class="ttag">Databricks</span></div>
+      <div class="tbg pfree" style="margin-top:7px;display:inline-block">✅ Free Tier</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Julius AI')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Julius AI','NL-SQL')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="Hex Magic" data-t="snowflake,bigquery,dbt,rising,paid">
+      <div class="tct"><div class="tn">Hex Magic AI</div><div class="tbs"><div class="tbg">Notebook</div><div class="tbg rise">⬆️ Rising</div></div></div>
+      <div class="td"><div class="tds">Generates SQL and Python from natural language in a collaborative notebook. Best for analytics teams doing code-assisted exploration.</div><div class="tdf">Hex blends notebooks and BI. Magic AI generates SQL, Python, and chart code from NL within cells. Collaborative editing lets multiple analysts work simultaneously. Hex Apps turn notebooks into interactive apps for stakeholders. AI-native on dbt.</div></div>
+      <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">BigQuery</span><span class="ttag">dbt</span><span class="ttag">Python</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Hex Magic AI')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Hex Magic','NL-SQL')"> Compare</label></div>
+    </div>
+  </div>
+</div>
+
+<div class="sec s6 vis" id="s6">
+  <div class="sh"><div class="sic">📊</div><div class="sti">BI Copilots & Embedded AI</div><div class="scn">8 tools</div></div>
+  <div class="sdv"></div>
+  <div class="tg">
+    <div class="tc" data-n="Power BI" data-t="azure,enterprise,paid,hot">
+      <div class="tct"><div class="tn">Microsoft Power BI Copilot</div><div class="tbs"><div class="tbg">Enterprise</div><div class="tbg hot">🔥 Hot</div></div></div>
+      <div class="td"><div class="tds">Generates DAX queries and narrative visuals. Anomaly detection flags metric shifts with NL explanations. $14/user/month for M365 orgs.</div><div class="tdf">Lowest friction AI BI tool for Microsoft-heavy orgs. Copilot generates DAX measures, narrative summaries, and visual suggestions from NL. Fabric integration means Copilot works across the entire Microsoft data estate.</div></div>
+      <div class="ttg"><span class="ttag">Azure</span><span class="ttag">Microsoft Fabric</span><span class="ttag">SharePoint</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 $14/user/mo</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Power BI Copilot')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Power BI','BI Copilots')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="Tableau" data-t="snowflake,enterprise,paid,mature,slack">
+      <div class="tct"><div class="tn">Tableau Agent + Pulse</div><div class="tbs"><div class="tbg">Enterprise</div><div class="tbg mat">✅ Mature</div></div></div>
+      <div class="td"><div class="tds">Agent handles conversational queries and calculations. Pulse delivers metric alerts and summaries directly to Slack or email.</div><div class="tdf">Tableau Agent is the conversational layer on Tableau's best-in-class visualization engine. Pulse monitors KPIs and surfaces anomalies in plain language via Slack, email, or Salesforce. Together they create a push+pull analytics experience unmatched in the market.</div></div>
+      <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">Salesforce</span><span class="ttag">Slack</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Tableau Agent + Pulse')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Tableau','BI Copilots')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="Looker + Gemini" data-t="bigquery,gcp,enterprise,paid,rising">
+      <div class="tct"><div class="tn">Looker + Gemini</div><div class="tbs"><div class="tbg">GCP Native</div><div class="tbg rise">⬆️ Rising</div></div></div>
+      <div class="td"><div class="tds">Code-first semantic governance with Gemini NL capabilities. Best for data-engineering-heavy orgs on Google Cloud.</div><div class="tdf">Looker's LookML semantic layer is the industry's most rigorous code-first approach to governed metrics. Gemini adds conversational querying on top. Best for GCP-native orgs who want strict semantic layer control over every metric definition.</div></div>
+      <div class="ttg"><span class="ttag">BigQuery</span><span class="ttag">GCP</span><span class="ttag">Vertex AI</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Looker + Gemini')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Looker + Gemini','BI Copilots')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="Sigma Computing" data-t="snowflake,bigquery,enterprise,paid,rising">
+      <div class="tct"><div class="tn">Sigma Computing</div><div class="tbs"><div class="tbg">Warehouse AI</div><div class="tbg rise">⬆️ Rising</div></div></div>
+      <div class="td"><div class="tds">Ask Sigma is an agentic AI that locates data sources, builds multi-step analyses, and shows each step of its decision logic.</div><div class="tdf">Unique spreadsheet-like interface runs directly on the warehouse — no data extract needed. Ask Sigma adds AI reasoning on top, showing decision steps taken to answer a question. Strong for finance teams migrating from Excel to cloud analytics.</div></div>
+      <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">BigQuery</span><span class="ttag">Databricks</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Sigma Computing')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Sigma Computing','BI Copilots')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="Holistics AI" data-t="snowflake,bigquery,dbt,paid,rising">
+      <div class="tct"><div class="tn">Holistics AI</div><div class="tbs"><div class="tbg">Semantic Layer</div><div class="tbg rise">⬆️ Rising</div></div></div>
+      <div class="td"><div class="tds">Composable metric logic via AQL. AI generates metric definitions that data teams review before promoting to the governed model.</div><div class="tdf">Holistics AML lets teams define metrics as code with version control. AI suggests metric definitions that go through a review workflow before becoming official governed metrics. Human-in-the-loop governance built into the AI layer. Growing fast in Southeast Asia.</div></div>
+      <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">BigQuery</span><span class="ttag">dbt</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Holistics AI')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Holistics AI','BI Copilots')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="Qlik AutoML" data-t="enterprise,paid,mature">
+      <div class="tct"><div class="tn">Qlik AutoML</div><div class="tbs"><div class="tbg">ML + BI</div><div class="tbg mat">✅ Mature</div></div></div>
+      <div class="td"><div class="tds">Predictive analytics and automated ML embedded in the BI layer. For teams wanting ML insights without separate data science infra.</div><div class="tdf">AutoML lets business analysts build predictive models without Python. Drag-and-drop experiment configuration, automated feature engineering, and model comparison. Predictions surface directly in Qlik dashboards. Best for sales forecasting and churn prediction.</div></div>
+      <div class="ttg"><span class="ttag">Qlik Cloud</span><span class="ttag">AWS</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Qlik AutoML')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Qlik AutoML','BI Copilots')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="Domo" data-t="enterprise,paid,mature">
+      <div class="tct"><div class="tn">Domo</div><div class="tbs"><div class="tbg">Executive</div><div class="tbg mat">✅ Mature</div></div></div>
+      <div class="td"><div class="tds">AI-driven insights optimized for executive mobile use. Best for C-suite dashboards and business-wide KPI monitoring.</div><div class="tdf">Domo's mobile-first design is unmatched for executive consumption of business data. Domo AI adds automated narratives and anomaly alerts. Domo Everywhere embeds analytics in any external application. Strong in retail, healthcare, and media.</div></div>
+      <div class="ttg"><span class="ttag">Salesforce</span><span class="ttag">AWS</span><span class="ttag">Snowflake</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Domo')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Domo','BI Copilots')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="Zenlytic ZOE" data-t="snowflake,bigquery,dbt,paid,rising,slack">
+      <div class="tct"><div class="tn">Zenlytic ZOE</div><div class="tbs"><div class="tbg">AI-Native</div><div class="tbg rise">⬆️ Rising</div></div></div>
+      <div class="td"><div class="tds">Conversational BI agent with governed semantic layer. Translates NL to governed queries with strong data team control.</div><div class="tdf">Zoe routes questions through governed metric definitions — AI-generated answers always use the right business logic. Multi-turn conversations let users explore data iteratively. Slack integration lets any team member ask Zoe without logging into a BI tool.</div></div>
+      <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">BigQuery</span><span class="ttag">dbt</span><span class="ttag">Slack</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Zenlytic ZOE')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Zenlytic ZOE','BI Copilots')"> Compare</label></div>
+    </div>
+  </div>
+</div>
+
+<div class="sec s7 vis" id="s7">
+  <div class="sh"><div class="sic">🤖</div><div class="sti">Autonomous / Agentic Analytics</div><div class="scn">6 tools</div></div>
+  <div class="sdv"></div>
+  <div class="tg">
+    <div class="tc" data-n="Tellius" data-t="snowflake,bigquery,enterprise,paid,hot">
+      <div class="tct"><div class="tn">Tellius</div><div class="tbs"><div class="tbg">Deepest Analysis</div><div class="tbg hot">🔥 Hot</div></div></div>
+      <div class="td"><div class="tds">Governed NL-to-SQL across 30+ sources simultaneously. Leads on autonomous root cause analysis — investigates why metrics changed.</div><div class="tdf">Only tool that autonomously investigates the "why" behind metric changes. Polaris AI runs multi-dimensional analysis across all connected sources simultaneously, surfacing root causes in minutes. Strong momentum in financial services and retail.</div></div>
+      <div class="ttg"><span class="ttag">Snowflake</span><span class="ttag">BigQuery</span><span class="ttag">Databricks</span><span class="ttag">Redshift</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Tellius')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Tellius','Agentic')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="Beam AI" data-t="enterprise,paid,rising">
+      <div class="tct"><div class="tn">Beam AI</div><div class="tbs"><div class="tbg">Automation</div><div class="tbg rise">⬆️ Rising</div></div></div>
+      <div class="td"><div class="tds">Enterprise agentic automation hub. Central dashboard for agent tasks, memory, history, and performance. Integrates with Airtable, ServiceNow, Asana.</div><div class="tdf">Beam deploys specialized agents for data operations — monitoring pipelines, filing incidents, updating dashboards, and notifying stakeholders. Agent memory persists context across tasks. Full visibility into every agent action with rollback capability.</div></div>
+      <div class="ttg"><span class="ttag">Airtable</span><span class="ttag">ServiceNow</span><span class="ttag">Asana</span><span class="ttag">Slack</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Beam AI')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Beam AI','Agentic')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="MindsDB" data-t="snowflake,oss,free,hot,slack">
+      <div class="tct"><div class="tn">MindsDB</div><div class="tbs"><div class="tbg oss">Open Source</div><div class="tbg hot">🔥 Hot</div></div></div>
+      <div class="td"><div class="tds">Autonomous BI agents integrated directly into Slack. Conversational analytics on operational data across 200+ sources.</div><div class="tdf">MindsDB runs as an AI layer directly on top of your existing databases — no data movement. Agents answer questions in Slack by querying the right source autonomously. 200+ connectors including real-time streams. Open-source core with 25k+ GitHub stars.</div></div>
+      <div class="ttg"><span class="ttag">Slack</span><span class="ttag">MySQL</span><span class="ttag">Snowflake</span><span class="ttag">MongoDB</span></div>
+      <div class="tbg pfree" style="margin-top:7px;display:inline-block">✅ Free / OSS</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'MindsDB')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'MindsDB','Agentic')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="Zerve" data-t="snowflake,bigquery,paid,rising">
+      <div class="tct"><div class="tn">Zerve</div><div class="tbs"><div class="tbg">Data Science</div><div class="tbg rise">⬆️ Rising</div></div></div>
+      <div class="td"><div class="tds">AI-native notebooks with built-in collaboration and deployment. Coding, datasets, and AI assistance in one shared environment.</div><div class="tdf">Combines data science notebook experience with built-in deployment infrastructure. AI assistant helps write, debug, and optimize code across SQL, Python, and R. Environments are fully reproducible. Real-time collaboration with conflict resolution.</div></div>
+      <div class="ttg"><span class="ttag">Python</span><span class="ttag">R</span><span class="ttag">Snowflake</span><span class="ttag">BigQuery</span></div>
+      <div class="tbg ppaid" style="margin-top:7px;display:inline-block">💰 Paid</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Zerve')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Zerve','Agentic')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="Claude + MCP" data-t="oss,free,hot">
+      <div class="tct"><div class="tn">Claude + MCP</div><div class="tbs"><div class="tbg">Flexible</div><div class="tbg hot">🔥 Hot</div></div></div>
+      <div class="td"><div class="tds">Model-agnostic agent framework. Plug in any context via MCP. Best for custom agentic workflows. No built-in governance layer.</div><div class="tdf">Model Context Protocol lets Claude connect to any tool, database, or API as a first-class tool-calling agent. Data teams use Claude + MCP to build custom data agents without engineering a full platform. Increasingly used in data ops automation.</div></div>
+      <div class="ttg"><span class="ttag">Any Stack</span><span class="ttag">Python</span><span class="ttag">API</span></div>
+      <div class="tbg pfree" style="margin-top:7px;display:inline-block">✅ Free Tier</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Claude + MCP')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Claude + MCP','Agentic')"> Compare</label></div>
+    </div>
+    <div class="tc" data-n="Meta AI Agents" data-t="enterprise,rising">
+      <div class="tct"><div class="tn">Meta AI Pipeline Agents</div><div class="tbs"><div class="tbg">Hyperscale</div><div class="tbg rise">⬆️ Rising</div></div></div>
+      <div class="td"><div class="tds">Swarm of 50+ specialized agents pre-computing tribal knowledge. 40% fewer tool calls; complex research from 2 days to 30 minutes.</div><div class="tdf">Meta's internal multi-agent system for petabyte-scale pipelines. Not publicly available, but architecture patterns are being replicated using LangGraph. Key insight: specialized agents with narrow tasks outperform general agents at hyperscale.</div></div>
+      <div class="ttg"><span class="ttag">Internal / Meta only</span></div>
+      <div class="tbg" style="margin-top:7px;display:inline-block;background:#6b728020;color:#9ca3af">⚠️ Not Public</div>
+      <div class="tca"><button class="ca" onclick="togBkd(this)">🔖 Save</button><button class="ca" onclick="sCard(this,'Meta AI Pipeline Agents')">↗ Share</button><button class="ca" onclick="expCard(this)">+ More</button><button class="eli5-toggle" onclick="runELI5(this)">🧠 ELI5</button><label class="ckw"><input type="checkbox" class="cc" onchange="togCmpTool(this,'Meta AI Agents','Agentic')"> Compare</label></div>
+    </div>
+  </div>
+</div>
+
+<div id="bkv">
+  <div id="bkc-list"></div>
+  <div class="bke" id="bke" style="display:none">
+    <div style="font-size:32px;margin-bottom:10px">🔖</div>
+    <div>No saved tools yet.</div>
+    <div style="margin-top:5px;font-size:10px">Tap "Save" on any card to bookmark it here.</div>
+  </div>
+</div>
+
+</main>
+
+<div class="cpa" id="cpa">
+  <div class="cpah"><span class="cpat">⚖️ Compare Tools</span><button class="cpax" onclick="closeCpa()">✕</button></div>
+  <div class="cpsl">
+    <div class="cps" id="cs0">Empty</div>
+    <div class="cps" id="cs1">Empty</div>
+    <div class="cps" id="cs2">Empty</div>
+  </div>
+  <button class="cpgo" onclick="openModal()">Compare →</button>
+</div>
+
+<div class="ov" id="ov" onclick="if(event.target===this)closeModal()">
+  <div class="mo">
+    <div class="moh"><span class="mot">⚖️ Side-by-Side</span><button class="mox" onclick="closeModal()">✕</button></div>
+    <div id="mod-body"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script>
+let bkds = JSON.parse(localStorage.getItem('hk_bkd')||'[]');
+let cmpOn = false, cmpList = [], activeSec = 'all', activeSF = null;
+let qAnswers = {}, qStep = 1, stackSel = {};
+
+const CATS = [
+  {id:'p',ico:'🏗',lbl:'Pipeline',sec:'s1'},
+  {id:'c',ico:'🗂',lbl:'Catalog',sec:'s2'},
+  {id:'l',ico:'🔍',lbl:'Lineage',sec:'s3'},
+  {id:'g',ico:'🛡',lbl:'Governance',sec:'s4'},
+  {id:'n',ico:'💬',lbl:'NL-to-SQL',sec:'s5'},
+  {id:'b',ico:'📊',lbl:'BI Copilot',sec:'s6'},
+  {id:'a',ico:'🤖',lbl:'Agentic',sec:'s7'},
+];
+
+const MAP_PTS = [
+  {n:'Atlan',x:68,y:28,c:'#00e5ff'},{n:'Collibra',x:58,y:20,c:'#a78bfa'},
+  {n:'Informatica',x:80,y:22,c:'#f59e0b'},{n:'IBM Watson',x:74,y:32,c:'#60a5fa'},
+  {n:'Oracle',x:84,y:18,c:'#f87171'},{n:'Alation',x:54,y:28,c:'#34d399'},
+  {n:'Databricks',x:64,y:38,c:'#fb923c'},{n:'Snowflake Cortex',x:58,y:44,c:'#38bdf8'},
+  {n:'Airflow',x:28,y:56,c:'#e879f9'},{n:'OpenMetadata',x:24,y:62,c:'#4ade80'},
+  {n:'LangGraph',x:20,y:68,c:'#fbbf24'},{n:'MindsDB',x:30,y:72,c:'#34d399'},
+  {n:'Power BI',x:72,y:48,c:'#f59e0b'},{n:'Tableau',x:76,y:54,c:'#60a5fa'},
+  {n:'Looker',x:66,y:58,c:'#4ade80'},{n:'ThoughtSpot',x:54,y:48,c:'#f472b6'},
+  {n:'Tellius',x:62,y:52,c:'#00e5ff'},{n:'Sigma',x:44,y:50,c:'#fb923c'},
+  {n:'Hex',x:34,y:56,c:'#c084fc'},{n:'Julius AI',x:24,y:76,c:'#86efac'},
+  {n:'Querio',x:36,y:66,c:'#fda4af'},{n:'Secoda',x:40,y:56,c:'#67e8f9'},
+  {n:'Beam AI',x:50,y:42,c:'#a78bfa'},{n:'Zerve',x:30,y:62,c:'#fcd34d'},
+  {n:'Claude+MCP',x:20,y:58,c:'#c084fc'},{n:'Holistics',x:38,y:52,c:'#6ee7b7'},
+];
+
+const TL = [
+  {y:2015,n:'Apache Airflow',e:'Open-sourced by Airbnb'},
+  {y:2017,n:'Alation',e:'Modern catalog category'},
+  {y:2019,n:'Collibra',e:'$100M Series D'},
+  {y:2020,n:'DataHub',e:'Open-sourced by LinkedIn'},
+  {y:2021,n:'Atlan',e:'Modern catalog launch'},
+  {y:2022,n:'ThoughtSpot Spotter',e:'AI analytics announced'},
+  {y:2023,n:'Databricks Genie',e:'NL-to-SQL goes GA'},
+  {y:2023,n:'Power BI Copilot',e:'Microsoft Copilot launch'},
+  {y:2024,n:'Snowflake Cortex',e:'Cortex Analyst GA'},
+  {y:2024,n:'LangGraph',e:'Multi-agent framework'},
+  {y:2025,n:'Atlan MCP',e:'Lineage in AI tools'},
+  {y:2026,n:'Agentic BI',e:'327% multi-agent growth'},
+];
+
+const TOOL_META = {
+  'Databricks Lakeflow':{pricing:'Paid',oss:false,free:false,wh:'Databricks',cat:'Pipeline',ent:true},
+  'Apache Airflow':{pricing:'Free/OSS',oss:true,free:true,wh:'Any',cat:'Pipeline',ent:false},
+  'Informatica CDI':{pricing:'Paid',oss:false,free:false,wh:'Multi-cloud',cat:'Pipeline',ent:true},
+  'LangGraph':{pricing:'Free/OSS',oss:true,free:true,wh:'Any',cat:'Pipeline',ent:false},
+  'Atlan':{pricing:'Paid',oss:false,free:false,wh:'Multi-cloud',cat:'Catalog',ent:true},
+  'Collibra':{pricing:'Paid',oss:false,free:false,wh:'Multi-cloud',cat:'Catalog',ent:true},
+  'Alation':{pricing:'Paid',oss:false,free:false,wh:'Multi-cloud',cat:'Catalog',ent:true},
+  'Informatica IDMC':{pricing:'Paid',oss:false,free:false,wh:'Multi-cloud',cat:'Catalog',ent:true},
+  'Secoda':{pricing:'Paid',oss:false,free:false,wh:'Multi-cloud',cat:'Catalog',ent:false},
+  'OpenMetadata':{pricing:'Free/OSS',oss:true,free:true,wh:'Any',cat:'Catalog',ent:false},
+  'OvalEdge':{pricing:'Paid',oss:false,free:false,wh:'Snowflake',cat:'Catalog',ent:false},
+  'Databricks Genie':{pricing:'Paid',oss:false,free:false,wh:'Databricks',cat:'NL-SQL',ent:true},
+  'Snowflake Cortex':{pricing:'Paid',oss:false,free:false,wh:'Snowflake',cat:'NL-SQL',ent:true},
+  'ThoughtSpot':{pricing:'Paid',oss:false,free:false,wh:'Multi-cloud',cat:'NL-SQL',ent:true},
+  'Querio':{pricing:'Paid',oss:false,free:false,wh:'Multi-cloud',cat:'NL-SQL',ent:false},
+  'Julius AI':{pricing:'Free Tier',oss:false,free:true,wh:'Any',cat:'NL-SQL',ent:false},
+  'Hex Magic':{pricing:'Paid',oss:false,free:false,wh:'Multi-cloud',cat:'NL-SQL',ent:false},
+  'Power BI':{pricing:'$14/mo',oss:false,free:false,wh:'Azure',cat:'BI',ent:true},
+  'Tableau':{pricing:'Paid',oss:false,free:false,wh:'Multi-cloud',cat:'BI',ent:true},
+  'Looker + Gemini':{pricing:'Paid',oss:false,free:false,wh:'BigQuery',cat:'BI',ent:true},
+  'Sigma Computing':{pricing:'Paid',oss:false,free:false,wh:'Multi-cloud',cat:'BI',ent:false},
+  'Holistics AI':{pricing:'Paid',oss:false,free:false,wh:'Multi-cloud',cat:'BI',ent:false},
+  'Qlik AutoML':{pricing:'Paid',oss:false,free:false,wh:'Qlik Cloud',cat:'BI',ent:true},
+  'Domo':{pricing:'Paid',oss:false,free:false,wh:'Multi-cloud',cat:'BI',ent:true},
+  'Zenlytic ZOE':{pricing:'Paid',oss:false,free:false,wh:'Multi-cloud',cat:'BI',ent:false},
+  'Tellius':{pricing:'Paid',oss:false,free:false,wh:'Multi-cloud',cat:'Agentic',ent:true},
+  'Beam AI':{pricing:'Paid',oss:false,free:false,wh:'Any',cat:'Agentic',ent:true},
+  'MindsDB':{pricing:'Free/OSS',oss:true,free:true,wh:'Any',cat:'Agentic',ent:false},
+  'Zerve':{pricing:'Paid',oss:false,free:false,wh:'Multi-cloud',cat:'Agentic',ent:false},
+  'Claude + MCP':{pricing:'Free Tier',oss:false,free:true,wh:'Any',cat:'Agentic',ent:false},
+  'Meta AI Agents':{pricing:'N/A',oss:false,free:false,wh:'Internal',cat:'Agentic',ent:true},
+};
+
+function dismissSplash(){
+  const s=document.getElementById('splash');
+  if(!s||s.dataset.dismissed)return;
+  s.dataset.dismissed='1';
+  s.style.transition='opacity .6s';s.style.opacity='0';
+  setTimeout(()=>s.remove(),700);
+}
+window.addEventListener('DOMContentLoaded',()=>{
+  setTimeout(dismissSplash,2100);
+  // Failsafe: remove splash after 4s no matter what
+  setTimeout(dismissSplash,4000);
+  initBkds();initMap();initStack();initTimeline();
+  document.getElementById('thBtn').textContent=localStorage.getItem('hk_th')==='light'?'☀️':'🌙';
+  if(localStorage.getItem('hk_th')==='light')document.documentElement.setAttribute('data-theme','light');
+  updBkdCount();
+});
+
+document.getElementById('thBtn').onclick=()=>{
+  const c=document.documentElement.getAttribute('data-theme');
+  const n=c==='dark'?'light':'dark';
+  document.documentElement.setAttribute('data-theme',n);
+  localStorage.setItem('hk_th',n);
+  document.getElementById('thBtn').textContent=n==='dark'?'🌙':'☀️';
+};
+
+document.getElementById('shBtn').onclick=()=>{
+  if(navigator.share)navigator.share({title:'AI & BI Data Agents 2026 by Harsha KS',url:location.href});
+  else{navigator.clipboard.writeText(location.href);toast('🔗 Link copied!');}
+};
+
+const si=document.getElementById('si');
+const scl=document.getElementById('scl');
+si.oninput=()=>{
+  const q=si.value.toLowerCase().trim();
+  scl.style.display=q?'block':'none';
+  if(q==='show me everything')document.getElementById('egg').classList.add('show');
+  else document.getElementById('egg').classList.remove('show');
+  if(!q){document.getElementById('sc').style.display='none';document.querySelectorAll('.tc').forEach(c=>c.classList.remove('hid'));applyView();return;}
+  document.querySelectorAll('.sec').forEach(s=>s.classList.add('vis'));
+  let found=0;
+  document.querySelectorAll('.tc').forEach(c=>{
+    const match=(c.dataset.n||'').toLowerCase().includes(q)||(c.dataset.t||'').toLowerCase().includes(q)||c.textContent.toLowerCase().includes(q);
+    c.classList.toggle('hid',!match);if(match)found++;
+  });
+  const sc=document.getElementById('sc');
+  sc.textContent=`${found} tool${found!==1?'s':''} match "${si.value}"`;sc.style.display='block';
+};
+scl.onclick=()=>{si.value='';scl.style.display='none';document.getElementById('sc').style.display='none';document.querySelectorAll('.tc').forEach(c=>c.classList.remove('hid'));applyView();};
+
+function togSF(btn,f){
+  const on=btn.classList.contains('on');
+  document.querySelectorAll('.sf').forEach(b=>b.classList.remove('on'));
+  if(on){activeSF=null;document.querySelectorAll('.tc').forEach(c=>c.classList.remove('hid'));}
+  else{btn.classList.add('on');activeSF=f;document.querySelectorAll('.sec').forEach(s=>s.classList.add('vis'));document.querySelectorAll('.tc').forEach(c=>{c.classList.toggle('hid',!(c.dataset.t||'').includes(f));});}
+}
+
+function showAll(btn){
+  activeSec='all';
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));btn.classList.add('on');
+  document.getElementById('bkv').style.display='none';document.getElementById('bkv').classList.remove('vis');
+  document.querySelectorAll('.sec').forEach(s=>s.classList.add('vis'));
+  retrig();
+}
+function filterSec(id,btn){
+  activeSec=id;
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));btn.classList.add('on');
+  document.getElementById('bkv').style.display='none';document.getElementById('bkv').classList.remove('vis');
+  document.querySelectorAll('.sec').forEach(s=>s.classList.toggle('vis',s.id===id));
+  retrig();
+}
+function applyView(){if(activeSec==='all')document.querySelectorAll('.sec').forEach(s=>s.classList.add('vis'));else if(activeSec!=='bkd')document.querySelectorAll('.sec').forEach(s=>s.classList.toggle('vis',s.id===activeSec));}
+function retrig(){setTimeout(()=>{document.querySelectorAll('.sec.vis .tc').forEach(c=>{c.style.animation='none';c.offsetHeight;c.style.animation='';});},10);}
+
+function showBkd(btn){
+  activeSec='bkd';
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));btn.classList.add('on');
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('vis'));
+  renderBkds();
+  const bv=document.getElementById('bkv');bv.style.display='block';bv.classList.add('vis');
+}
+function initBkds(){
+  document.querySelectorAll('.tc').forEach(card=>{
+    const nm=card.dataset.n||card.querySelector('.tn').textContent;
+    if(bkds.includes(nm)){const b=card.querySelector('.ca');if(b){b.textContent='✅ Saved';b.classList.add('bk');}card.classList.add('bk');}
+  });
+}
+function togBkd(btn){
+  const c=btn.closest('.tc');const nm=c.dataset.n||c.querySelector('.tn').textContent;
+  if(bkds.includes(nm)){bkds=bkds.filter(x=>x!==nm);btn.textContent='🔖 Save';btn.classList.remove('bk');c.classList.remove('bk');toast('Removed from saved');}
+  else{bkds.push(nm);btn.textContent='✅ Saved';btn.classList.add('bk');c.classList.add('bk');toast('✅ Saved!');}
+  localStorage.setItem('hk_bkd',JSON.stringify(bkds));updBkdCount();
+}
+function updBkdCount(){document.getElementById('bkc').textContent=bkds.length;}
+function renderBkds(){
+  const cl=document.getElementById('bkc-list');const empty=document.getElementById('bke');
+  cl.innerHTML='';
+  if(!bkds.length){empty.style.display='block';return;}
+  empty.style.display='none';
+  bkds.forEach(nm=>{
+    const orig=[...document.querySelectorAll('.tc')].find(c=>(c.dataset.n||'')===nm);
+    if(orig){const clone=orig.cloneNode(true);const bBtn=clone.querySelector('.ca');if(bBtn){bBtn.textContent='✅ Saved';bBtn.classList.add('bk');bBtn.onclick=function(){togBkd(bBtn);if(activeSec==='bkd')renderBkds();};}
+    const moreBtn=clone.querySelectorAll('.ca')[2];if(moreBtn)moreBtn.onclick=function(){expCard(this);};cl.appendChild(clone);}
+  });
+}
+
+function expCard(btn){const c=btn.closest('.tc');const ex=c.classList.toggle('exp');btn.textContent=ex?'− Less':'+ More';}
+
+function sCard(btn,name){
+  const txt=`${name} — AI & BI Data Agent 2026 guide by Harsha KS: ${location.href}`;
+  if(navigator.share)navigator.share({title:name,url:location.href});
+  else{navigator.clipboard.writeText(txt);toast('↗ Copied!');}
+}
+
+function togCmp(){
+  cmpOn=!cmpOn;const btn=document.getElementById('cmpBtn');
+  btn.classList.toggle('on',cmpOn);
+  if(!cmpOn){cmpList=[];document.querySelectorAll('.cc').forEach(c=>c.checked=false);document.querySelectorAll('.tc').forEach(c=>c.classList.remove('cs'));updCpa();document.getElementById('cpa').classList.remove('open');}
+  toast(cmpOn?'⚖️ Compare mode ON — pick up to 3 tools':'Compare mode OFF');
+}
+function togCmpTool(cb,name,cat){
+  if(!cmpOn){cb.checked=false;toast('Enable Compare mode first');return;}
+  if(cb.checked){if(cmpList.length>=3){cb.checked=false;toast('Max 3 tools');return;}cmpList.push({name,cat});cb.closest('.tc').classList.add('cs');}
+  else{cmpList=cmpList.filter(x=>x.name!==name);cb.closest('.tc').classList.remove('cs');}
+  updCpa();
+  document.getElementById('cpa').classList.toggle('open',cmpList.length>0);
+  const bdg=document.getElementById('cbdg');bdg.textContent=cmpList.length;bdg.style.display=cmpList.length?'inline-block':'none';
+}
+function updCpa(){
+  for(let i=0;i<3;i++){const sl=document.getElementById(`cs${i}`);
+    if(cmpList[i]){sl.className='cps fil';sl.innerHTML=`${cmpList[i].name}<span class="rx" onclick="remCmp(${i})">✕</span>`;}
+    else{sl.className='cps';sl.innerHTML='Empty';}
+  }
+}
+function remCmp(i){const nm=cmpList[i].name;cmpList.splice(i,1);
+  const cb=[...document.querySelectorAll('.cc')].find(c=>{const n=c.closest('.tc')?.dataset.n||'';return n===nm||n.includes(nm)||nm.includes(n);});
+  if(cb){cb.checked=false;cb.closest('.tc')?.classList.remove('cs');}
+  updCpa();if(!cmpList.length)closeCpa();
+}
+function closeCpa(){document.getElementById('cpa').classList.remove('open');}
+function openModal(){
+  if(cmpList.length<2){toast('Select at least 2 tools');return;}
+  const rows=[{l:'Category',k:'cat'},{l:'Pricing',k:'pricing'},{l:'Open Source',k:'oss'},{l:'Free Tier',k:'free'},{l:'Warehouse',k:'wh'},{l:'Enterprise',k:'ent'}];
+  let h=`<table class="ctbl"><thead><tr><th class="rl">Criteria</th>`;
+  cmpList.forEach(t=>{h+=`<th>${t.name}</th>`;});h+=`</tr></thead><tbody>`;
+  rows.forEach(r=>{h+=`<tr><td class="rl">${r.l}</td>`;
+    cmpList.forEach(t=>{const d=TOOL_META[t.name]||{};let v=d[r.k];if(v===undefined||v===null)v='—';
+      if(typeof v==='boolean')v=v?'<span class="cy">✓</span>':'<span class="cn">✗</span>';
+      h+=`<td>${v}</td>`;});h+=`</tr>`;});
+  h+=`</tbody></table>`;
+  document.getElementById('mod-body').innerHTML=h;
+  document.getElementById('ov').classList.add('open');
+}
+function closeModal(){document.getElementById('ov').classList.remove('open');}
+
+function pickQ(btn,val){
+  btn.closest('.qos').querySelectorAll('.qo').forEach(o=>o.classList.remove('sel'));
+  btn.classList.add('sel');qAnswers[`q${qStep}`]=val;
+}
+function qNext(step){
+  if(!qAnswers[`q${step}`]){toast('Pick an option first');return;}
+  document.getElementById(`qs${step}`).classList.remove('active');
+  qStep=step+1;document.getElementById(`qs${qStep}`).classList.add('active');
+  document.getElementById(`qp${qStep}`).classList.add('on');
+}
+function qBack(step){document.getElementById(`qs${step}`).classList.remove('active');qStep=step-1;document.getElementById(`qs${qStep}`).classList.add('active');}
+function qSubmit(){
+  if(!qAnswers['q3']){toast('Pick an option first');return;}
+  const {q1:sz,q2:cl,q3:pain}=qAnswers;
+  const recs=getRecs(sz,cl,pain);
+  document.getElementById('qrl').innerHTML=recs.map(r=>`<div class="qri"><strong>${r.tool}</strong><span>${r.reason}</span></div>`).join('');
+  document.getElementById('qs3').classList.remove('active');
+  document.getElementById('qr').classList.add('show');
+}
+function getRecs(sz,cl,pain){
+  if(pain==='pipelines')return[
+    {tool:sz==='enterprise'?'Databricks Lakeflow':'Apache Airflow',reason:'Best pipeline orchestration for your scale'},
+    {tool:'LangGraph',reason:'Add self-healing intelligence to your pipelines'},
+    {tool:'Informatica CDI',reason:'Governance for complex transformation logic'}];
+  if(pain==='discovery')return[
+    {tool:'Atlan',reason:sz==='enterprise'?'Gartner Leader, future-proof architecture':'Best catalog UX for growing teams'},
+    {tool:cl==='gcp'?'Google Dataplex':'OpenMetadata',reason:cl==='gcp'?'Native GCP lineage & catalog':'Open-source catalog foundation'},
+    {tool:'Collibra',reason:'Governance workflow engine for compliance'}];
+  if(pain==='analytics')return[
+    {tool:cl==='azure'?'Power BI Copilot':cl==='gcp'?'Looker + Gemini':'Tableau Agent + Pulse',reason:'Best BI copilot for your cloud'},
+    {tool:'Sigma Computing',reason:'Spreadsheet-like warehouse analytics with AI'},
+    {tool:'Tellius',reason:'Autonomous root cause analysis'}];
+  return[
+    {tool:sz==='small'?'Julius AI':'ThoughtSpot Spotter',reason:'NL analytics for non-technical users'},
+    {tool:cl==='aws'?'Databricks Genie':'Snowflake Cortex Analyst',reason:'Warehouse-native NL queries, no extra cost'},
+    {tool:'Querio',reason:'Consistent NL with governed semantic layer'}];
+}
+function qReset(){
+  qAnswers={};qStep=1;
+  document.querySelectorAll('.qst').forEach(s=>s.classList.remove('active'));
+  document.getElementById('qs1').classList.add('active');
+  document.getElementById('qr').classList.remove('show');
+  document.querySelectorAll('.qpd').forEach((d,i)=>{if(i>0)d.classList.remove('on');});
+  document.querySelectorAll('.qo').forEach(o=>o.classList.remove('sel'));
+}
+
+// ── PERSONALITY QUIZ ──
+let pqAnswers = {}, pqStep = 1;
+function pqPick(btn,val){
+  btn.closest('.qos').querySelectorAll('.qo').forEach(o=>o.classList.remove('sel'));
+  btn.classList.add('sel');pqAnswers[`q${pqStep}`]=val;
+}
+function pqNext(step){
+  if(!pqAnswers[`q${step}`]){toast('Pick an option first');return;}
+  document.getElementById(`pqs${step}`).classList.remove('active');
+  pqStep=step+1;document.getElementById(`pqs${pqStep}`).classList.add('active');
+  document.getElementById(`pqpd${pqStep}`).classList.add('on');
+}
+function pqBack(step){document.getElementById(`pqs${step}`).classList.remove('active');pqStep=step-1;document.getElementById(`pqs${pqStep}`).classList.add('active');}
+function pqSubmit(){
+  if(!pqAnswers['q3']){toast('Pick an option first');return;}
+  const {q1,q2,q3} = pqAnswers;
+  
+  let tool = "Apache Airflow", desc = "Reliable, open, and a little complex. You hold everything together.";
+  if (q1 === 'agent' && q3 === 'nl') { tool = "MindsDB"; desc = "You're an autonomous agent! Living in Slack and solving problems magically."; }
+  else if (q2 === 'structure') { tool = "Collibra"; desc = "You're enterprise governance. Highly structured, compliant, and strictly governed."; }
+  else if (q3 === 'nl' && q2 === 'luxury') { tool = "Databricks Genie"; desc = "You're a warehouse-native NL agent. Premium, smart, and expensive."; }
+  else if (q1 === 'meeting' && q3 === 'dashboard') { tool = "Tableau Agent"; desc = "You love a good visualization and a weekly meeting."; }
+  else if (q2 === 'open') { tool = "OpenMetadata"; desc = "You're open source, fast-moving, and love connecting things together."; }
+  else if (q1 === 'manual') { tool = "Power BI Copilot"; desc = "You're dependable, embedded in the Microsoft ecosystem, and love DAX."; }
+  
+  document.getElementById('pqrl').innerHTML = `<div class="qri"><strong style="font-size:16px;color:var(--acc);margin-bottom:8px;">${tool}</strong><span style="font-size:11px;color:var(--txt);line-height:1.5">${desc}</span></div>`;
+  document.getElementById('pqs3').classList.remove('active');
+  document.getElementById('pqr').classList.add('show');
+}
+function pqReset(){
+  pqAnswers={};pqStep=1;
+  document.querySelectorAll('#personality-quiz .qst').forEach(s=>s.classList.remove('active'));
+  document.getElementById('pqs1').classList.add('active');
+  document.getElementById('pqr').classList.remove('show');
+  document.querySelectorAll('#personality-quiz .qpd').forEach((d,i)=>{if(i>0)d.classList.remove('on');});
+  document.querySelectorAll('#personality-quiz .qo').forEach(o=>o.classList.remove('sel'));
+}
+
+function initMap(){
+  const mc=document.getElementById('mmc');
+  MAP_PTS.forEach(p=>{
+    const d=document.createElement('div');d.className='md';
+    d.style.cssText=`left:${p.x}%;top:${p.y}%;background:${p.c}`;
+    d.innerHTML=`<div class="mdl">${p.n}</div>`;
+    d.addEventListener('click',()=>{
+      const card=[...document.querySelectorAll('.tc')].find(c=>(c.dataset.n||'').toLowerCase().includes(p.n.toLowerCase().split(' ')[0].toLowerCase()));
+      if(card){card.scrollIntoView({behavior:'smooth',block:'center'});toast(`📍 ${p.n}`);}
+    });
+    mc.appendChild(d);
+  });
+  const cats=[{l:'Pipeline',c:'#00e5ff'},{l:'Catalog/Lineage',c:'#a78bfa'},{l:'Governance',c:'#10b981'},{l:'Analytics/BI',c:'#f59e0b'},{l:'Agentic',c:'#38bdf8'}];
+  const lg=document.getElementById('mleg');
+  cats.forEach(c=>{lg.innerHTML+=`<div class="mli"><div class="mld" style="background:${c.c}"></div>${c.l}</div>`;});
+}
+
+function initStack(){
+  const c=document.getElementById('ssl');
+  CATS.forEach(cat=>{
+    const s=document.createElement('div');s.className='ssi';s.id=`ss-${cat.id}`;
+    s.innerHTML=`<div class="ssi-ic">${cat.ico}</div><div class="ssi-inf"><div class="ssi-cat">${cat.lbl}</div><div class="ssi-emp">Tap to choose →</div></div>`;
+    s.addEventListener('click',()=>pickStack(cat));c.appendChild(s);
+  });
+}
+function pickStack(cat){
+  const sec=document.getElementById(cat.sec);if(!sec)return;
+  const tools=[...sec.querySelectorAll('.tn')].map(n=>n.textContent);
+  const ch=window.prompt(`Pick a tool for ${cat.lbl}:\n${tools.map((t,i)=>`${i+1}. ${t}`).join('\n')}\n\nType the number:`);
+  const idx=parseInt(ch)-1;
+  if(idx>=0&&idx<tools.length){
+    stackSel[cat.id]=tools[idx];
+    const sl=document.getElementById(`ss-${cat.id}`);sl.classList.add('fil');
+    sl.innerHTML=`<div class="ssi-ic">${cat.ico}</div><div class="ssi-inf"><div class="ssi-cat">${cat.lbl}</div><div class="ssi-tool">${tools[idx]}</div></div><span class="ssi-rm">✕</span>`;
+    sl.querySelector('.ssi-rm').onclick=function(e){e.stopPropagation();clearStack(cat);};
+    toast(`✅ ${tools[idx]} added!`);
+  }
+}
+function clearStack(cat){
+  delete stackSel[cat.id];const sl=document.getElementById(`ss-${cat.id}`);sl.classList.remove('fil');
+  sl.innerHTML=`<div class="ssi-ic">${cat.ico}</div><div class="ssi-inf"><div class="ssi-cat">${cat.lbl}</div><div class="ssi-emp">Tap to choose →</div></div>`;
+}
+function shareStack(){
+  const filled=Object.entries(stackSel);
+  if(!filled.length){toast('Build your stack first!');return;}
+  const txt=`My 2026 Data Stack (via Harsha KS's guide):\n${filled.map(([id,tool])=>{const cat=CATS.find(c=>c.id===id);return `${cat?.ico||''} ${cat?.lbl||''}: ${tool}`;}).join('\n')}\n\n${location.href}`;
+  if(navigator.share)navigator.share({title:'My 2026 Data Stack',text:txt,url:location.href});
+  else{navigator.clipboard.writeText(txt);toast('📋 Stack copied!');}
+}
+
+function initTimeline(){
+  const tr=document.getElementById('tltr');
+  TL.forEach(item=>{
+    const el=document.createElement('div');el.className='tli';
+    el.innerHTML=`<div class="tly">${item.y}</div><div class="tld"></div><div class="tln">${item.n}</div><div class="tle">${item.e}</div>`;
+    tr.appendChild(el);
+  });
+}
+
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2400);}
+
+// ── PHASE 2: AI FEATURES ──────────────────────────────
+
+const TOOL_NAMES = [
+  'Databricks Lakeflow','Apache Airflow','Informatica CDI','LangGraph',
+  'Atlan','Collibra','Alation','Informatica IDMC','Secoda','OpenMetadata','OvalEdge askEdgi',
+  'Atlan (Lineage)','Collibra (Lineage)','IBM Watson Knowledge Catalog','Google Dataplex','Informatica (Lineage)','Alation (Lineage)',
+  'Atlan (Governance)','Collibra (Governance)','Informatica (Gov)','IBM Watson Knowledge Catalog (Gov)','Oracle Enterprise Metadata Mgmt','Apache Egeria',
+  'Databricks Genie','Snowflake Cortex Analyst','ThoughtSpot Spotter','Querio','Julius AI','Hex Magic AI',
+  'Microsoft Power BI Copilot','Tableau Agent + Pulse','Looker + Gemini','Sigma Computing','Holistics AI','Qlik AutoML','Domo','Zenlytic ZOE',
+  'Tellius','Beam AI','MindsDB','Zerve','Claude + MCP','Meta AI Pipeline Agents'
+];
+
+const TOOL_SUMMARY = `You are an expert on data engineering, analytics, and BI tooling in 2026. Here are the 43 tools covered in this guide:
+
+PIPELINE: Databricks Lakeflow (AI-native ETL, enterprise, paid, Snowflake/BigQuery), Apache Airflow (OSS DAG orchestration, free, any cloud), Informatica CDI (enterprise schema-drift healing, paid), LangGraph (OSS multi-agent self-healing DAGs, free).
+
+CATALOG: Atlan (Gartner Leader, best UX, column-level lineage, MCP integration, paid), Collibra (regulated enterprise, policy enforcement, paid), Alation (analytics-first, behavioral ML, paid), Informatica IDMC (CLAIRE AI, multi-cloud, paid), Secoda (fast deploy 1-2 weeks, paid), OpenMetadata/DataHub (OSS, free), OvalEdge askEdgi (governed RAG, paid).
+
+LINEAGE: Atlan (best overall, column-level, MCP), Collibra (compliance lineage, GDPR/SOX), IBM Watson Knowledge Catalog (data+ML model lineage), Google Dataplex (GCP native, BigQuery lineage, usage-based), Informatica IDMC, Alation.
+
+GOVERNANCE: Atlan (Gartner future-proof, AI policy engine), Collibra (workflow engine, GDPR/HIPAA), Informatica IDMC (CLAIRE, GDPR/HIPAA templates), IBM Watson (AI+data governance, risk scoring), Oracle (multi-jurisdiction, OCI), Apache Egeria (OSS federated, free).
+
+NL-TO-SQL: Databricks Genie (compound AI, warehouse-native, paid), Snowflake Cortex Analyst (semantic YAML, Snowflake-native, credits), ThoughtSpot Spotter (self-service at scale, paid), Querio (semantic layer, paid), Julius AI (file upload 32GB, free tier), Hex Magic AI (notebook + NL, paid).
+
+BI COPILOTS: Power BI Copilot (DAX + narrative, $14/user/mo, Azure), Tableau Agent + Pulse (Slack alerts, best viz, paid), Looker + Gemini (LookML + Gemini, GCP), Sigma Computing (spreadsheet UX on warehouse, paid), Holistics AI (AQL metrics-as-code, SEA), Qlik AutoML (ML+BI, paid), Domo (executive mobile, paid), Zenlytic ZOE (governed semantic, paid).
+
+AGENTIC: Tellius (root cause analysis across 30+ sources, paid), Beam AI (enterprise agent hub, paid), MindsDB (OSS, Slack-native, 200+ sources, free), Zerve (AI notebooks + deployment, paid), Claude + MCP (model-agnostic, free tier), Meta AI Pipeline Agents (internal only, not public).`;
+
+async function callClaude(userPrompt, systemExtra='') {
+  const system = TOOL_SUMMARY + (systemExtra ? '\n\n' + systemExtra : '');
+  const resp = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      model: 'claude-sonnet-4-20250514',
+      max_tokens: 1000,
+      system,
+      messages: [{ role: 'user', content: userPrompt }]
+    })
+  });
+  const data = await resp.json();
+  if (data.error) throw new Error(data.error.message);
+  return data.content?.[0]?.text || '';
+}
+
+function formatAIResponse(text) {
+  return text
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/^### (.+)$/gm, '<div style="font-family:Syne,sans-serif;font-size:12px;font-weight:700;color:var(--acc);margin:10px 0 4px">$1</div>')
+    .replace(/^## (.+)$/gm, '<div style="font-family:Syne,sans-serif;font-size:13px;font-weight:700;margin:12px 0 5px">$1</div>')
+    .replace(/^- (.+)$/gm, '<div style="padding:2px 0 2px 12px;border-left:2px solid var(--acc);margin:3px 0">$1</div>')
+    .replace(/^(\d+)\. (.+)$/gm, '<div style="padding:2px 0"><span style="color:var(--acc);font-weight:700">$1.</span> $2</div>')
+    .replace(/\n\n/g, '<br>')
+    .replace(/\n/g, '<br>');
+}
+
+// ── NL SEARCH ──
+function setNL(text) {
+  document.getElementById('nl-input').value = text;
+  runNLSearch();
+}
+
+async function runNLSearch() {
+  const q = document.getElementById('nl-input').value.trim();
+  if (!q) { toast('Type something to search'); return; }
+
+  const thinking = document.getElementById('nl-thinking');
+  const label = document.getElementById('nl-result-label');
+  thinking.classList.add('show');
+  label.classList.remove('show');
+
+  // Reset all cards first
+  document.querySelectorAll('.tc').forEach(c => c.classList.remove('hid'));
+
+  try {
+    const prompt = `The user is searching for data tools with this description: "${q}"
+
+From the 43 tools in this guide, identify the BEST matching tools (between 2-8 tools). Return ONLY a JSON array of tool data-n attribute values (exactly as listed below), nothing else.
+
+Available data-n values:
+Databricks Lakeflow, Apache Airflow, Informatica CDI, LangGraph,
+Atlan, Collibra, Alation, Informatica IDMC, Secoda, OpenMetadata, OvalEdge,
+Atlan Lineage, Collibra Lineage, IBM Watson, Google Dataplex, Informatica Lineage, Alation Lineage,
+Atlan Governance, Collibra Governance, Informatica Governance, IBM Watson Gov, Oracle, Apache Egeria,
+Databricks Genie, Snowflake Cortex, ThoughtSpot, Querio, Julius AI, Hex Magic,
+Power BI, Tableau, Looker + Gemini, Sigma Computing, Holistics AI, Qlik AutoML, Domo, Zenlytic ZOE,
+Tellius, Beam AI, MindsDB, Zerve, Claude + MCP, Meta AI Agents
+
+Return ONLY the JSON array like: ["Atlan", "Secoda", "OpenMetadata"]`;
+
+    const raw = await callClaude(prompt, 'Return ONLY valid JSON array. No explanation, no markdown, just the array.');
+    const clean = raw.replace(/```json|```/g, '').trim();
+    const matches = JSON.parse(clean);
+
+    // Show only matching cards
+    document.querySelectorAll('.sec').forEach(s => s.classList.add('vis'));
+    let found = 0;
+    document.querySelectorAll('.tc').forEach(card => {
+      const n = (card.dataset.n || '').toLowerCase();
+      const isMatch = matches.some(m => n.includes(m.toLowerCase()) || m.toLowerCase().includes(n.split(' ')[0].toLowerCase()));
+      card.classList.toggle('hid', !isMatch);
+      if (isMatch) found++;
+    });
+
+    label.textContent = `Claude matched ${found} tool${found !== 1 ? 's' : ''} for: "${q}"`;
+    label.classList.add('show');
+    toast(`🔍 Found ${found} matching tool${found !== 1 ? 's' : ''}`);
+  } catch(e) {
+    toast('Search failed — check console');
+    console.error(e);
+  } finally {
+    thinking.classList.remove('show');
+  }
+}
+
+document.getElementById('nl-input').addEventListener('keydown', e => {
+  if (e.key === 'Enter') runNLSearch();
+});
+
+// ── AI STACK ADVISOR ──
+async function runAdvisor() {
+  const desc = document.getElementById('adv-input').value.trim();
+  if (!desc) { toast('Describe your company first'); return; }
+
+  const btn = document.getElementById('adv-btn');
+  const thinking = document.getElementById('adv-thinking');
+  const result = document.getElementById('adv-result');
+
+  btn.disabled = true;
+  thinking.classList.add('show');
+  result.classList.remove('show');
+
+  try {
+    const text = await callClaude(
+      `A user describes their company as: "${desc}"
+
+Based on this description, recommend a complete data stack from the 43 tools in this guide. For each layer (Pipeline, Catalog, Lineage, Governance, Analytics/BI, Agentic if needed), pick the single best tool and explain why in 1-2 sentences specific to their situation.
+
+Format your response with clear sections for each tool. Be specific and direct. Include any important caveats. End with a "Total stack cost" estimate (Free/Low/Medium/High).`
+    );
+
+    result.innerHTML = formatAIResponse(text);
+    result.classList.add('show');
+    btn.textContent = '🔄 Rebuild Stack';
+  } catch(e) {
+    result.innerHTML = '<span style="color:var(--red)">Failed to get recommendation. Please try again.</span>';
+    result.classList.add('show');
+    console.error(e);
+  } finally {
+    btn.disabled = false;
+    thinking.classList.remove('show');
+  }
+}
+
+// ── TOOL BATTLE ──
+function initBattle() {
+  const b1 = document.getElementById('b1');
+  const b2 = document.getElementById('b2');
+  const tools = [
+    'Atlan','Collibra','Alation','Informatica IDMC','Secoda','OpenMetadata/DataHub','OvalEdge askEdgi',
+    'Databricks Lakeflow','Apache Airflow','Informatica CDI','LangGraph',
+    'Google Dataplex','IBM Watson Knowledge Catalog','Apache Egeria','Oracle Enterprise Metadata Mgmt',
+    'Databricks Genie','Snowflake Cortex Analyst','ThoughtSpot Spotter','Querio','Julius AI','Hex Magic AI',
+    'Power BI Copilot','Tableau Agent + Pulse','Looker + Gemini','Sigma Computing','Holistics AI','Qlik AutoML','Domo','Zenlytic ZOE',
+    'Tellius','Beam AI','MindsDB','Zerve','Claude + MCP','Meta AI Pipeline Agents'
+  ];
+  tools.forEach((t, i) => {
+    const o1 = new Option(t, t); const o2 = new Option(t, t);
+    b1.add(o1); b2.add(o2);
+  });
+  b2.selectedIndex = 1;
+}
+
+async function runBattle() {
+  const t1 = document.getElementById('b1').value;
+  const t2 = document.getElementById('b2').value;
+  const ctx = document.getElementById('battle-context').value.trim();
+
+  if (t1 === t2) { toast('Pick two different tools!'); return; }
+
+  const btn = document.getElementById('battle-btn');
+  const thinking = document.getElementById('battle-thinking');
+  const result = document.getElementById('battle-result');
+
+  btn.disabled = true;
+  thinking.classList.add('show');
+  result.classList.remove('show');
+
+  try {
+    const contextLine = ctx ? `User context: ${ctx}` : 'No specific context provided — give a general comparison.';
+    const text = await callClaude(
+      `Compare these two data tools head-to-head: ${t1} vs ${t2}
+
+${contextLine}
+
+Structure your response as:
+## ⚔️ ${t1} vs ${t2}
+
+### When to choose ${t1}
+[3 specific reasons]
+
+### When to choose ${t2}
+[3 specific reasons]
+
+### Head-to-head scorecard
+Rate each on: Ease of setup, Governance depth, AI capabilities, Cost, Best team size (1-5 stars emoji)
+
+### 🏆 Winner for this context
+[Clear recommendation with 2-sentence reasoning]`
+    );
+
+    result.innerHTML = formatAIResponse(text);
+    result.classList.add('show');
+    btn.textContent = '⚡ Battle Again';
+  } catch(e) {
+    result.innerHTML = '<span style="color:var(--red)">Battle failed. Please try again.</span>';
+    result.classList.add('show');
+    console.error(e);
+  } finally {
+    btn.disabled = false;
+    thinking.classList.remove('show');
+  }
+}
+
+// ── ELI5 MODE ──
+async function runELI5(btn) {
+  const card = btn.closest('.tc');
+  const name = card.querySelector('.tn')?.textContent || '';
+  const desc = card.querySelector('.tds')?.textContent || '';
+  const eli5div = card.querySelector('.eli5-text');
+
+  const isOn = btn.classList.toggle('on');
+
+  if (!isOn) {
+    eli5div.style.display = 'none';
+    btn.textContent = '🧠 ELI5';
+    return;
+  }
+
+  btn.textContent = '🧠 Loading…';
+  eli5div.style.display = 'block';
+  eli5div.innerHTML = '<span class="eli5-loading">Claude is simplifying this…</span>';
+
+  try {
+    const text = await callClaude(
+      `Explain "${name}" to a non-technical person in 2-3 short sentences. Use a simple real-world analogy. Current description: "${desc}". Be fun, clear, and use zero jargon. Start with "Think of it like…"`,
+      'You explain complex data tools to non-technical people using simple analogies. Keep it under 60 words.'
+    );
+    eli5div.innerHTML = text;
+    eli5div.classList.add('show');
+    btn.textContent = '🧠 ELI5 ON';
+  } catch(e) {
+    eli5div.innerHTML = 'Failed to load. Try again.';
+    btn.classList.remove('on');
+    btn.textContent = '🧠 ELI5';
+    console.error(e);
+  }
+}
+
+// Init battle dropdowns on load
+window.addEventListener('DOMContentLoaded', () => { initBattle(); });
+
+</script>
+</body>
+</html>

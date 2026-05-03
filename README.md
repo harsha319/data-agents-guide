@@ -1,126 +1,36 @@
-# AI & BI Data Agents 2026
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-A mobile-friendly, interactive reference guide to the top AI and BI data agents in 2026 — organized by use case.
+## Getting Started
 
-**Live demo:** Deploy instantly to Vercel (see below)
-
----
-
-## 📋 Use Cases Covered
-
-| # | Category | Tools |
-|---|---|---|
-| 1 | 🏗 Pipeline Orchestration & ETL | 4 |
-| 2 | 🗂 Data Cataloging | 7 |
-| 3 | 🔍 Data Lineage | 6 |
-| 4 | 🛡 Data Governance & Compliance | 6 |
-| 5 | 💬 NL-to-SQL / Self-Service Analytics | 6 |
-| 6 | 📊 BI Copilots & Embedded AI | 8 |
-| 7 | 🤖 Autonomous / Agentic Analytics | 6 |
-
-**Total: 43 tools covered**
-
----
-
-## 🚀 Deploy to Vercel
-
-### Option 1 — One-click (recommended)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/YOUR_USERNAME/data-agents-guide)
-
-> Replace `YOUR_USERNAME` with your GitHub username after pushing.
-
-### Option 2 — Vercel CLI
+First, run the development server:
 
 ```bash
-# Install Vercel CLI
-npm i -g vercel
-
-# Clone and deploy
-git clone https://github.com/YOUR_USERNAME/data-agents-guide.git
-cd data-agents-guide
-vercel
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-Follow the prompts. Your site will be live at `https://data-agents-guide.vercel.app` (or your custom domain).
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### Option 3 — Vercel Dashboard
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-1. Go to [vercel.com/new](https://vercel.com/new)
-2. Import this GitHub repository
-3. Leave all settings as default — Vercel auto-detects static HTML
-4. Click **Deploy**
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
----
+## Learn More
 
-## 🖥 Run Locally
+To learn more about Next.js, take a look at the following resources:
 
-No build step required. It's plain HTML/CSS/JS.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-```bash
-git clone https://github.com/YOUR_USERNAME/data-agents-guide.git
-cd data-agents-guide
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-# Option A: Python
-python3 -m http.server 3000
+## Deploy on Vercel
 
-# Option B: Node
-npx serve .
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-# Option C: VS Code
-# Install "Live Server" extension → right-click index.html → Open with Live Server
-```
-
-Open `http://localhost:3000` in your browser.
-
----
-
-## 📁 Project Structure
-
-```
-data-agents-guide/
-├── index.html      # Full app — single self-contained file
-├── vercel.json     # Vercel deployment config
-└── README.md       # This file
-```
-
-No dependencies. No build step. No npm install. Just HTML.
-
----
-
-## ✨ Features
-
-- **Filter tabs** — tap to view tools by use case category
-- **Mobile-first** — optimized for phone screens, works on desktop too
-- **Color-coded cards** — each category has a distinct accent color
-- **Stats banner** — key 2026 market figures at a glance
-- **Insight panel** — the single most important trend for 2026
-- **Animations** — smooth card entrance animations on filter switch
-- **Zero dependencies** — Google Fonts only (loaded via CDN)
-
----
-
-## 🛠 Customization
-
-All content lives in `index.html`. To add or edit a tool:
-
-```html
-<div class="tool-card">
-  <div class="tool-card-top">
-    <div class="tool-name">Your Tool Name</div>
-    <div class="tool-badge">Badge Label</div>
-  </div>
-  <div class="tool-desc">Your description here.</div>
-</div>
-```
-
-To add an open-source badge, add the `oss` class:
-```html
-<div class="tool-badge oss">Open Source</div>
-```
-
----
-
-## 📄 License
-
-MIT — free to use, fork, and deploy.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
