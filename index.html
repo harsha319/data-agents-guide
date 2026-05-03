@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI & BI Data Agents 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0c10;
+    --surface: #111318;
+    --surface2: #181c24;
+    --border: #222730;
+    --accent: #00e5ff;
+    --accent2: #7c3aed;
+    --accent3: #f59e0b;
+    --text: #e8eaf0;
+    --muted: #6b7280;
+    --green: #10b981;
+    --pink: #f472b6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+  body {
+    font-family: 'DM Mono', monospace;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* HEADER */
+  header {
+    padding: 28px 20px 20px;
+    background: linear-gradient(160deg, #0d1117 0%, #0a0c10 100%);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+  }
+
+  .header-tag {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+
+  header h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(20px, 5vw, 26px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--text);
+  }
+
+  header h1 span { color: var(--accent); }
+
+  .header-sub {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+
+  /* FILTER TABS */
+  .filter-scroll {
+    overflow-x: auto;
+    padding: 16px 20px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    scrollbar-width: none;
+  }
+  .filter-scroll::-webkit-scrollbar { display: none; }
+
+  .filter-tabs {
+    display: flex;
+    gap: 8px;
+    width: max-content;
+  }
+
+  .tab {
+    padding: 7px 14px;
+    border-radius: 100px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+  }
+
+  .tab.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #000;
+    font-weight: 600;
+  }
+
+  .tab:active { transform: scale(0.96); }
+
+  /* MAIN CONTENT */
+  main { padding: 20px; padding-bottom: 60px; }
+
+  /* SECTION */
+  .section {
+    margin-bottom: 28px;
+    display: none;
+  }
+  .section.visible { display: block; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    cursor: pointer;
+  }
+
+  .section-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    flex: 1;
+  }
+
+  .section-count {
+    font-size: 10px;
+    color: var(--muted);
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    padding: 3px 8px;
+    border-radius: 100px;
+  }
+
+  /* TOOL CARDS */
+  .tools-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .tool-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 14px 16px;
+    transition: border-color 0.2s, transform 0.15s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tool-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 100%;
+    border-radius: 14px 0 0 14px;
+  }
+
+  .tool-card:active { transform: scale(0.985); }
+
+  .tool-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+
+  .tool-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  .tool-badge {
+    font-size: 9px;
+    padding: 3px 8px;
+    border-radius: 100px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .tool-desc {
+    font-size: 11.5px;
+    color: #9ca3af;
+    line-height: 1.6;
+  }
+
+  /* COLOR VARIANTS PER SECTION */
+  .s1 .section-icon { background: #00e5ff18; }
+  .s1 .tool-card::before { background: var(--accent); }
+  .s1 .tool-badge { background: #00e5ff18; color: var(--accent); }
+
+  .s2 .section-icon { background: #7c3aed18; }
+  .s2 .tool-card::before { background: var(--accent2); }
+  .s2 .tool-badge { background: #7c3aed18; color: #a78bfa; }
+
+  .s3 .section-icon { background: #f59e0b18; }
+  .s3 .tool-card::before { background: var(--accent3); }
+  .s3 .tool-badge { background: #f59e0b18; color: var(--accent3); }
+
+  .s4 .section-icon { background: #10b98118; }
+  .s4 .tool-card::before { background: var(--green); }
+  .s4 .tool-badge { background: #10b98118; color: var(--green); }
+
+  .s5 .section-icon { background: #f472b618; }
+  .s5 .tool-card::before { background: var(--pink); }
+  .s5 .tool-badge { background: #f472b618; color: var(--pink); }
+
+  .s6 .section-icon { background: #ef444418; }
+  .s6 .tool-card::before { background: #ef4444; }
+  .s6 .tool-badge { background: #ef444418; color: #f87171; }
+
+  .s7 .section-icon { background: #0ea5e918; }
+  .s7 .tool-card::before { background: #0ea5e9; }
+  .s7 .tool-badge { background: #0ea5e918; color: #38bdf8; }
+
+  /* INSIGHT BANNER */
+  .insight-banner {
+    background: linear-gradient(135deg, #0d1117, #0f1620);
+    border: 1px solid #00e5ff30;
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .insight-banner::after {
+    content: '';
+    position: absolute;
+    top: -20px; right: -20px;
+    width: 80px; height: 80px;
+    background: radial-gradient(circle, #00e5ff15, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .insight-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+
+  .insight-text {
+    font-size: 12px;
+    color: #9ca3af;
+    line-height: 1.65;
+  }
+
+  /* STATS ROW */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 10px;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    line-height: 1.3;
+  }
+
+  /* DIVIDER */
+  .section-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 4px 0 16px;
+  }
+
+  /* OPEN SOURCE TAG */
+  .oss { background: #10b98115 !important; color: #34d399 !important; }
+
+  /* Animate in */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .tool-card { animation: fadeUp 0.3s ease both; }
+  .tool-card:nth-child(1) { animation-delay: 0.0s; }
+  .tool-card:nth-child(2) { animation-delay: 0.05s; }
+  .tool-card:nth-child(3) { animation-delay: 0.10s; }
+  .tool-card:nth-child(4) { animation-delay: 0.15s; }
+  .tool-card:nth-child(5) { animation-delay: 0.20s; }
+  .tool-card:nth-child(6) { animation-delay: 0.25s; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-tag">// 2026 Landscape</div>
+  <h1>AI & BI <span>Data Agents</span></h1>
+  <div class="header-sub">Organized by use case · 7 categories · 40+ tools</div>
+</header>
+
+<div class="filter-scroll">
+  <div class="filter-tabs">
+    <button class="tab active" onclick="showAll(this)">All</button>
+    <button class="tab" onclick="filterSection('s1', this)">🏗 Pipeline</button>
+    <button class="tab" onclick="filterSection('s2', this)">🗂 Cataloging</button>
+    <button class="tab" onclick="filterSection('s3', this)">🔍 Lineage</button>
+    <button class="tab" onclick="filterSection('s4', this)">🛡 Governance</button>
+    <button class="tab" onclick="filterSection('s5', this)">💬 NL-to-SQL</button>
+    <button class="tab" onclick="filterSection('s6', this)">📊 BI Copilots</button>
+    <button class="tab" onclick="filterSection('s7', this)">🤖 Agentic</button>
+  </div>
+</div>
+
+<main>
+
+  <!-- STATS -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-num">327%</div>
+      <div class="stat-label">Multi-agent growth</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">80%</div>
+      <div class="stat-label">DBs built by AI agents</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">40%</div>
+      <div class="stat-label">Enterprise adoption by end of 2026</div>
+    </div>
+  </div>
+
+  <!-- INSIGHT -->
+  <div class="insight-banner">
+    <div class="insight-label">// Key Insight 2026</div>
+    <div class="insight-text">Data catalogs are becoming the foundation of the enterprise context layer — providing AI agents with queryable metadata, lineage, and governance at runtime. Governance is no longer separate from analytics.</div>
+  </div>
+
+  <!-- S1: PIPELINE -->
+  <div class="section s1 visible" id="s1">
+    <div class="section-header">
+      <div class="section-icon">🏗</div>
+      <div class="section-title">Pipeline Orchestration & ETL</div>
+      <div class="section-count">4 tools</div>
+    </div>
+    <div class="section-divider"></div>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Databricks Lakeflow + Agent Bricks</div>
+          <div class="tool-badge">Enterprise</div>
+        </div>
+        <div class="tool-desc">AI-native ETL with ai_query and ai_parse_document embedded directly in pipelines. Orchestrates AI workloads at scale using Lakeflow Jobs with full enterprise context.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Apache Airflow</div>
+          <div class="tool-badge oss">Open Source</div>
+        </div>
+        <div class="tool-desc">Python-based DAG orchestration with retries, failure alerts, and dependencies. 100s of operators for BigQuery, Snowflake, Spark, and Kubernetes.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Informatica Cloud Data Integration</div>
+          <div class="tool-badge">Enterprise</div>
+        </div>
+        <div class="tool-desc">Agents dynamically generate and verify transformation logic as schemas change. Native integrations with Snowflake, Databricks, and BigQuery.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">LangGraph Multi-Agent Orchestration</div>
+          <div class="tool-badge oss">Framework</div>
+        </div>
+        <div class="tool-desc">Self-healing DAGs where agents reason over pipeline state, logs, and metadata — auto-rewriting failed transformations or rerouting data flows when anomalies occur.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S2: CATALOGING -->
+  <div class="section s2 visible" id="s2">
+    <div class="section-header">
+      <div class="section-icon">🗂</div>
+      <div class="section-title">Data Cataloging</div>
+      <div class="section-count">7 tools</div>
+    </div>
+    <div class="section-divider"></div>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Atlan</div>
+          <div class="tool-badge">Gartner Leader</div>
+        </div>
+        <div class="tool-desc">Best overall. Ingests metadata from Snowflake, Databricks, dbt, and 200+ connectors with ML-powered classification, column-level lineage, and business glossary automation.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Collibra</div>
+          <div class="tool-badge">Enterprise</div>
+        </div>
+        <div class="tool-desc">Best for regulated enterprises. AI-assisted business glossary, automated lineage mapping, stewardship dependency detection, and governance workflow triggers.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Alation</div>
+          <div class="tool-badge">Enterprise</div>
+        </div>
+        <div class="tool-desc">Analytics-first. ML-powered metadata discovery, intelligent asset search, access control enforcement, and curation workflows for compliance teams.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Informatica IDMC</div>
+          <div class="tool-badge">Enterprise</div>
+        </div>
+        <div class="tool-desc">CLAIRE AI engine automates cataloging, classification, and quality assurance across large multi-cloud environments.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Secoda</div>
+          <div class="tool-badge">Fast Deploy</div>
+        </div>
+        <div class="tool-desc">Deploys in 1–2 weeks. ML-powered metadata ingestion and natural language search. Best for teams starting quickly.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">OpenMetadata</div>
+          <div class="tool-badge oss">Open Source</div>
+        </div>
+        <div class="tool-desc">Open-source metadata foundation with AI scoring, classification, and lineage engines. Good starting point for teams building governance from scratch.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">OvalEdge askEdgi</div>
+          <div class="tool-badge">Governed RAG</div>
+        </div>
+        <div class="tool-desc">Built on top of an enterprise catalog. Unifies data discovery, governance, and analytics in one AI-powered ecosystem with zero-prep analytics.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S3: LINEAGE -->
+  <div class="section s3 visible" id="s3">
+    <div class="section-header">
+      <div class="section-icon">🔍</div>
+      <div class="section-title">Data Lineage</div>
+      <div class="section-count">6 tools</div>
+    </div>
+    <div class="section-divider"></div>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Atlan</div>
+          <div class="tool-badge">Best Overall</div>
+        </div>
+        <div class="tool-desc">End-to-end column-level lineage from sources through dbt/SQL into warehouses and BI tools. Atlan MCP brings lineage context into AI tools for impact checks and PR reviews.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Collibra</div>
+          <div class="tool-badge">Enterprise</div>
+        </div>
+        <div class="tool-desc">Visual lineage for regulated enterprises with stewardship workflows and compliance capabilities. Best for heavy governance requirements.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Informatica IDMC</div>
+          <div class="tool-badge">Enterprise</div>
+        </div>
+        <div class="tool-desc">Metadata and lineage solution supporting large multi-cloud environments across the full data lifecycle.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">IBM Watson Knowledge Catalog</div>
+          <div class="tool-badge">AI + Data</div>
+        </div>
+        <div class="tool-desc">Tracks both data and model lineage from ingestion through model deployment. Model registry stores metadata and risk scoring for each AI model.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Google Dataplex</div>
+          <div class="tool-badge">GCP Native</div>
+        </div>
+        <div class="tool-desc">Serverless lineage integrated with BigQuery, Vertex AI, and Looker. Best for organizations on Google Cloud needing built-in scalability and compliance automation.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Alation</div>
+          <div class="tool-badge">Enterprise</div>
+        </div>
+        <div class="tool-desc">Data discovery and glossary management with metadata documentation. Basic lineage capabilities alongside broader catalog functionality.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S4: GOVERNANCE -->
+  <div class="section s4 visible" id="s4">
+    <div class="section-header">
+      <div class="section-icon">🛡</div>
+      <div class="section-title">Data Governance & Compliance</div>
+      <div class="section-count">6 tools</div>
+    </div>
+    <div class="section-divider"></div>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Atlan</div>
+          <div class="tool-badge">Gartner Leader</div>
+        </div>
+        <div class="tool-desc">Only platform identified by Gartner with future-proof architecture in 2026 MQ. #1 in lineage & impact analysis (scores 4.3–4.4). AI stewards auto-enrich, classify, and enforce policies continuously.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Collibra</div>
+          <div class="tool-badge">Enterprise</div>
+        </div>
+        <div class="tool-desc">Enterprise-grade policy enforcement, automated lineage, and compliance integrity. Identifies stewardship dependencies and triggers remediation workflows.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Informatica IDMC</div>
+          <div class="tool-badge">Enterprise</div>
+        </div>
+        <div class="tool-desc">CLAIRE AI engine for classification, quality governance, and automated compliance assurance at scale across multi-cloud environments.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">IBM Watson Knowledge Catalog</div>
+          <div class="tool-badge">AI Governance</div>
+        </div>
+        <div class="tool-desc">Combines data and AI model governance. Tracks from ingestion through deployment with risk scoring. Strong for regulated industries needing model auditability.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Oracle Enterprise Metadata Mgmt</div>
+          <div class="tool-badge">Enterprise</div>
+        </div>
+        <div class="tool-desc">AI-powered search and tagging across databases. Real-time insights into lineage, risk, and usage. Region-specific deployment for multi-jurisdiction compliance.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Apache Egeria</div>
+          <div class="tool-badge oss">Open Source</div>
+        </div>
+        <div class="tool-desc">2026 updates add ML-powered metadata normalization and contextual mapping across business domains — consistent governance even when teams use different labels.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S5: NL-TO-SQL -->
+  <div class="section s5 visible" id="s5">
+    <div class="section-header">
+      <div class="section-icon">💬</div>
+      <div class="section-title">NL-to-SQL / Self-Service Analytics</div>
+      <div class="section-count">6 tools</div>
+    </div>
+    <div class="section-divider"></div>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Databricks Genie</div>
+          <div class="tool-badge">Warehouse Native</div>
+        </div>
+        <div class="tool-desc">Translates natural language to SQL using a compound AI system. Warehouse-native with close data proximity and no extra LLM costs.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Snowflake Cortex Analyst</div>
+          <div class="tool-badge">Warehouse Native</div>
+        </div>
+        <div class="tool-desc">Native NL queries within Snowflake. No additional LLM spend; routes questions to the right tool via Cortex Agents. Best for internal data teams.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">ThoughtSpot Spotter</div>
+          <div class="tool-badge">Self-Service</div>
+        </div>
+        <div class="tool-desc">Generates dashboards and semantic models from natural language. Search-driven analytics against governed data worksheets. Strong for non-technical business users.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Querio</div>
+          <div class="tool-badge">AI-Native BI</div>
+        </div>
+        <div class="tool-desc">Connects to Snowflake, BigQuery, Postgres with live read-only access. Context layer defines joins and metrics once for consistent interpretation across teams.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Julius AI</div>
+          <div class="tool-badge">File + DB</div>
+        </div>
+        <div class="tool-desc">Conversational analysis of uploaded files up to 32 GB and connected databases. Native connections to SQL Server, MySQL, and Databricks. Built for non-technical users.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Hex Magic AI</div>
+          <div class="tool-badge">Notebook</div>
+        </div>
+        <div class="tool-desc">Generates SQL and Python from natural language within a collaborative notebook environment. Best for analytics teams doing code-assisted exploration.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S6: BI COPILOTS -->
+  <div class="section s6 visible" id="s6">
+    <div class="section-header">
+      <div class="section-icon">📊</div>
+      <div class="section-title">BI Copilots & Embedded AI</div>
+      <div class="section-count">8 tools</div>
+    </div>
+    <div class="section-divider"></div>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Microsoft Power BI Copilot</div>
+          <div class="tool-badge">Enterprise</div>
+        </div>
+        <div class="tool-desc">Generates DAX queries and narrative visuals. Anomaly detection flags unusual metric shifts with NL explanations. Low friction for Microsoft 365 orgs at $14/user/month.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Tableau Agent + Pulse</div>
+          <div class="tool-badge">Enterprise</div>
+        </div>
+        <div class="tool-desc">Agent handles conversational queries and calculations. Pulse delivers metric alerts and plain-language summaries directly into Slack or email. Best-in-class visualization.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Looker + Gemini</div>
+          <div class="tool-badge">GCP Native</div>
+        </div>
+        <div class="tool-desc">Code-first semantic governance with Gemini NL capabilities. Best for data engineering-heavy organizations on Google Cloud/BigQuery needing strict semantic layer control.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Sigma Computing</div>
+          <div class="tool-badge">Warehouse AI</div>
+        </div>
+        <div class="tool-desc">Ask Sigma acts as an agentic AI — locates data sources, builds multi-step analyses, and shows each step of its decision logic. Calls LLMs directly from the warehouse.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Holistics AI</div>
+          <div class="tool-badge">Semantic Layer</div>
+        </div>
+        <div class="tool-desc">Composable metric logic via AQL. AI can generate metric definitions that data teams review before promoting into the governed model. Strong governance-first approach.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Qlik AutoML</div>
+          <div class="tool-badge">ML + BI</div>
+        </div>
+        <div class="tool-desc">Predictive analytics and automated ML embedded within the BI layer. Strong for teams that want ML insights without separate data science infrastructure.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Domo</div>
+          <div class="tool-badge">Executive</div>
+        </div>
+        <div class="tool-desc">AI-driven insights optimized for executive mobile use cases. Best for C-suite dashboards and business-wide KPI monitoring with minimal technical setup.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Zenlytic ZOE</div>
+          <div class="tool-badge">AI-Native</div>
+        </div>
+        <div class="tool-desc">Conversational BI agent with governed semantic layer. Translates NL to governed queries across warehouse sources with strong data team control.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S7: AGENTIC -->
+  <div class="section s7 visible" id="s7">
+    <div class="section-header">
+      <div class="section-icon">🤖</div>
+      <div class="section-title">Autonomous / Agentic Analytics</div>
+      <div class="section-count">6 tools</div>
+    </div>
+    <div class="section-divider"></div>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Tellius</div>
+          <div class="tool-badge">Deepest Analysis</div>
+        </div>
+        <div class="tool-desc">Governed NL-to-SQL across Snowflake, Databricks, BigQuery, Redshift, and 30+ sources simultaneously. Leads on autonomous root cause analysis — investigates why metrics changed, not just what changed.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Beam AI</div>
+          <div class="tool-badge">Automation</div>
+        </div>
+        <div class="tool-desc">Enterprise-grade agentic automation hub. Central dashboard for agent tasks, memory, history, and performance. Integrates with Airtable, ServiceNow, Asana, and more.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">MindsDB</div>
+          <div class="tool-badge">Slack Native</div>
+        </div>
+        <div class="tool-desc">Autonomous BI agents integrated directly into Slack. Conversational analytics on operational data across 200+ sources. No separate analytics interface required.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Zerve</div>
+          <div class="tool-badge">Data Science</div>
+        </div>
+        <div class="tool-desc">AI-native notebooks with built-in collaboration and deployment. Coding environments, datasets, and AI assistance in one shared environment. From exploration to production.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Claude + MCP</div>
+          <div class="tool-badge">Flexible</div>
+        </div>
+        <div class="tool-desc">Model-agnostic agent framework. Plug in any context via MCP. Best for custom agentic workflows rather than governed self-service. No built-in governance layer.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-name">Meta AI Pipeline Agents</div>
+          <div class="tool-badge">Hyperscale</div>
+        </div>
+        <div class="tool-desc">Swarm of 50+ specialized agents that pre-compute tribal knowledge across codebases. Result: 40% fewer tool calls, complex research from 2 days down to 30 minutes.</div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  function showAll(btn) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.section').forEach(s => s.classList.add('visible'));
+    // Re-trigger animations
+    document.querySelectorAll('.tool-card').forEach(c => {
+      c.style.animation = 'none';
+      c.offsetHeight;
+      c.style.animation = '';
+    });
+  }
+
+  function filterSection(id, btn) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.section').forEach(s => {
+      s.classList.toggle('visible', s.id === id);
+    });
+    // Re-trigger animations on visible cards
+    setTimeout(() => {
+      document.querySelectorAll('.section.visible .tool-card').forEach(c => {
+        c.style.animation = 'none';
+        c.offsetHeight;
+        c.style.animation = '';
+      });
+    }, 10);
+  }
+</script>
+</body>
+</html>
